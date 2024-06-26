@@ -1,3 +1,4 @@
+/* Estilos básicos */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,7 +6,7 @@ body {
     background-color: #f0f8f8;
     color: #333;
 }
-  
+
 header {
     background-color: #fff;
     padding: 10px 20px;
@@ -14,47 +15,47 @@ header {
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
+
 header .logo {
     font-size: 1.5em;
     font-weight: bold;
 }
-  
+
 header nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-  
+
 header nav ul li {
     margin: 0 10px;
 }
-  
+
 header nav ul li a {
     color: #333;
     text-decoration: none;
     font-size: 1em;
 }
-  
+
 header .search-bar input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-  
+
 .hero {
     position: relative;
     text-align: center;
     color: white;
     margin: 20px;
 }
-  
+
 .hero img {
     width: 100%;
     border-radius: 10px;
 }
-  
+
 .hero-text {
     position: absolute;
     top: 50%;
@@ -64,17 +65,17 @@ header .search-bar input {
     padding: 20px;
     border-radius: 10px;
 }
-  
+
 .hero-text h1 {
     font-size: 2.5em;
     margin: 0;
 }
-  
+
 .hero-text p {
     font-size: 1.2em;
     margin: 10px 0;
 }
-  
+
 .hero-text button {
     padding: 10px 20px;
     border: none;
@@ -85,22 +86,22 @@ header .search-bar input {
     cursor: pointer;
     margin: 5px;
 }
-  
+
 .section {
     padding: 20px;
     text-align: center;
 }
-  
+
 .section h2 {
     margin-bottom: 20px;
 }
-  
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-  
+
 .card {
     background-color: white;
     margin: 10px;
@@ -110,16 +111,16 @@ header .search-bar input {
     width: 300px;
     text-align: left;
 }
-  
+
 .card img {
     width: 100%;
     border-radius: 10px;
 }
-  
+
 .card p {
     margin: 10px 0 0;
 }
-  
+
 footer {
     background-color: #fff;
     color: #333;
@@ -127,25 +128,25 @@ footer {
     padding: 20px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
-  
+
 footer .contact-info p,
 footer .social-media a,
 footer .newsletter p {
     margin: 10px 0;
 }
-  
+
 footer .social-media a {
     color: #333;
     margin: 0 5px;
     text-decoration: none;
 }
-  
+
 footer .newsletter input {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-  
+
 footer .newsletter button {
     padding: 5px 10px;
     border: none;
@@ -154,3 +155,35 @@ footer .newsletter button {
     color: white;
     cursor: pointer;
 }
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-text {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+

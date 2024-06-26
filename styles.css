@@ -194,7 +194,7 @@ footer .newsletter button {
 
     header .search-bar {
         order: 1;
-        width: 100%;
+        width: auto;
         margin: 10px 0;
     }
 

@@ -4,58 +4,58 @@ body {
     padding: 0;
     background-color: #f0f8f8;
     color: #333;
-  }
+}
   
-  header {
+header {
     background-color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  header .logo {
+header .logo {
     font-size: 1.5em;
     font-weight: bold;
-  }
+}
   
-  header nav ul {
+header nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-  }
+}
   
-  header nav ul li {
+header nav ul li {
     margin: 0 10px;
-  }
+}
   
-  header nav ul li a {
+header nav ul li a {
     color: #333;
     text-decoration: none;
     font-size: 1em;
-  }
+}
   
-  header .search-bar input {
+header .search-bar input {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
+}
   
-  .hero {
+.hero {
     position: relative;
     text-align: center;
     color: white;
     margin: 20px;
-  }
+}
   
-  .hero img {
+.hero img {
     width: 100%;
     border-radius: 10px;
-  }
+}
   
-  .hero-text {
+.hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,19 +63,19 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-  }
+}
   
-  .hero-text h1 {
+.hero-text h1 {
     font-size: 2.5em;
     margin: 0;
-  }
+}
   
-  .hero-text p {
+.hero-text p {
     font-size: 1.2em;
     margin: 10px 0;
-  }
+}
   
-  .hero-text button {
+.hero-text button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -84,24 +84,24 @@ body {
     font-size: 1em;
     cursor: pointer;
     margin: 5px;
-  }
+}
   
-  .section {
+.section {
     padding: 20px;
     text-align: center;
-  }
+}
   
-  .section h2 {
+.section h2 {
     margin-bottom: 20px;
-  }
+}
   
-  .card-container {
+.card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
   
-  .card {
+.card {
     background-color: white;
     margin: 10px;
     padding: 20px;
@@ -109,49 +109,48 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: left;
-  }
+}
   
-  .card img {
+.card img {
     width: 100%;
     border-radius: 10px;
-  }
+}
   
-  .card p {
+.card p {
     margin: 10px 0 0;
-  }
+}
   
-  footer {
+footer {
     background-color: #fff;
     color: #333;
     text-align: center;
     padding: 20px;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
   
-  footer .contact-info p,
-  footer .social-media a,
-  footer .newsletter p {
+footer .contact-info p,
+footer .social-media a,
+footer .newsletter p {
     margin: 10px 0;
-  }
+}
   
-  footer .social-media a {
+footer .social-media a {
     color: #333;
     margin: 0 5px;
     text-decoration: none;
-  }
+}
   
-  footer .newsletter input {
+footer .newsletter input {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
+}
   
-  footer .newsletter button {
+footer .newsletter button {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     background-color: #28a745;
     color: white;
     cursor: pointer;
-  }
-  
+}

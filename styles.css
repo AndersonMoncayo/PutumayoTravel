@@ -20,6 +20,19 @@ header .logo {
     font-weight: bold;
 }
 
+header .search-bar {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+header .search-bar input {
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 header nav {
     display: flex;
     align-items: center;
@@ -48,12 +61,6 @@ header .nav-toggle {
     border: none;
     font-size: 1.5em;
     cursor: pointer;
-}
-
-header .search-bar input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .hero {
@@ -175,8 +182,25 @@ footer .newsletter button {
         align-items: flex-start;
     }
 
+    header .mobile-controls {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
     header .nav-toggle {
         display: block;
+    }
+
+    header .search-bar {
+        order: 1;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header nav {
+        order: 2;
+        width: 100%;
     }
 
     header nav ul {
@@ -192,23 +216,4 @@ footer .newsletter button {
     header nav ul li {
         margin: 10px 0;
     }
-
-    header .search-bar {
-        margin-top: 10px;
-    }
-
-    .hero-text {
-        width: 80%;
-        padding: 10px;
-    }
-
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
 }
-

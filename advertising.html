@@ -5,37 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Publicidad - Mocoa Travel</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Rating Star Widgets Style */
-    .rating {
-      unicode-bidi: bidi-override;
-      direction: rtl;
-      width: fit-content;
-      margin: 0 auto;
-    }
-    .rating > span {
-      display: inline-block;
-      position: relative;
-      width: 1.1em;
-      font-size: 2em;
-      color: #FFD700;
-      cursor: pointer;
-    }
-    .rating > span:hover:before,
-    .rating > span:hover ~ span:before {
-      content: "\2605";
-      position: absolute;
-    }
-    .review-section {
-      text-align: center;
-      margin: 20px;
-    }
-    .review-input {
-      width: 80%;
-      padding: 10px;
-      margin-top: 10px;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -73,40 +42,69 @@
         <div class="card">
           <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/222.jpg" alt="Restaurante 1">
           <p>Restaurante Patrocinado 1</p>
-          <!-- Rating and Review Section -->
-          <div class="review-section">
-            <div class="rating">
-              <span data-value="5">&#9733;</span>
-              <span data-value="4">&#9733;</span>
-              <span data-value="3">&#9733;</span>
-              <span data-value="2">&#9733;</span>
-              <span data-value="1">&#9733;</span>
-            </div>
-            <input type="text" class="review-input" placeholder="Escribe tu comentario">
-            <button onclick="submitReview(this)">Enviar</button>
-          </div>
         </div>
         <div class="card">
           <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/333.jpg" alt="Restaurante 2">
           <p>Restaurante Patrocinado 2</p>
-          <!-- Rating and Review Section -->
-          <div class="review-section">
-            <div class="rating">
-              <span data-value="5">&#9733;</span>
-              <span data-value="4">&#9733;</span>
-              <span data-value="3">&#9733;</span>
-              <span data-value="2">&#9733;</span>
-              <span data-value="1">&#9733;</span>
-            </div>
-            <input type="text" class="review-input" placeholder="Escribe tu comentario">
-            <button onclick="submitReview(this)">Enviar</button>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Additional sections omitted for brevity -->
+    <section class="section publicidad" id="licoreras">
+      <h2>Licoreras</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/444.jpg" alt="Licorera 1">
+          <p>Licorera Patrocinada 1</p>
+        </div>
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/555.jpg" alt="Licorera 2">
+          <p>Licorera Patrocinada 2</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section publicidad" id="domicilios">
+      <h2>Domicilios</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/666.jpg" alt="Domicilio 1">
+          <p>Servicio de Domicilio 1</p>
+        </div>
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/777.jpg" alt="Domicilio 2">
+          <p>Servicio de Domicilio 2</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publicidad" id="parques">
+      <h2>Parques</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/888.jpg" alt="Parque 1">
+          <p>Parque Patrocinado 1</p>
+        </div>
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/111.jpg" alt="Parque 2">
+          <p>Parque Patrocinado 2</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publicidad" id="otros">
+      <h2>Otros Lugares</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/222.jpg" alt="Lugar 1">
+          <p>Lugar Patrocinado 1</p>
+        </div>
+        <div class="card">
+          <img src="C:/Users/MONCAYO/Downloads/Nueva carpeta (3)/333.jpg" alt="Lugar 2">
+          <p>Lugar Patrocinado 2</p>
+        </div>
+      </div>
+    </section>
   </main>
   
   <footer>
@@ -128,44 +126,10 @@
   </footer>
 
   <script>
-    let ratings = {};
-
-    document.querySelectorAll('.rating > span').forEach(star => {
-      star.addEventListener('click', function() {
-        let rating = this.getAttribute('data-value');
-        let parent = this.parentNode;
-        let siblings = parent.querySelectorAll('span');
-        siblings.forEach(sibling => {
-          if (sibling.getAttribute('data-value') <= rating) {
-            sibling.textContent = '★';
-          } else {
-            sibling.textContent = '☆';
-          }
-        });
-        parent.setAttribute('data-selected', rating);
-      });
-    });
-
-    function submitReview(button) {
-      let card = button.parentNode;
-      let rating = card.querySelector('.rating').getAttribute('data-selected');
-      let comment = card.querySelector('.review-input').value;
-      
-      if (!rating) {
-        alert('Por favor, selecciona una calificación.');
-        return;
-      }
-
-      let userIP = 'unique-user-ip'; // This should be fetched from the server-side
-      if (ratings[userIP]) {
-        alert('Ya has enviado una calificación.');
-        return;
-      }
-
-      ratings[userIP] = { rating: rating, comment: comment };
-      alert('Gracias por tu comentario.');
-      button.disabled = true;
+    function exploreNow() {
+      document.getElementById('hero-text').style.display = 'none';
     }
   </script>
 </body>
 </html>
+

@@ -221,13 +221,23 @@
 
       document.querySelectorAll('.star-rating span').forEach(star => {
         star.addEventListener('click', function() {
-          const rating = this.getAttribute('data-value');
+          const rating = parseInt(this.getAttribute('data-value'));
           const parent = this.closest('.card');
           const attractionId = parent.getAttribute('data-id');
 
           if (!localStorage.getItem(attractionId)) {
+            const savedRatings = JSON.parse(localStorage.getItem('ratings')) || {};
+            const ratings = savedRatings[attractionId] || { totalStars: 0, totalReviews: 0, starCounts: [0, 0, 0, 0, 0] };
+
+            ratings.totalStars += rating;
+            ratings.totalReviews += 1;
+            ratings.starCounts[rating - 1] += 1;
+
+            savedRatings[attractionId] = ratings;
+            localStorage.setItem('ratings', JSON.stringify(savedRatings));
             localStorage.setItem(attractionId, rating);
-            updateRating(attractionId, rating);
+
+            updateRating(attractionId, ratings);
           } else {
             alert('You have already rated this attraction.');
           }
@@ -235,45 +245,39 @@
       });
 
       function initializeRatings() {
+        const savedRatings = JSON.parse(localStorage.getItem('ratings')) || {};
         document.querySelectorAll('.card').forEach(card => {
           const attractionId = card.getAttribute('data-id');
-          const savedRating = localStorage.getItem(attractionId);
-          if (savedRating) {
-            updateRating(attractionId, savedRating, true);
+          const ratings = savedRatings[attractionId];
+          if (ratings) {
+            updateRating(attractionId, ratings, true);
           }
         });
       }
 
-      function updateRating(attractionId, rating, isInitial = false) {
+      function updateRating(attractionId, ratings, isInitial = false) {
         const parent = document.querySelector(`.card[data-id="${attractionId}"]`);
         const averageRatingElement = parent.querySelector('.average-rating');
         const reviewCountElement = parent.querySelector('.review-count');
         const distributionBars = parent.querySelectorAll('.distribution-bar');
 
-        let reviewCount = parseInt(reviewCountElement.textContent) || 0;
-        if (!isInitial) reviewCount++;
+        const reviewCount = ratings.totalReviews;
         reviewCountElement.textContent = `${reviewCount} reviews`;
 
-        const starCountElement = distributionBars[5 - rating].querySelector('.count');
-        let starCount = parseInt(starCountElement.textContent);
-        if (!isInitial) starCount++;
-        starCountElement.textContent = starCount;
+        ratings.starCounts.forEach((count, index) => {
+          const starCountElement = distributionBars[4 - index].querySelector('.count');
+          starCountElement.textContent = count;
 
-        const barFilledElement = distributionBars[5 - rating].querySelector('.bar-filled');
-        const widthPercentage = (starCount / reviewCount) * 100;
-        barFilledElement.style.width = `${widthPercentage}%`;
-
-        let totalStars = 0;
-        distributionBars.forEach((bar, index) => {
-          const count = parseInt(bar.querySelector('.count').textContent);
-          totalStars += count * (5 - index);
+          const barFilledElement = distributionBars[4 - index].querySelector('.bar-filled');
+          const widthPercentage = (count / reviewCount) * 100;
+          barFilledElement.style.width = `${widthPercentage}%`;
         });
 
-        const newAverageRating = (totalStars / reviewCount).toFixed(1);
-        averageRatingElement.textContent = newAverageRating;
+        const averageRating = (ratings.totalStars / reviewCount).toFixed(1);
+        averageRatingElement.textContent = averageRating;
 
         parent.querySelectorAll('.star-rating span').forEach((star, index) => {
-          star.classList.toggle('selected', index < newAverageRating);
+          star.classList.toggle('selected', index < averageRating);
         });
       }
     });
@@ -284,4 +288,3 @@
   </script>
 </body>
 </html>
-

@@ -83,12 +83,12 @@
     <section class="section atracciones" id="atracciones">
       <h2>Atracciones Populares</h2>
       <div class="card-container">
-        <div class="card">
+        <div class="card" data-id="atraccion1">
           <img src="222.jpg" alt="Atracción 1">
           <p>Atracción Nacional</p>
-          <div class="review-section" data-id="atraccion1">
+          <div class="review-section">
             <div class="rating-overview">
-              <div class="average-rating">5.0</div>
+              <div class="average-rating">0.0</div>
               <div class="star-rating">
                 <span data-value="1">&#9733;</span>
                 <span data-value="2">&#9733;</span>
@@ -96,13 +96,13 @@
                 <span data-value="4">&#9733;</span>
                 <span data-value="5">&#9733;</span>
               </div>
-              <div class="review-count">18 reviews</div>
+              <div class="review-count">0 reviews</div>
             </div>
             <div class="rating-distribution">
               <div class="distribution-bar">
                 <span>5 stars</span>
-                <div class="bar"><div class="bar-filled" style="width: 100%;"></div></div>
-                <span class="count">18</span>
+                <div class="bar"><div class="bar-filled" style="width: 0%;"></div></div>
+                <span class="count">0</span>
               </div>
               <div class="distribution-bar">
                 <span>4 stars</span>
@@ -127,12 +127,12 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-id="atraccion2">
           <img src="333.jpg" alt="Atracción 2">
           <p>Atracción Natural</p>
-          <div class="review-section" data-id="atraccion2">
+          <div class="review-section">
             <div class="rating-overview">
-              <div class="average-rating">5.0</div>
+              <div class="average-rating">0.0</div>
               <div class="star-rating">
                 <span data-value="1">&#9733;</span>
                 <span data-value="2">&#9733;</span>
@@ -140,13 +140,13 @@
                 <span data-value="4">&#9733;</span>
                 <span data-value="5">&#9733;</span>
               </div>
-              <div class="review-count">18 reviews</div>
+              <div class="review-count">0 reviews</div>
             </div>
             <div class="rating-distribution">
               <div class="distribution-bar">
                 <span>5 stars</span>
-                <div class="bar"><div class="bar-filled" style="width: 100%;"></div></div>
-                <span class="count">18</span>
+                <div class="bar"><div class="bar-filled" style="width: 0%;"></div></div>
+                <span class="count">0</span>
               </div>
               <div class="distribution-bar">
                 <span>4 stars</span>
@@ -217,10 +217,12 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      initializeRatings();
+
       document.querySelectorAll('.star-rating span').forEach(star => {
         star.addEventListener('click', function() {
           const rating = this.getAttribute('data-value');
-          const parent = this.closest('.review-section');
+          const parent = this.closest('.card');
           const attractionId = parent.getAttribute('data-id');
 
           if (!localStorage.getItem(attractionId)) {
@@ -232,19 +234,29 @@
         });
       });
 
-      function updateRating(attractionId, rating) {
-        const parent = document.querySelector(`.review-section[data-id="${attractionId}"]`);
+      function initializeRatings() {
+        document.querySelectorAll('.card').forEach(card => {
+          const attractionId = card.getAttribute('data-id');
+          const savedRating = localStorage.getItem(attractionId);
+          if (savedRating) {
+            updateRating(attractionId, savedRating, true);
+          }
+        });
+      }
+
+      function updateRating(attractionId, rating, isInitial = false) {
+        const parent = document.querySelector(`.card[data-id="${attractionId}"]`);
         const averageRatingElement = parent.querySelector('.average-rating');
         const reviewCountElement = parent.querySelector('.review-count');
         const distributionBars = parent.querySelectorAll('.distribution-bar');
-        let reviewCount = parseInt(reviewCountElement.textContent);
 
-        reviewCount++;
+        let reviewCount = parseInt(reviewCountElement.textContent) || 0;
+        if (!isInitial) reviewCount++;
         reviewCountElement.textContent = `${reviewCount} reviews`;
 
         const starCountElement = distributionBars[5 - rating].querySelector('.count');
         let starCount = parseInt(starCountElement.textContent);
-        starCount++;
+        if (!isInitial) starCount++;
         starCountElement.textContent = starCount;
 
         const barFilledElement = distributionBars[5 - rating].querySelector('.bar-filled');

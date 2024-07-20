@@ -27,7 +27,7 @@
   
   <main>
     <section class="hero">
-      <img src="111.jpg" alt="Publicidad - Mocoa Travel" style="width: 10%;">
+      <img src="111.jpg" alt="Publicidad - Mocoa Travel" style="width: 50%;">
       <div class="hero-text" id="hero-text">
         <h1>Publicidad</h1>
         <p>Descubre los mejores lugares patrocinados en Mocoa.</p>
@@ -36,21 +36,21 @@
     </section>
     
     <section class="section publicidad" id="restaurantes">
-      <h2>Restaurantes</h2>
+      <h2>Restaurantes Patrocinados</h2>
       <div class="card-container">
         <div class="card">
           <img src="222.jpg" alt="Restaurante 1">
-          <p>Restaurante Patrocinado 1</p>
+          <p>Restaurante Nacional</p>
         </div>
         <div class="card">
           <img src="333.jpg" alt="Restaurante 2">
-          <p>Restaurante Patrocinado 2</p>
+          <p>Restaurante Natural</p>
         </div>
       </div>
     </section>
 
     <section class="section publicidad" id="licoreras">
-      <h2>Licoreras</h2>
+      <h2>Licoreras Patrocinadas</h2>
       <div class="card-container">
         <div class="card">
           <img src="444.jpg" alt="Licorera 1">
@@ -64,7 +64,7 @@
     </section>
 
     <section class="section publicidad" id="domicilios">
-      <h2>Domicilios</h2>
+      <h2>Servicios de Domicilio</h2>
       <div class="card-container">
         <div class="card">
           <img src="666.jpg" alt="Domicilio 1">
@@ -78,7 +78,7 @@
     </section>
 
     <section class="section publicidad" id="parques">
-      <h2>Parques</h2>
+      <h2>Parques Patrocinados</h2>
       <div class="card-container">
         <div class="card">
           <img src="888.jpg" alt="Parque 1">
@@ -134,8 +134,10 @@
       
       links.forEach(link => {
         link.addEventListener("click", (event) => {
+          event.preventDefault();
           links.forEach(l => l.classList.remove("selected"));
           link.classList.add("selected");
+          window.location.href = link.href;  // Navega a la nueva página
         });
       });
     });

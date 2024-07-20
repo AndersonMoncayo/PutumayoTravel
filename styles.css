@@ -51,6 +51,10 @@ header nav ul li a {
     font-size: 1em;
 }
 
+header nav ul li a.active {
+    border-bottom: 2px solid #333;
+}
+
 header .nav-toggle {
     display: none;
     background: none;

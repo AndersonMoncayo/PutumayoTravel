@@ -82,14 +82,20 @@
     <div class="social-media">
       <a href="#">Facebook</a>
       <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
-    </div>
+      <a href="#">Twitter</a></div>
     <div class="newsletter">
       <p>Suscríbete a nuestro boletín</p>
       <input type="email" placeholder="Tu correo electrónico">
       <button>Suscribirse</button>
     </div>
   </footer>
+
+  <div class="whatsapp-icon" id="whatsapp-icon">
+    <div class="whatsapp-message" id="whatsapp-message">
+      CREEMOS TU ESTRATEGIA JUNTOS
+    </div>
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+  </div>
 
   <script>
     function exploreNow() {
@@ -106,6 +112,20 @@
           link.classList.add("selected");
           window.location.href = link.href;  // Navega a la nueva página
         });
+      });
+
+      const whatsappIcon = document.getElementById('whatsapp-icon');
+      const whatsappMessage = document.getElementById('whatsapp-message');
+      whatsappIcon.addEventListener('mouseenter', () => {
+        whatsappMessage.style.opacity = '1';
+        whatsappMessage.style.transform = 'rotate(0deg) scale(1)';
+      });
+      whatsappIcon.addEventListener('mouseleave', () => {
+        whatsappMessage.style.opacity = '0';
+        whatsappMessage.style.transform = 'rotate(360deg) scale(0)';
+      });
+      whatsappIcon.addEventListener('click', () => {
+        window.location.href = 'https://api.whatsapp.com/send/?phone=573227737273&text&type=phone_number&app_absent=0';
       });
     });
   </script>

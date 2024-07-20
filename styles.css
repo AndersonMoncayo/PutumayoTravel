@@ -181,6 +181,24 @@ footer .newsletter button {
         align-items: center;
     }
 
+    header .nav-toggle {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul.nav-active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
     .hero-text {
         width: 80%;
         padding: 10px;
@@ -191,6 +209,10 @@ footer .newsletter button {
         align-items: center;
     }
 
+    .card-container .card {
+        width: 90%;
+    }
+}
     .card-container .card {
         width: 90%;
     }

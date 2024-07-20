@@ -20,6 +20,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 header .logo {
@@ -61,7 +62,8 @@ header .nav-toggle {
     border: none;
     font-size: 1.5em;
     cursor: pointer;
-    margin-top: 10px;
+    position: absolute;
+    left: 20px;
 }
 
 .hero {

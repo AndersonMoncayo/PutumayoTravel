@@ -51,14 +51,6 @@ header nav ul li a {
     font-size: 1em;
 }
 
-header .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
 .hero {
     position: relative;
     text-align: center;
@@ -118,26 +110,26 @@ header .nav-toggle {
 }
 
 .card-container .card {
-    background-color: rgba(255, 255, 255, 0.5); /* Ajusta la transparencia a 50% */
+    background-color: rgba(255, 255, 255, 0.5);
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: left;
-    transition: transform 0.3s; /* Añade la transición para la animación */
+    transition: transform 0.3s;
 }
 
 .card-container .card img {
     width: 100%;
-    height: 200px; /* Ajusta la altura de todas las imágenes */
-    object-fit: cover; /* Asegura que las imágenes cubran el área sin distorsionarse */
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s; /* Añade la transición para la animación al pasar el mouse */
+    transition: transform 0.3s;
 }
 
 .card-container .card img:hover {
-    transform: scale(1.5); /* Expande la imagen al pasar el mouse */
+    transform: scale(1.5);
 }
 
 .card-container .card p {
@@ -145,7 +137,7 @@ header .nav-toggle {
 }
 
 .card-container .card:active {
-    transform: scale(1.05); /* Expande la tarjeta al hacer clic */
+    transform: scale(1.05);
 }
 
 footer {
@@ -183,29 +175,10 @@ footer .newsletter button {
     cursor: pointer;
 }
 
-/* Media Queries para Responsividad */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
-    }
-
-    header .nav-toggle {
-        display: block;
-    }
-
-    header nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    header nav ul.nav-active {
-        display: flex;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
     }
 
     .hero-text {

@@ -2,14 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('background-marketing.jpg'); /* URL de la imagen de fondo */
-    background-size: cover;
-    background-position: center;
+    background-color: #f0f8f8;
     color: #333;
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    background-color: #fff;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -107,9 +105,6 @@ header .nav-toggle {
 .section {
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-    margin: 20px 0;
-    border-radius: 10px;
 }
 
 .section h2 {
@@ -154,7 +149,7 @@ header .nav-toggle {
 }
 
 footer {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    background-color: #fff;
     color: #333;
     text-align: center;
     padding: 20px;

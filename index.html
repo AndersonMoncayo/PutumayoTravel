@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mocoa, Putumayo - Descubre la Puerta de la Amazonía Colombiana</title>
+  <title>Restaurantes en Mocoa</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -16,10 +16,10 @@
       </button>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="restaurantes.html">Restaurantes</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="advertising.html">Publicidad</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/restaurantes" class="active">Restaurantes</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/advertising">Publicidad</a></li>
         </ul>
       </nav>
     </div>
@@ -27,50 +27,46 @@
   
   <main>
     <section class="hero">
-      <img src="111.jpg" alt="Cascada Fin del Mundo" style="width: 50%;">
+      <img src="111.jpg" alt="Restaurantes en Mocoa" style="width: 50%;">
       <div class="hero-text" id="hero-text">
-        <h1>¡Bienvenidos a Mocoa, Putumayo!</h1>
-        <p>Descubre la magia natural y la riqueza cultural de la puerta de entrada a la Amazonía colombiana.</p>
+        <h1>¡Restaurantes en Mocoa!</h1>
+        <p>Descubre los mejores restaurantes para disfrutar en Mocoa.</p>
         <button onclick="exploreNow()">Explora Ahora</button>
       </div>
     </section>
     
-    <section class="section no-te-pierdas" id="no-te-pierdas">
-      <h2>No te Pierdas</h2>
+    <section class="section restaurantes" id="restaurantes">
+      <h2>Restaurantes Populares</h2>
       <div class="card-container">
         <div class="card">
-          <img src="222.jpg" alt="Lugar 1">
-          <p>12 Fascinantes Lugares para Visitar en Mocoa</p>
+          <img src="222.jpg" alt="Restaurante 1">
+          <p>Restaurante Nacional</p>
         </div>
         <div class="card">
-          <img src="333.jpg" alt="Restaurante 1">
-          <p>Los Mejores Restaurantes de Mocoa</p>
-        </div>
-        <div class="card">
-          <img src="444.jpg" alt="Evento 1">
-          <p>Eventos y Festividades en Mocoa</p>
+          <img src="333.jpg" alt="Restaurante 2">
+          <p>Restaurante Natural</p>
         </div>
       </div>
     </section>
-    
+
     <section class="section puede-interesarte" id="puede-interesarte">
       <h2>Puede Interesarte</h2>
       <div class="card-container">
         <div class="card">
-          <img src="555.jpg" alt="Publicidad 1">
-          <p><a href="advertising.html#restaurantes">Restaurantes Patrocinados</a></p>
+          <img src="222.jpg" alt="Publicidad 1">
+          <p><a href='/advertising#restaurantes'>Restaurantes Patrocinados</a></p>
         </div>
         <div class="card">
-          <img src="666.jpg" alt="Publicidad 2">
-          <p><a href="advertising.html#licoreras">Licoreras Patrocinadas</a></p>
+          <img src="333.jpg" alt="Publicidad 2">
+          <p><a href='/advertising#licoreras'>Licoreras Patrocinadas</a></p>
         </div>
         <div class="card">
-          <img src="777.jpg" alt="Publicidad 3">
-          <p><a href="advertising.html#domicilios">Servicios de Domicilio</a></p>
+          <img src="444.jpg" alt="Publicidad 3">
+          <p><a href='/advertising#domicilios'>Servicios de Domicilio</a></p>
         </div>
         <div class="card">
-          <img src="888.jpg" alt="Publicidad 4">
-          <p><a href="advertising.html#parques">Parques Patrocinados</a></p>
+          <img src="555.jpg" alt="Publicidad 4">
+          <p><a href='/advertising#parques'>Parques Patrocinados</a></p>
         </div>
       </div>
     </section>
@@ -92,9 +88,6 @@
       <input type="email" placeholder="Tu correo electrónico">
       <button>Suscribirse</button>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Mocoa Travel. Todos los derechos reservados.</p>
-    </div>
   </footer>
 
   <script>
@@ -104,4 +97,3 @@
   </script>
 </body>
 </html>
-

@@ -17,7 +17,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="/" id="inicio-link">Inicio</a></li>
-          <li><a href="/restaurantes" class="active" id="restaurantes-link">Restaurantes</a></li>
+          <li><a href="/restaurantes" id="restaurantes-link">Restaurantes</a></li>
           <li><a href="/contacto" id="contacto-link">Contacto</a></li>
           <li><a href="/advertising" id="publicidad-link">Publicidad</a></li>
         </ul>
@@ -99,9 +99,11 @@
       const links = document.querySelectorAll(".nav-links a");
       
       links.forEach(link => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
           links.forEach(l => l.classList.remove("selected"));
           link.classList.add("selected");
+          window.location.href = link.href;  // Navega a la nueva página
         });
       });
     });

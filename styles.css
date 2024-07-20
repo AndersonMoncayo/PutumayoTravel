@@ -1,13 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8f8;
+    background-color: #e0f7fa;
     color: #333;
 }
 
 header {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -26,8 +26,8 @@ header {
 header .logo {
     font-size: 2em;
     font-weight: bold;
-    color: red;
-    font-family: 'Arial Black', sans-serif;
+    color: #005662;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 header nav {
@@ -50,11 +50,12 @@ header nav ul li a {
     color: #333;
     text-decoration: none;
     font-size: 1em;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 header nav ul li a.selected {
-    border-bottom: 2px solid #333;
-    background-color: #f0f0f0; /* Color de sombreado */
+    border-bottom: 2px solid #005662;
+    background-color: #b2ebf2; /* Color de sombreado */
 }
 
 header .nav-toggle {
@@ -84,7 +85,7 @@ header .nav-toggle {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 86, 98, 0.5);
     padding: 20px;
     border-radius: 10px;
 }
@@ -103,7 +104,7 @@ header .nav-toggle {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #28a745;
+    background-color: #00796b;
     color: white;
     font-size: 1em;
     cursor: pointer;
@@ -157,7 +158,7 @@ header .nav-toggle {
 }
 
 footer {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #333;
     text-align: center;
     padding: 20px;
@@ -186,7 +187,7 @@ footer .newsletter button {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #28a745;
+    background-color: #00796b;
     color: white;
     cursor: pointer;
 }

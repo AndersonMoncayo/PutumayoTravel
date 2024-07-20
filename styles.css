@@ -235,18 +235,3 @@ footer .newsletter button {
         width: 90%;
     }
 }
-JavaScript (script.js)
-Crea un archivo script.js si aún no existe y agrega el siguiente contenido:
-
-javascript
-Copiar código
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".nav-links a");
-  
-  links.forEach(link => {
-    link.addEventListener("click", (event) => {
-      links.forEach(l => l.classList.remove("selected"));
-      link.classList.add("selected");
-    });
-  });
-});

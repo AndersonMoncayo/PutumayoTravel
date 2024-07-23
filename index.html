@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurantes en Mocoa</title>
+  <title>Marketing Web Putumayo</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
@@ -14,13 +14,13 @@
       <button class="nav-toggle" aria-label="Abrir menú">
         &#9776;
       </button>
-      <div class="logo">Mocoa Travel</div>
+      <div class="logo">Marketing Web Putumayo</div>
       <nav>
         <ul class="nav-links">
           <li><a href="/" id="inicio-link">Inicio</a></li>
-          <li><a href="/restaurantes" id="restaurantes-link">Restaurantes</a></li>
-          <li><a href="/contacto" id="contacto-link">Contacto</a></li>
-          <li><a href="/advertising" id="publicidad-link">Publicidad</a></li>
+          <li><a href="#servicios" id="servicios-link">Servicios</a></li>
+          <li><a href="#nosotros" id="nosotros-link">Sobre Nosotros</a></li>
+          <li><a href="#contacto" id="contacto-link">Contacto</a></li>
         </ul>
       </nav>
     </div>
@@ -28,92 +28,44 @@
   
   <main>
     <section class="hero">
-      <img src="111.jpg" alt="Restaurantes en Mocoa" style="width: 50%;">
+      <img src="111.jpg" alt="Marketing Web Putumayo" class="hero-img">
       <div class="hero-text" id="hero-text">
-        <h1>¡Restaurantes en Mocoa!</h1>
-        <p>Descubre los mejores restaurantes para disfrutar en Mocoa.</p>
+        <h1>¡Transforma tu Presencia en Línea!</h1>
+        <p>En Marketing Web Putumayo, te ayudamos a llevar tu negocio al siguiente nivel con estrategias de marketing digital personalizadas que garantizan resultados efectivos y medibles.</p>
         <button onclick="exploreNow()">Explora Ahora</button>
       </div>
     </section>
     
-    <section class="section restaurantes" id="restaurantes">
-      <h2>Restaurantes Populares</h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="222.jpg" alt="Restaurante 1">
-          <p>Restaurante Nacional</p>
-        </div>
-        <div class="card">
-          <img src="333.jpg" alt="Restaurante 2">
-          <p>Restaurante Natural</p>
-        </div>
-      </div>
+    <section class="section servicios" id="servicios">
+      <h2>Nuestros Servicios</h2>
+      <p>Ofrecemos una gama completa de servicios de marketing digital, incluyendo:</p>
+      <ul>
+        <li>Diseño y Desarrollo Web</li>
+        <li>Optimización SEO</li>
+        <li>Gestión de Redes Sociales</li>
+        <li>Publicidad Digital</li>
+        <li>Email Marketing</li>
+        <li>Consultoría y Estrategia Digital</li>
+      </ul>
     </section>
 
-    <section class="section puede-interesarte" id="puede-interesarte">
-      <h2>Puede Interesarte</h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="222.jpg" alt="Publicidad 1">
-          <p><a href='/advertising#restaurantes'>Restaurantes Patrocinados</a></p>
-        </div>
-        <div class="card">
-          <img src="333.jpg" alt="Publicidad 2">
-          <p><a href='/advertising#licoreras'>Licoreras Patrocinadas</a></p>
-        </div>
-        <div class="card">
-          <img src="444.jpg" alt="Publicidad 3">
-          <p><a href='/advertising#domicilios'>Servicios de Domicilio</a></p>
-        </div>
-        <div class="card">
-          <img src="555.jpg" alt="Publicidad 4">
-          <p><a href='/advertising#parques'>Parques Patrocinados</a></p>
-        </div>
-      </div>
+    <section class="section nosotros" id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Marketing Web Putumayo es una agencia de marketing digital dedicada a ayudar a negocios en la región de Putumayo a crecer y alcanzar sus objetivos. Nuestro equipo está compuesto por expertos en diversas áreas del marketing digital, comprometidos a ofrecer soluciones efectivas y personalizadas para cada cliente.</p>
     </section>
-
-    <section class="section tecnologia" id="tecnologia">
-  <h2>Tecnología</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="aud1.jpg" alt="Audífono 1" class="zoomable">
-      <p>Audífono A6s - Liquidación de audifonos Mocoa Putumayo.</p>
-      <p><a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20realizo%20la%20compra?" class="compra-link">Compra Ahora 🛒</a></p>
-    </div>
-    <div class="card">
-      <img src="aud2.jpg" alt="Audífono 2" class="zoomable">
-      <p>Audífono ABC - Diseño elegante y batería de larga duración.</p>
-      <p><a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20realizo%20la%20compra?" class="compra-link">Compra Ahora 🛒</a></p>
-    </div>
-    <div class="card">
-      <img src="aud3.jpg" alt="Audífono 3" class="zoomable">
-      <p>Audífono DEF - Cancelación de ruido y conectividad inalámbrica.</p>
-      <p><a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20realizo%20la%20compra?" class="compra-link">Compra Ahora 🛒</a></p>
-    </div>
-    <div class="card">
-      <img src="aud4.jpg" alt="Audífono 4" class="zoomable">
-      <p>Audífono GHI - Sonido envolvente y resistencia al agua.</p>
-      <p><a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20realizo%20la%20compra?" class="compra-link">Compra Ahora 🛒</a></p>
-    </div>
-    <div class="card">
-      <img src="aud5.jpg" alt="Audífono 5" class="zoomable">
-      <p>Audífono JKL - Compatibilidad con asistentes de voz y carga rápida.</p>
-      <p><a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20realizo%20la%20compra?" class="compra-link">Compra Ahora 🛒</a></p>
-    </div>
-  </div>
-</section>
   </main>
   
   <footer>
     <div class="contact-info">
       <p>Dirección: Calle Falsa 123, Mocoa, Putumayo, Colombia</p>
       <p>Teléfono: +57 1 234 5678</p>
-      <p>Email: info@mocoatravel.com</p>
+      <p>Email: info@marketingwebputumayo.com</p>
     </div>
     <div class="social-media">
       <a href="#">Facebook</a>
       <a href="#">Instagram</a>
-      <a href="#">Twitter</a></div>
+      <a href="#">Twitter</a>
+    </div>
     <div class="newsletter">
       <p>Suscríbete a nuestro boletín</p>
       <input type="email" placeholder="Tu correo electrónico">
@@ -127,39 +79,5 @@
     </div>
     <img src="whatt.png" alt="WhatsApp">
   </div>
-
-  <script>
-    function exploreNow() {
-      document.getElementById('hero-text').style.display = 'none';
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const links = document.querySelectorAll(".nav-links a");
-      
-      links.forEach(link => {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          links.forEach(l => l.classList.remove("selected"));
-          link.classList.add("selected");
-          window.location.href = link.href;  // Navega a la nueva página
-        });
-      });
-
-      const whatsappIcon = document.getElementById('whatsapp-icon');
-      const whatsappMessage = document.getElementById('whatsapp-message');
-      whatsappIcon.addEventListener('mouseenter', () => {
-        whatsappMessage.style.opacity = '1';
-        whatsappMessage.style.transform = 'rotate(0deg) scale(1)';
-      });
-      whatsappIcon.addEventListener('mouseleave', () => {
-        whatsappMessage.style.opacity = '0';
-        whatsappMessage.style.transform = 'rotate(360deg) scale(0)';
-      });
-      whatsappIcon.addEventListener('click', () => {
-        window.location.href = 'https://api.whatsapp.com/send/?phone=573227737273&text&type=phone_number&app_absent=0';
-      });
-    });
-  </script>
 </body>
 </html>
-

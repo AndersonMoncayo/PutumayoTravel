@@ -87,6 +87,7 @@ header .nav-toggle {
     margin-left: 20px;
 }
 
+
 .hero-text {
     flex: 1;
     margin-right: 20px;
@@ -104,6 +105,7 @@ header .nav-toggle {
     margin: 0;
     font-family: 'Oswald', sans-serif;
     color: #ffcc00; /* Color de acento */
+    white-space: nowrap; /* Evita el salto de línea */
 }
 
 .hero-text p {
@@ -114,6 +116,7 @@ header .nav-toggle {
     text-align: justify; /* Justifica el párrafo */
     max-width: 600px; /* Define un ancho máximo para el párrafo */
 }
+
 .hero-text button {
     padding: 10px 20px;
     border: none;

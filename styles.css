@@ -150,10 +150,13 @@ header .nav-toggle {
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.card-container .card img:hover {
-    transform: scale(1.1);  /* Ajusta el zoom en hover */
+.card-container .card img.zoomed {
+    transform: scale(1.5);  /* Incrementa el tamaño de la imagen al 150% */
+    z-index: 1000;
+    position: relative;
 }
 
 .card-container .card p {

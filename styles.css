@@ -93,7 +93,10 @@ header .nav-toggle {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    display: block; /* Asegura que el texto esté siempre visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el texto horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
 .hero-text h1 {
@@ -108,8 +111,9 @@ header .nav-toggle {
     margin: 10px 0;
     font-family: 'Raleway', sans-serif;
     color: #f1f1f1;
+    text-align: justify; /* Justifica el párrafo */
+    max-width: 600px; /* Define un ancho máximo para el párrafo */
 }
-
 .hero-text button {
     padding: 10px 20px;
     border: none;

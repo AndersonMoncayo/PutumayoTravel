@@ -93,6 +93,7 @@ header .nav-toggle {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    display: block; /* Asegura que el texto esté siempre visible */
 }
 
 .hero-text h1 {

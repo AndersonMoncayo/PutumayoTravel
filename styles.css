@@ -116,18 +116,6 @@ header .nav-toggle {
     max-width: 600px; /* Define un ancho máximo para el párrafo */
 }
 
-.hero-text button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00796b;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    margin: 5px;
-    font-family: 'Raleway', sans-serif;
-}
-
 .section {
     padding: 20px;
     text-align: center;
@@ -295,6 +283,59 @@ footer .newsletter button {
     font-family: 'Raleway', sans-serif;
 }
 
+.blog {
+    padding: 20px;
+    text-align: left;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+}
+
+.blog h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+}
+
+.blog article {
+    margin-top: 20px;
+}
+
+.blog h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+    margin-top: 20px;
+}
+
+.blog p {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #ffaa00;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -348,3 +389,4 @@ footer .newsletter button {
         margin: 10px 0;
     }
 }
+

@@ -206,7 +206,7 @@ header .nav-toggle {
 }
 
 .card h3 {
-    font-size: 1.65em; /* 10% más grande que el tamaño original de 1.5em */
+  
     font-family: 'Oswald', sans-serif;
     margin-bottom: 10px;
     text-align: left; 

@@ -228,37 +228,6 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form label {
-    margin: 10px 0 5px 0;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.contact-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #00796b;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
 .contact-info {
     text-align: center;
     margin-top: 20px;

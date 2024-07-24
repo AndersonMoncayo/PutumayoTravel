@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
 
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Cambiado a blanco */
-    color: #000000; /* Cambiado a negro */
+    background-color: #ffffff;
+    color: #333333;
 }
 
 header {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -28,8 +28,8 @@ header {
 header .logo {
     font-size: 2em;
     font-weight: bold;
-    color: #000000; /* Cambiado a negro */
-    font-family: 'Oswald', sans-serif;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header nav {
@@ -49,15 +49,15 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #000000; /* Cambiado a negro */
+    color: #000000;
     text-decoration: none;
     font-size: 1em;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 header nav ul li a.selected {
-    border-bottom: 2px solid #000000; /* Cambiado a negro */
-    background-color: #e0e0e0;
+    border-bottom: 2px solid #000000;
+    background-color: #f2f2f2;
 }
 
 header .nav-toggle {
@@ -68,13 +68,13 @@ header .nav-toggle {
     cursor: pointer;
     position: absolute;
     left: 20px;
-    color: #000000; /* Cambiado a negro */
+    color: #000000;
 }
 
 .hero {
     position: relative;
     text-align: left;
-    color: black;
+    color: #000000;
     margin: 20px;
     display: flex;
     justify-content: space-between;
@@ -90,7 +90,7 @@ header .nav-toggle {
 .hero-text {
     flex: 1;
     margin-right: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     display: flex;
@@ -102,16 +102,16 @@ header .nav-toggle {
 .hero-text h1 {
     font-size: 2.5em;
     margin: 0;
-    font-family: 'Oswald', sans-serif;
-    color: #000000; /* Cambiado a negro */
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
     line-height: 1.2;
 }
 
 .hero-text p {
     font-size: 1.2em;
     margin: 10px 0;
-    font-family: 'Raleway', sans-serif;
-    color: #000000; /* Cambiado a negro */
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
     text-align: justify;
     max-width: 600px;
 }
@@ -119,8 +119,8 @@ header .nav-toggle {
 .cta-button {
     display: inline-block;
     padding: 5px 10px;
-    background-color: #000000; /* Cambiado a negro */
-    color: #ffffff; /* Cambiado a blanco */
+    background-color: #000000;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -135,20 +135,20 @@ header .nav-toggle {
 .section {
     padding: 40px 60px;
     text-align: center;
-    background-color: #ffffff; /* Cambiado a blanco */
-    color: #000000; /* Cambiado a negro */
+    background-color: #ffffff;
+    color: #333333;
 }
 
 .section h2, .section h3 {
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
-    color: #000000; /* Cambiado a negro */
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
     text-align: center;
 }
 
 .section p, .section ul {
-    font-family: 'Raleway', sans-serif;
-    color: #000000; /* Cambiado a negro */
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
 }
 
 .section ul {
@@ -163,21 +163,20 @@ header .nav-toggle {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Espacio entre las tarjetas */
-    align-items: center; /* Centra verticalmente las tarjetas */
-    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center;
 }
 
 .card {
-    background: #f0f0f0; /* Fondo claro */
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 23%; /* Ajuste del ancho para permitir cuatro tarjetas en una fila */
+    width: 300px;
     text-align: center;
     transition: transform 0.3s;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     position: relative;
 }
 
@@ -207,21 +206,21 @@ header .nav-toggle {
 
 .card h3 {
     font-size: 1.65em;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 10px 0;
 }
 
 .card p {
     margin: 10px 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card .compra-link {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #000000; /* Cambiado a negro */
-    color: #ffffff; /* Cambiado a blanco */
+    background-color: #000000;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -237,7 +236,8 @@ header .nav-toggle {
     align-items: center;
     text-align: left;
     margin: 20px;
-    background: #f0f0f0;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -251,7 +251,7 @@ header .nav-toggle {
 .card-text {
     flex: 1;
     padding-left: 20px;
-    color: #000000; /* Cambiado a negro */
+    color: #333333;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -260,21 +260,21 @@ header .nav-toggle {
 
 .card-text h3 {
     font-size: 1.65em;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
 }
 
 .card-text p {
     margin: 10px 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card-text .cta-button {
     align-self: flex-start;
     display: inline-block;
     padding: 5px 10px;
-    background-color: #000000; /* Cambiado a negro */
-    color: #ffffff; /* Cambiado a blanco */
+    background-color: #000000;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -286,12 +286,6 @@ header .nav-toggle {
 
 .card-text .cta-button:hover {
     background-color: #333333;
-}
-
-@media (max-width: 1024px) {
-    .card {
-        width: 48%; /* Dos tarjetas por fila en pantallas medianas */
-    }
 }
 
 @media (max-width: 768px) {

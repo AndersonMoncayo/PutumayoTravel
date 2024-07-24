@@ -253,6 +253,7 @@ header .nav-toggle {
 .card-text {
     flex: 1;
     padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
+      margin-top: 20px; /* Agrega espacio entre la imagen y el texto */
     color: #f1f1f1;
     display: flex;
     flex-direction: column; /* Alinea los elementos uno debajo del otro */
@@ -263,11 +264,13 @@ header .nav-toggle {
     font-size: 1.5em;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 10px;
+     text-align: center; /* Centra el texto */
 }
 
 .card-text p {
     margin: 10px 0;
     font-family: 'Raleway', sans-serif;
+     text-align: center; /* Centra el texto */
 }
 
 .contact-info {

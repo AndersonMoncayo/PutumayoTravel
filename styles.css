@@ -255,7 +255,8 @@ header .nav-toggle {
     color: #f1f1f1;
     display: flex;
     flex-direction: column; 
-    align-items: flex-start; 
+    align-items: center; /* Cambiado de flex-start a center */
+    text-align: center; /* Alineación central del texto */
 }
 
 .card-text h3 {

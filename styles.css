@@ -102,9 +102,9 @@ header .nav-toggle {
 .hero-text h1 {
     font-size: 2.5em;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    line-height: 1.2;
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00; /* Color de acento */
+    line-height: 1.2; /* Ajusta la altura de la línea para reducir el espacio */
 }
 
 .hero-text p {

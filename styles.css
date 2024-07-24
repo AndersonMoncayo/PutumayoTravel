@@ -228,30 +228,39 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
-.card-overlay-container {
-    position: relative;
-    width: 100%;
-}
-
-.card-img {
-    width: 100%;
-    height: auto;
-}
-
-.card-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
+.card-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-.card-overlay h3, .card-overlay p, .card-overlay a {
-    color: #fff;
+.card-img-horizontal {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.card-text {
+    flex: 1;
+    margin-left: 20px;
+    color: #f1f1f1;
+}
+
+.card-text h3 {
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 10px;
+}
+
+.card-text p {
     margin: 10px 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .contact-info {

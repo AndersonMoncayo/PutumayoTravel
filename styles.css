@@ -228,6 +228,32 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
+.card-overlay-container {
+    position: relative;
+    width: 100%;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card-overlay h3, .card-overlay p, .card-overlay a {
+    color: #fff;
+    margin: 10px 0;
+}
+
 .contact-info {
     text-align: center;
     margin-top: 20px;

@@ -233,6 +233,7 @@ header .nav-toggle {
 
 .card-horizontal {
     display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
     align-items: center;
     justify-content: flex-start; /* Alinea los elementos al principio */
     text-align: left;

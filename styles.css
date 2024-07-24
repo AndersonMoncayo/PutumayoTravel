@@ -117,16 +117,19 @@ header .nav-toggle {
 }
 
 .cta-button {
-   
-  display: inline-block;
-    margin-top: 10px;
+    display: inline-block;
     padding: 10px 20px;
     background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    margin-top: 20px;
+    width: auto; /* Asegúrate de que el ancho sea automático */
+    max-width: 200px; /* Ajusta este valor según el diseño deseado */
+    text-align: center; /* Centra el texto dentro del botón */
 }
+
 
 .cta-button:hover {
     background-color: #ffaa00;

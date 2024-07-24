@@ -232,26 +232,21 @@ header .nav-toggle {
 }
 
 .card-horizontal {
-   display: flex;
+    display: flex;
     align-items: center;
     justify-content: flex-start; /* Alinea los elementos al principio */
     text-align: left;
     margin: 20px;
     padding: 20px;
-    padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-.card-img-horizontal {
-    width: 100%;
-    border-radius: 10px;
-}
-
 .card-text {
-  flex: 1;
+    flex: 1;
+    margin-left: 5cm; /* Desplaza el texto y el botón 5 cm a la derecha */
     color: #f1f1f1;
     display: flex;
     flex-direction: column;

@@ -127,7 +127,7 @@ header .nav-toggle {
     margin-top: 20px;
     width: auto;
     max-width: 200px;
-    text-align: center; /* Centra el texto dentro del botón */
+    text-align: center; 
 }
 
 .cta-button:hover {

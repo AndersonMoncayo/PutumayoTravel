@@ -116,21 +116,22 @@ header .nav-toggle {
     max-width: 600px;
 }
 
-.cta-button {
+.card-text .cta-button {
+    align-self: center; /* Alinear el botón al centro del contenedor */
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px; /* Botón más pequeño */
     background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 10px;
     width: auto;
-    max-width: 200px;
+    max-width: 100px; /* Tamaño más pequeño */
     text-align: center; 
 }
 
-.cta-button:hover {
+.card-text .cta-button:hover {
     background-color: #ffaa00;
 }
 
@@ -256,21 +257,19 @@ header .nav-toggle {
     color: #f1f1f1;
     display: flex;
     flex-direction: column; 
-    align-items: center; /* Cambiado de flex-start a center */
-    text-align: center; /* Alineación central del texto */
+    align-items: flex-start; /* Alineación a la izquierda */
+    text-align: left; /* Alineación del texto a la izquierda */
 }
 
 .card-text h3 {
     font-size: 1.65em; /* 10% más grande que el tamaño original de 1.5em */
     font-family: 'Oswald', sans-serif;
     margin-bottom: 10px;
-    text-align: center; /* Alineación central */
 }
 
 .card-text p {
     margin: 10px 0;
     font-family: 'Raleway', sans-serif;
-    text-align: center; /* Alineación central */
 }
 
 .cta-button {

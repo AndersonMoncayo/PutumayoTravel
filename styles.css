@@ -165,6 +165,8 @@ header .nav-toggle {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center; /* Cambiado de flex-start a center */
+    text-align: center; /* Alineación central del texto */
 }
 
 .card {

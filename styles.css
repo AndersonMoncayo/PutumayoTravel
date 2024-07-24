@@ -145,6 +145,7 @@ header .nav-toggle {
     margin-bottom: 20px;
     font-family: 'Oswald', sans-serif;
     color: #ffcc00;
+    text-align: center; /* Alineación central */
 }
 
 .section p, .section ul {
@@ -206,10 +207,9 @@ header .nav-toggle {
 }
 
 .card h3 {
-  
+    font-size: 1.65em; /* 10% más grande que el tamaño original de 1.5em */
     font-family: 'Oswald', sans-serif;
-    margin-bottom: 10px;
-    text-align: left; 
+    margin: 10px 0;
 }
 
 .card p {
@@ -261,16 +261,35 @@ header .nav-toggle {
 }
 
 .card-text h3 {
-    font-size: 1.5em;
+    font-size: 1.65em; /* 10% más grande que el tamaño original de 1.5em */
     font-family: 'Oswald', sans-serif;
     margin-bottom: 10px;
-    text-align: left; 
+    text-align: center; /* Alineación central */
 }
 
 .card-text p {
     margin: 10px 0;
     font-family: 'Raleway', sans-serif;
-    text-align: left; 
+    text-align: center; /* Alineación central */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 5px 10px; /* Botón más pequeño */
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: auto;
+    max-width: 100px; /* Tamaño más pequeño */
+    text-align: center; 
+    /* align-self: center; <- Esto no es necesario si el padre usa align-items: center */
+}
+
+.cta-button:hover {
+    background-color: #ffaa00;
 }
 
 .contact-info {

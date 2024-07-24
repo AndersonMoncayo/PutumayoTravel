@@ -235,9 +235,10 @@ header .nav-toggle {
 .card-horizontal {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; /* Cambia space-between por flex-start */
     text-align: left;
     margin: 20px;
+    padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 20px;
@@ -252,8 +253,7 @@ header .nav-toggle {
 
 .card-text {
     flex: 1;
-    margin-left: 20px;
-     padding-left: 5cm;
+    margin-left: 5cm; /* Desplaza el texto 5 cm a la derecha */
     color: #f1f1f1;
     display: flex;
     flex-direction: column;

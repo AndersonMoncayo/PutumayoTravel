@@ -116,21 +116,6 @@ header .nav-toggle {
     max-width: 600px; /* Define un ancho máximo para el párrafo */
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.cta-button:hover {
-    background-color: #ffaa00;
-}
-
 .section {
     padding: 40px 60px; /* Añade padding para mejorar el espacio alrededor del texto */
     text-align: center;
@@ -138,7 +123,7 @@ header .nav-toggle {
     color: #f1f1f1;
 }
 
-.section h2, .section h3 {
+.section h2 {
     margin-bottom: 20px;
     font-family: 'Oswald', sans-serif;
     color: #ffcc00;
@@ -228,59 +213,6 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
-.advert-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    margin: 20px 0;
-}
-
-.advert-img {
-    width: 40%;
-    border-radius: 10px;
-    margin-right: 20px;
-}
-
-.advert-text {
-    flex: 1;
-    text-align: left;
-}
-
-.advert-text h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    font-family: 'Oswald', sans-serif;
-    color: #ffcc00;
-}
-
-.advert-text p {
-    margin-bottom: 10px;
-    font-family: 'Raleway', sans-serif;
-    color: #f1f1f1;
-}
-
-.advert-text .compra-link {
-    background-color: #ffcc00;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.advert-text .compra-link:hover {
-    background-color: #ffaa00;
-}
-
-.contact-info {
-    text-align: center;
-    margin-top: 20px;
-}
-
 footer {
     background-color: #000000;
     color: #f1f1f1;
@@ -351,6 +283,59 @@ footer .newsletter button {
     font-family: 'Raleway', sans-serif;
 }
 
+.blog {
+    padding: 40px 60px; /* Añade padding para mejorar el espacio alrededor del texto */
+    text-align: left;
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+}
+
+.blog h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+}
+
+.blog article {
+    margin-top: 20px;
+}
+
+.blog h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+    margin-top: 20px;
+}
+
+.blog p {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #ffaa00;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -402,24 +387,5 @@ footer .newsletter button {
     .card {
         width: 100%;
         margin: 10px 0;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8em; /* Reduce el tamaño del texto en móviles */
-    }
-
-    .advert-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advert-img {
-        width: 80%;
-        margin: 0 0 20px 0;
-    }
-
-    .advert-text {
-        margin: 0;
-        text-align: center;
     }
 }

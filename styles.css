@@ -1,30 +1,3 @@
-<section class="section" id="puede-interesarte">
-  <h2>Puede Interesarte</h2>
-  <div class="advert-container">
-    <img src="deportv1.jpg" alt="S&T SportsWear" class="advert-img">
-    <div class="advert-text">
-      <h3>S&T SportsWear</h3>
-      <p>Ropa deportiva para mujer: Shorts, leggings, camisetas, enterizos.</p>
-      <a href="https://wa.me/573227737273?text=Hola,%20%C2%BFcomo%20adquiero%20el%20servicio%20de%20Dise%C3%B1o%20y%20Desarrollo%20Web?" class="compra-link">Compra Ahora 🛒</a>
-    </div>
-  </div>
-</section>
-Resumen
-Asegúrate de que el CSS para .advert-container, .advert-img, y .advert-text esté aplicado correctamente.
-Verifica que la estructura HTML para "Puede Interesarte" esté configurada con las clases correctas y en el orden apropiado.
-Con estas modificaciones, la sección "Puede Interesarte" debería aparecer en una disposición horizontal. Si necesitas más ayuda o ajustes, házmelo saber.
-
-
-
-
-
-trata de aparecer en pantalla pero no seve 
-ChatGPT
-Vamos a ajustar el CSS para asegurarnos de que la sección "Puede Interesarte" se muestre correctamente en pantalla y se vea de forma horizontal. También revisaremos el HTML para asegurarnos de que todo esté bien estructurado.
-
-CSS Ajustado
-css
-Copiar código
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Raleway:wght@400&display=swap');
 
 body {
@@ -205,6 +178,23 @@ header .nav-toggle {
     position: relative;
 }
 
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 10px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
 .card img {
     width: 100%;
     height: 200px;
@@ -238,52 +228,39 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
-.advert-container {
+.card-horizontal {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.4);
+    text-align: left;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    margin: 20px 0;
 }
 
-.advert-img {
-    width: 50%;
+.card-img-horizontal {
+    width: 40%;
     border-radius: 10px;
-    margin-right: 20px;
 }
 
-.advert-text {
+.card-text {
     flex: 1;
-    text-align: left;
-}
-
-.advert-text h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    font-family: 'Oswald', sans-serif;
-    color: #ffcc00;
-}
-
-.advert-text p {
-    margin-bottom: 10px;
-    font-family: 'Raleway', sans-serif;
+    margin-left: 20px;
     color: #f1f1f1;
 }
 
-.advert-text .compra-link {
-    background-color: #ffcc00;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+.card-text h3 {
+    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 10px;
 }
 
-.advert-text .compra-link:hover {
-    background-color: #ffaa00;
+.card-text p {
+    margin: 10px 0;
+    font-family: 'Raleway', sans-serif;
 }
 
 .contact-info {
@@ -366,20 +343,5 @@ footer .social-media a {
 
     .hero-text h1 {
         font-size: 1.8em;
-    }
-
-    .advert-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advert-img {
-        width: 80%;
-        margin: 0 0 20px 0;
-    }
-
-    .advert-text {
-        margin: 0;
-        text-align: center;
     }
 }

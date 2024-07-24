@@ -160,41 +160,41 @@ header .nav-toggle {
 
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* Cambiar a columna para disposición vertical */
+    align-items: center; /* Centrar las tarjetas horizontalmente */
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.1); /* Cambiado al 60% de transparencia */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    width: 100%;
+    width: 100%; /* O establecer un ancho fijo si es necesario */
     text-align: center;
     transition: transform 0.3s;
     font-family: 'Raleway', sans-serif;
     position: relative;
-    display: flex; /* Para disposición horizontal */
-    align-items: center;
 }
 
-/* Ajustes de imagen dentro de la tarjeta */
+/* Otros estilos para mantener la coherencia */
 .card img {
-    width: 40%; /* Ajustar el tamaño según el diseño deseado */
+    width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-/* Ajustes de texto dentro de la tarjeta */
-.card h3, .card p {
-    text-align: left;
-    margin: 0;
+.card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.card p {
+    margin: 10px 0;
     font-family: 'Raleway', sans-serif;
-    color: #f1f1f1;
 }
 
 .card .compra-link {

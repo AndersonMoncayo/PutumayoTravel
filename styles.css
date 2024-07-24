@@ -117,14 +117,15 @@ header .nav-toggle {
 }
 
 .cta-button {
-    display: inline-block;
+   
+  display: inline-block;
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 20px;
 }
 
 .cta-button:hover {

@@ -228,6 +228,54 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
+.advert-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+.advert-img {
+    width: 50%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.advert-text {
+    flex: 1;
+    text-align: left;
+}
+
+.advert-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+}
+
+.advert-text p {
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    color: #f1f1f1;
+}
+
+.advert-text .compra-link {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.advert-text .compra-link:hover {
+    background-color: #ffaa00;
+}
+
 .contact-info {
     text-align: center;
     margin-top: 20px;
@@ -358,5 +406,20 @@ footer .newsletter button {
 
     .hero-text h1 {
         font-size: 1.8em; /* Reduce el tamaño del texto en móviles */
+    }
+
+    .advert-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advert-img {
+        width: 80%;
+        margin: 0 0 20px 0;
+    }
+
+    .advert-text {
+        margin: 0;
+        text-align: center;
     }
 }

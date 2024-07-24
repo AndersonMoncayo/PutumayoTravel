@@ -127,7 +127,7 @@ header .nav-toggle {
     margin-top: 20px;
     width: auto;
     max-width: 200px;
-    text-align: center; /* Centra el texto dentro del botón */
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -233,42 +233,35 @@ header .nav-toggle {
 
 .card-horizontal {
     display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    justify-content: flex-start; /* Alinea los elementos al principio */
     text-align: left;
     margin: 20px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-.card-img-horizontal {
-    width: 100%;
-    border-radius: 10px;
-}
-
 .card-text {
     flex: 1;
-    margin-top: 20px; /* Agrega espacio entre la imagen y el texto */
+    padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
     color: #f1f1f1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el texto y el botón */
+    align-items: flex-start;
 }
 
 .card-text h3 {
     font-size: 1.5em;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 10px;
-    text-align: center; /* Centra el texto */
 }
 
 .card-text p {
     margin: 10px 0;
     font-family: 'Raleway', sans-serif;
-    text-align: center; /* Centra el texto */
 }
 
 .contact-info {

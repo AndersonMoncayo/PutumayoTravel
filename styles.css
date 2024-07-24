@@ -118,7 +118,7 @@ header .nav-toggle {
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: #ffcc00;
     color: #000;
     text-decoration: none;
@@ -126,7 +126,7 @@ header .nav-toggle {
     font-weight: bold;
     margin-top: 20px;
     width: auto; /* Asegúrate de que el ancho sea automático */
-    max-width: 100px; /* Ajusta este valor según el diseño deseado */
+    max-width: 200px; /* Ajusta este valor según el diseño deseado */
     text-align: center; /* Centra el texto dentro del botón */
 }
 

@@ -215,7 +215,7 @@ header .nav-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.6); /* Mayor transparencia */
+    background: rgba(255, 255, 255, 0.4);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
@@ -231,9 +231,6 @@ header .nav-toggle {
 .advert-text {
     flex: 1;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .advert-text h3 {
@@ -247,7 +244,6 @@ header .nav-toggle {
     margin-bottom: 10px;
     font-family: 'Raleway', sans-serif;
     color: #f1f1f1;
-    text-align: justify;
 }
 
 .advert-text .compra-link {
@@ -257,8 +253,6 @@ header .nav-toggle {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    text-align: center;
-    width: fit-content;
 }
 
 .advert-text .compra-link:hover {

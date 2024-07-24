@@ -213,6 +213,29 @@ header .nav-toggle {
     background-color: #ffaa00;
 }
 
+.advert-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.advert-img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.advert-text {
+    margin-left: 20px;
+    max-width: 50%;
+}
+
+.advert-text h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffcc00;
+}
+
 footer {
     background-color: #000000;
     color: #f1f1f1;
@@ -385,6 +408,15 @@ footer .newsletter button {
     }
 
     .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .advert-container {
+        flex-direction: column;
+    }
+
+    .advert-img, .advert-text {
         width: 100%;
         margin: 10px 0;
     }

@@ -82,7 +82,7 @@ header .nav-toggle {
 }
 
 .hero-img {
-    width: 20%;
+    width: 40%;
     border-radius: 10px;
     margin-left: 20px;
 }
@@ -95,8 +95,8 @@ header .nav-toggle {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hero-text h1 {
@@ -116,19 +116,19 @@ header .nav-toggle {
     max-width: 600px;
 }
 
+
 .cta-button {
     display: inline-block;
-    padding: 5px 10px; /* Botón más pequeño */
+    padding: 10px 20px;
     background-color: #ffcc00;
     color: #000;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
     width: auto;
-    max-width: 100px; /* Tamaño más pequeño */
+    max-width: 200px;
     text-align: center; 
-    align-self: flex-end; /* Ubicar el botón a la derecha */
 }
 
 .cta-button:hover {

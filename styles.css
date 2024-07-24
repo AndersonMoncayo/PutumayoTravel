@@ -244,66 +244,6 @@ header .nav-toggle {
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
-.card-text {
-    flex: 1;
-    padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
-    color: #f1f1f1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.card-text h3 {
-    font-size: 1.5em;
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 10px;
-}
-
-.card-text p {
-    margin: 10px 0;
-    font-family: 'Raleway', sans-serif;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    width: auto;
-    max-width: 200px;
-    text-align: center;
-}
-Explicación
-Clase .card-text: Se añade padding-left: 5cm; para desplazar el contenido del texto y el botón 5 cm a la derecha.
-Con estos ajustes, el texto y el botón dentro del contenedor .card-text se desplazarán 5 cm a la derecha, logrando el diseño deseado sin modificar la estructura del texto.
-
-
-se daño el ajuste era solo correr todo el texto 5 cm a la derecha justificado sin dañar el texto
-ChatGPT
-Entiendo, vamos a ajustar el CSS para mover solo el texto 5 cm a la derecha sin alterar su justificación ni su estructura.
-
-CSS (styles.css)
-Modifica las reglas CSS para la clase .card-text:
-
-css
-Copiar código
-.card-horizontal {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alinea los elementos al principio */
-    text-align: left;
-    margin: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-}
-
 .card-img-horizontal {
     width: 40%;
     border-radius: 10px;
@@ -314,8 +254,8 @@ Copiar código
     padding-left: 5cm; /* Desplaza el contenido 5 cm a la derecha */
     color: #f1f1f1;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinea los elementos al inicio */
+    flex-direction: column; /* Alinea los elementos uno debajo del otro */
+    justify-content: center; /* Centra verticalmente los elementos */
 }
 
 .card-text h3 {

@@ -95,8 +95,8 @@ header .nav-toggle {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-text h1 {
@@ -115,7 +115,6 @@ header .nav-toggle {
     text-align: justify;
     max-width: 600px;
 }
-
 
 .cta-button {
     display: inline-block;

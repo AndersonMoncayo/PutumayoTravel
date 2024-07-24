@@ -6,3 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.classList.toggle('nav-active');
     });
 });
+
+function exploreNow() {
+    document.getElementById('hero-text').style.display = 'none';
+}

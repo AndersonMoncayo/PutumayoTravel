@@ -73,8 +73,9 @@ header {
 }
 
 .hero-gif {
-    max-width: 100%;
+    max-width: calc(100% - 1cm);
     height: auto;
+    margin: 0.5cm;
 }
 
 .services {
@@ -283,6 +284,12 @@ header {
         flex: 1 1 calc(50% - 20px);
         max-width: none;
     }
+
+    .hero-gif {
+        max-width: calc(100% - 1cm);
+        height: auto;
+        margin: 0.5cm;
+    }
 }
 
 @media (max-width: 480px) {
@@ -307,5 +314,11 @@ header {
     .service-card, .project-item {
         flex: 1 1 100%;
         max-width: none;
+    }
+
+    .hero-gif {
+        max-width: calc(100% - 1cm);
+        height: auto;
+        margin: 0.5cm;
     }
 }

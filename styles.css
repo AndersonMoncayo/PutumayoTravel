@@ -26,7 +26,7 @@ header {
 }
 
 .logo img {
-  height: 50px; /* Adjust the size of your logo as needed */
+  height: 50px; /* Ajusta el tamaño de tu logo según sea necesario */
 }
 
 nav ul {
@@ -49,18 +49,18 @@ nav ul li a {
 }
 
 nav ul li a.selected {
-  color: #d9534f; /* Red color for the selected link */
+  color: #d9534f; /* Color rojo para el enlace seleccionado */
 }
 
 nav ul li a:hover {
-  color: #d9534f; /* Same red color on hover */
+  color: #d9534f; /* Mismo color rojo al pasar el cursor */
 }
 
 .nav-toggle {
   display: none;
 }
 
-/* Responsive Design */
+/* Diseño Responsivo */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;

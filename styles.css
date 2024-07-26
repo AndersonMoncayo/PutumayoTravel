@@ -101,11 +101,12 @@ header {
 
 .service-card {
     position: relative;
-    width: 30%;
-    text-align: center;
+    width: 100%;
+    max-width: 300px;
     margin: 10px;
     overflow: hidden;
     border-radius: 10px;
+    text-align: center;
 }
 
 .service-card img {
@@ -212,7 +213,8 @@ header {
 
 .project-item {
     position: relative;
-    width: calc(33.333% - 20px);
+    width: 100%;
+    max-width: 300px;
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -257,11 +259,13 @@ header {
 @media (max-width: 768px) {
     .service-card, .project-item {
         flex: 1 1 calc(50% - 20px);
+        max-width: none;
     }
 }
 
 @media (max-width: 480px) {
     .service-card, .project-item {
         flex: 1 1 100%;
+        max-width: none;
     }
 }

@@ -16,9 +16,8 @@ header {
 
 .container {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -40,6 +39,8 @@ header {
     display: flex;
     margin: 0;
     padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .navigation li {

@@ -61,7 +61,7 @@ header {
 
 .hero {
     background-color: #ffffff;
-    padding: 100px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -70,6 +70,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px; /* Ajusta este valor si necesitas más espacio */
 }
 
 .hero-gif {

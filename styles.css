@@ -10,42 +10,39 @@ header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    width: 100%;
-    position: relative;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative;
 }
 
 .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -40px; /* Ajusta este valor según sea necesario */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .logo {
-    width: 80px;
+    width: 150px;
 }
 
 .navigation {
     list-style: none;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
-    flex: 1;
-    justify-content: center;
+    width: 100%;
 }
 
 .navigation li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .navigation li a {
@@ -266,8 +263,6 @@ header {
     }
 
     .logo-container {
-        position: static;
-        transform: none;
         margin-bottom: 10px;
     }
 
@@ -288,9 +283,12 @@ header {
 }
 
 @media (max-width: 480px) {
-    .service-card, .project-item {
-        flex: 1 1 100%;
-        max-width: none;
+    .container {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
     }
 
     .navigation {
@@ -301,5 +299,10 @@ header {
 
     .navigation li {
         margin: 5px 10px;
+    }
+
+    .service-card, .project-item {
+        flex: 1 1 100%;
+        max-width: none;
     }
 }

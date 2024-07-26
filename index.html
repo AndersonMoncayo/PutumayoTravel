@@ -20,24 +20,25 @@
 </head>
 <body>
   <header>
-    <div class="header-content">
-      <button class="nav-toggle" aria-label="Abrir menú">
-        &#9776;
-      </button>
-      <div class="logo">Marketing Web Putumayo</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#inicio" id="inicio-link">Inicio</a></li>
-          <li><a href="#servicios" id="servicios-link">Servicios</a></li>
-          <li><a href="#puede-interesarte" id="puede-interesarte-link">Puede Interesarte</a></li>
-          <li><a href="#nosotros" id="nosotros-link">Sobre Nosotros</a></li>
-          <li><a href="#contacto" id="contacto-link">Contacto</a></li>
-          <li><a href="blog.html" id="blog-link">Blog</a></li>
-        </ul>
-      </nav>
+    <div class="header-wrapper">
+      <div class="header-content">
+        <div class="logo">
+          <img src="path/to/logo.png" alt="Logo" class="logo-img">
+        </div>
+        <nav id="top-nav">
+          <ul class="dropdown-nav">
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#hablemos">Hablemos</a></li>
+            <li><a href="#more">+</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
-
+  
   <main>
     <section class="hero" id="inicio">
       <div class="hero-text" id="hero-text">
@@ -45,50 +46,72 @@
         <p>Especialistas en marketing digital para negocios locales en Putumayo. Ofrecemos estrategias personalizadas para aumentar tu visibilidad y atraer más clientes.</p>
         <a href="#contacto" class="cta-button">¡Consulta Gratis!</a>
       </div>
-      <img src="images/hero.png" alt="Marketing Web Putumayo" class="hero-img">
+      <img src="path/to/hero-image.png" alt="Marketing Web Putumayo" class="hero-img">
     </section>
-
+    
     <section class="section" id="servicios">
-      <h2>Lo Que Hacemos</h2>
-      <div class="service-cards">
-        <div class="service-card">
-          <img src="images/branding.png" alt="Creación de Marca">
+      <h2>Lo que hacemos</h2>
+      <h3>Nuestros Servicios</h3>
+      <div class="card-container">
+        <div class="card">
           <h3>Creación de Marca</h3>
         </div>
-        <div class="service-card">
-          <img src="images/estrategia_digital.png" alt="Estrategia Digital">
+        <div class="card">
           <h3>Estrategia Digital</h3>
         </div>
-        <div class="service-card">
-          <img src="images/desarrollo_web.png" alt="Desarrollo Web">
+        <div class="card">
           <h3>Desarrollo Web</h3>
         </div>
       </div>
     </section>
 
-    <section class="section" id="proyectos">
-      <h2>Conoce Nuestro Trabajo</h2>
-      <div class="project-gallery">
-        <div class="project-item"><img src="images/project1.png" alt="Proyecto 1"></div>
-        <div class="project-item"><img src="images/project2.png" alt="Proyecto 2"></div>
-        <div class="project-item"><img src="images/project3.png" alt="Proyecto 3"></div>
-        <div class="project-item"><img src="images/project4.png" alt="Proyecto 4"></div>
-        <div class="project-item"><img src="images/project5.png" alt="Proyecto 5"></div>
-        <div class="project-item"><img src="images/project6.png" alt="Proyecto 6"></div>
+    <section class="section" id="proyectos-recientes">
+      <h2>Conoce nuestro trabajo</h2>
+      <h3>Proyectos Recientes</h3>
+      <div class="card-container">
+        <div class="card">
+          <img src="path/to/project-image1.png" alt="Proyecto 1">
+        </div>
+        <div class="card">
+          <img src="path/to/project-image2.png" alt="Proyecto 2">
+        </div>
+        <div class="card">
+          <img src="path/to/project-image3.png" alt="Proyecto 3">
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+    
+    <section class="section" id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <h3>Historia y Misión</h3>
+      <p>Desde nuestra fundación en 2010, Marketing Web Putumayo se ha dedicado a ayudar a los negocios locales a crecer mediante estrategias de marketing digital efectivas. Nuestra misión es brindar soluciones personalizadas que generen resultados medibles y sostenibles.</p>
+      <h3>Equipo</h3>
+      <p>Contamos con un equipo de expertos en marketing digital, diseño web y gestión de redes sociales, comprometidos con el éxito de tu negocio.</p>
+    </section>
+    
+    <section class="section" id="contacto">
+      <h2>Contacto</h2>
+      <div class="contact-info">
+        <p>Correo electrónico: info@marketingwebputumayo.com</p>
+        <p>Teléfono: +57 1 234 5678</p>
+        <p>Dirección: Calle Falsa 123, Mocoa, Putumayo, Colombia</p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="contact-info">
-      <p>Dirección: Calle Falsa 123, Mocoa, Putumayo, Colombia</p>
-      <p>Teléfono: +57 1 234 5678</p>
-      <p>Email: info@marketingwebputumayo.com</p>
-    </div>
-    <div class="social-media">
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
+    <div class="footer-wrapper">
+      <div class="contact-info">
+        <p>Dirección: Calle Falsa 123, Mocoa, Putumayo, Colombia</p>
+        <p>Teléfono: +57 1 234 5678</p>
+        <p>Email: info@marketingwebputumayo.com</p>
+      </div>
+      <div class="social-media">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
     </div>
   </footer>
 </body>

@@ -10,12 +10,14 @@ header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
+    width: 100%;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -23,25 +25,22 @@ header {
 
 .logo-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
 }
 
 .logo {
-    width: 150px;
+    width: 80px;
 }
 
 .navigation {
     list-style: none;
     display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .navigation li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 .navigation li a {
@@ -257,6 +256,23 @@ header {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation li {
+        margin: 5px 0;
+    }
+
     .service-card, .project-item {
         flex: 1 1 calc(50% - 20px);
         max-width: none;
@@ -267,5 +283,14 @@ header {
     .service-card, .project-item {
         flex: 1 1 100%;
         max-width: none;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation li {
+        margin: 5px 0;
     }
 }

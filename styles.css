@@ -29,7 +29,7 @@ header .logo {
     font-size: 2em;
     font-weight: bold;
     color: #000000;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header nav {
@@ -52,12 +52,12 @@ header nav ul li a {
     color: #000000;
     text-decoration: none;
     font-size: 1em;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 header nav ul li a.selected {
-    border-bottom: 2px solid #ff0000;
-    background-color: #000000; /* Color de sombreado */
+    border-bottom: 2px solid #000000;
+    background-color: #f2f2f2;
 }
 
 header .nav-toggle {
@@ -82,7 +82,7 @@ header .nav-toggle {
 }
 
 .hero-img {
-    width: 20%;
+    width: 50%;
     border-radius: 10px;
     margin-left: 20px;
 }
@@ -118,8 +118,8 @@ header .nav-toggle {
 
 .cta-button {
     display: inline-block;
-    padding: 5px 10px;
-    background-color: #000000;
+    padding: 10px 20px;
+    background-color: #ff0000;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -129,7 +129,7 @@ header .nav-toggle {
 }
 
 .cta-button:hover {
-    background-color: #333333;
+    background-color: #cc0000;
 }
 
 .section {
@@ -139,153 +139,51 @@ header .nav-toggle {
     color: #333333;
 }
 
-.section h2, .section h3 {
+.section h2 {
     margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #000000;
     text-align: center;
 }
 
-.section p, .section ul {
-    font-family: 'Roboto', sans-serif;
-    color: #333333;
-}
-
-.section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.section ul li {
-    margin: 10px 0;
-}
-
-.card-container {
+.section .service-cards, .section .project-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.card {
-    background: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
+.service-card, .project-item {
     margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 30%;
     text-align: center;
-    transition: transform 0.3s;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 10px;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card img {
+.service-card img, .project-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
     border-radius: 10px;
 }
 
-.card h3 {
-    font-size: 1.65em;
-    font-family: 'Montserrat', sans-serif;
-    margin: 10px 0;
-}
-
-.card p {
-    margin: 10px 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.card .compra-link {
-    display: inline-block;
+.service-card h3 {
     margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
 }
 
-.card .compra-link:hover {
-    background-color: #333333;
-}
-
-.card-horizontal {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    margin: 20px;
-    background: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
+footer {
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card-img-horizontal {
-    width: 28%;
-    border-radius: 10px;
-}
-
-.card-text {
-    flex: 1;
-    padding-left: 20px;
-    color: #333333;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.card-text h3 {
-    font-size: 1.65em;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
-}
-
-.card-text p {
-    margin: 10px 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.card-text .cta-button {
-    align-self: flex-start;
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
-    width: auto;
-    max-width: 150px;
     text-align: center;
+    background-color: #f8f8f8;
+    color: #333333;
 }
 
-.card-text .cta-button:hover {
-    background-color: #333333;
+footer .contact-info p, footer .social-media a {
+    margin: 10px 0;
+    color: #333333;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -338,33 +236,8 @@ header .nav-toggle {
         padding: 20px 10px;
     }
 
-    .card {
+    .service-card, .project-item {
         width: 100%;
         margin: 10px 0;
-    }
-
-    .card-horizontal {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 10px 0;
-        padding: 20px 10px;
-    }
-
-    .card-img-horizontal {
-        width: 80%;
-        margin: 0 0 20px 0;
-    }
-
-    .card-text {
-        padding: 0;
-    }
-
-    .card-text h3 {
-        font-size: 1.5em;
-    }
-
-    .hero-text h1 {
-        font-size: 1.8em;
     }
 }

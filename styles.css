@@ -56,20 +56,21 @@ header {
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center;
-    background-size: cover;
-    color: #ffffff;
+    background-color: #ffffff;
     padding: 100px 0;
     text-align: center;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    margin: 0;
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.hero-content p {
-    font-size: 24px;
+.hero-gif {
+    max-width: 100%;
+    height: auto;
 }
 
 .services {

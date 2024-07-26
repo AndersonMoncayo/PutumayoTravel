@@ -70,7 +70,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 20px; /* Ajusta este valor si necesitas más espacio */
+    margin-top: 10px; /* Ajusta este valor si necesitas más espacio */
 }
 
 .hero-gif {

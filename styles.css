@@ -74,9 +74,9 @@ header {
 }
 
 .hero-gif {
-    max-width: calc(100% - 1cm);
+    width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+    max-width: 1200px;
     height: auto;
-    margin: 0.5cm;
 }
 
 .services {
@@ -287,9 +287,9 @@ header {
     }
 
     .hero-gif {
-        max-width: calc(100% - 1cm);
+        width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+        max-width: 1200px;
         height: auto;
-        margin: 0.5cm;
     }
 }
 
@@ -318,8 +318,8 @@ header {
     }
 
     .hero-gif {
-        max-width: calc(100% - 1cm);
+        width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+        max-width: 1200px;
         height: auto;
-        margin: 0.5cm;
     }
 }

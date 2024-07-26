@@ -21,13 +21,14 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .logo-container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 10px;
+    top: -40px; /* Ajusta este valor según sea necesario */
 }
 
 .logo {

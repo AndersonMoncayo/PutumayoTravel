@@ -1,185 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333333;
 }
 
-.header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+header {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .logo img {
-    height: 50px;
+  height: 50px; /* Adjust the size of your logo as needed */
 }
 
-#top-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-#top-nav ul li {
-    margin: 0 15px;
+nav ul li {
+  margin: 0 15px;
 }
 
-#top-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+nav ul li a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 400;
+  transition: color 0.3s;
 }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    background: #f2f2f2;
+nav ul li a.selected {
+  color: #d9534f; /* Red color for the selected link */
 }
 
-.hero-text {
-    max-width: 600px;
+nav ul li a:hover {
+  color: #d9534f; /* Same red color on hover */
 }
 
-.hero-text h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.nav-toggle {
+  display: none;
 }
 
-.hero-text p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.hero-img {
-    max-width: 400px;
-    border-radius: 10px;
-}
-
-.cta-button {
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.services {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.services h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-}
-
-.services-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 30%;
-}
-
-.portfolio {
-    padding: 60px 20px;
-    text-align: center;
-    background: #f2f2f2;
-}
-
-.portfolio h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-}
-
-.portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.portfolio-item {
-    width: 30%;
-}
-
-.portfolio-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.contact {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
     flex-direction: column;
-    gap: 15px;
-}
-
-.contact form input,
-.contact form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact form button {
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: #fff;
+    align-items: flex-start;
+  }
+  
+  .nav-toggle {
+    display: block;
+    background: none;
     border: none;
-    border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.5em;
     cursor: pointer;
-}
-
-.footer-content {
-    padding: 20px;
-    text-align: center;
-    background: #333;
-    color: #fff;
-}
-
-.footer-content p {
-    margin: 5px 0;
-}
-
-.footer-content .social-media {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #333333;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+  
+  nav ul.nav-active {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.footer-content .social-media a {
-    color: #fff;
-    text-decoration: none;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
 }

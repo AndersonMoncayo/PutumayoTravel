@@ -50,10 +50,13 @@ header {
     color: #555555;
     font-size: 15px;
     font-weight: 400;
+    padding-bottom: 5px;
+    position: relative;
 }
 
-.navigation li a.selected {
+.navigation li a.selected, .navigation li a:hover {
     color: #9B0A0F;
+    border-bottom: 2px solid #9B0A0F;
 }
 
 .hero {

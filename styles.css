@@ -100,45 +100,64 @@ header {
 }
 
 .service-card {
-    background-color: #C10F15;
-    color: #ffffff;
-    flex: 1 1 calc(33.333% - 40px);
-    padding: 20px;
+    position: relative;
+    width: 30%;
     text-align: center;
-    border-radius: 10px;
     margin: 10px;
-    box-sizing: border-box;
-}
-
-.service-card .card-content {
-    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .service-card img {
-    width: 80px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.service-card .card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 15, 21, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .service-card h3 {
     margin-bottom: 20px;
     font-size: 24px;
+    color: white;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: #C10F15;
+    background-color: transparent;
+    color: white;
     text-decoration: none;
     font-weight: 600;
+    border: 2px solid white;
     border-radius: 5px;
-    border: 2px solid #C10F15;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #C10F15;
-    color: #ffffff;
+    background-color: white;
+    color: #C10F15;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card:hover .card-content {
+    opacity: 1;
 }
 
 .projects {

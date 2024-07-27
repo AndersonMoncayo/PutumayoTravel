@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <style>
-        .logo.scrolled {
+        .logo-container {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        .logo-container.scrolled {
             transform: translateX(-50px);
-            transition: transform 0.3s ease-in-out;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -37,7 +40,7 @@
         </div>
     </section>
     <section class="services">
-        <h2>LO QUE HACEMOS</h1>
+        <h2>LO QUE HACEMOS</h2>
         <h1>NUESTROS SERVICIOS</h1>
         <div class="service-cards">
             <div class="service-card">
@@ -108,11 +111,11 @@
     </section>
     <script>
         window.addEventListener('scroll', function() {
-            const logo = document.querySelector('.logo');
+            const logoContainer = document.querySelector('.logo-container');
             if (window.scrollY > 50) {
-                logo.classList.add('scrolled');
+                logoContainer.classList.add('scrolled');
             } else {
-                logo.classList.remove('scrolled');
+                logoContainer.classList.remove('scrolled');
             }
         });
     </script>

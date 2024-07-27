@@ -33,7 +33,7 @@ body {
 }
 
 .logo {
-    width: 50px;
+    width: 150px;
 }
 
 .navigation {
@@ -65,7 +65,7 @@ body {
 
 .hero {
     background-color: #ffffff;
-    padding: 100px 0 -10; /* Espacio superior para compensar el header fijo y reducir el espacio inferior */
+    padding: 60px 0 0; /* Espacio superior para compensar el header fijo y reducir el espacio inferior */
     text-align: center;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .services {
-    padding: 40px 20px; /* Reducido el espacio en la parte superior de la sección de servicios */
+    padding: 30px 20px; /* Reducido el espacio en la parte superior de la sección de servicios */
     text-align: center;
 }
 

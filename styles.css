@@ -35,12 +35,13 @@ body {
 }
 
 .logo {
-    width: 50px;
+    width: 150px;
 }
 
-.logo.scrolled {
+.logo-container.scrolled {
     transform: translateX(-50px);
-    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .navigation {

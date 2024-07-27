@@ -7,11 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <style>
-        .container {
-            transition: transform 0.3s ease-in-out;
-        }
-        .container.scrolled {
+        .logo.scrolled {
             transform: translateX(-50px);
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -110,11 +108,11 @@
     </section>
     <script>
         window.addEventListener('scroll', function() {
-            const container = document.querySelector('.container');
+            const logo = document.querySelector('.logo');
             if (window.scrollY > 50) {
-                container.classList.add('scrolled');
+                logo.classList.add('scrolled');
             } else {
-                container.classList.remove('scrolled');
+                logo.classList.remove('scrolled');
             }
         });
     </script>

@@ -65,7 +65,7 @@ body {
 
 .hero {
     background-color: #ffffff;
-    padding: 60px 0 10px; /* Espacio superior para compensar el header fijo */
+    padding: 60px 0 0; /* Espacio superior para compensar el header fijo y reducir el espacio inferior */
     text-align: center;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .services {
-    padding: 60px 20px;
+    padding: 40px 20px; /* Reducido el espacio en la parte superior de la sección de servicios */
     text-align: center;
 }
 

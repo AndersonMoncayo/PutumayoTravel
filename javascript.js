@@ -1,8 +1,8 @@
 window.addEventListener('scroll', function() {
-    const logo = document.querySelector('.logo');
+    const logoContainer = document.querySelector('.logo-container');
     if (window.scrollY > 50) {
-        logo.classList.add('scrolled');
+        logoContainer.classList.add('scrolled');
     } else {
-        logo.classList.remove('scrolled');
+        logoContainer.classList.remove('scrolled');
     }
 });

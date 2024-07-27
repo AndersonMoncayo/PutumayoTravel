@@ -65,7 +65,7 @@ body {
 
 .hero {
     background-color: #ffffff;
-    padding: 80px 0 20px; /* Espacio superior para compensar el header fijo */
+    padding: 40px 0 10px; /* Espacio superior para compensar el header fijo */
     text-align: center;
 }
 

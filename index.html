@@ -1,135 +1,350 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad Creativa</title>
-    <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <style>
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-            position: relative;
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
-        }
-        .logo-container.scrolled {
-            justify-content: flex-start;
-            transform: translateX(-50px);
-            opacity: 0.8;
-        }
-        .logo {
-            width: 150px;
-            transition: width 0.3s ease-in-out;
-        }
-        .logo-container.scrolled .logo {
-            width: 50px;
-        }
-    </style>
-</head>
-<body>
-    <header class="header-fixed">
-        <div class="container">
-            <div class="logo-container">
-                <img src="111.webp" alt="Actividad Creativa" class="logo">
-            </div>
-            <nav>
-                <ul class="navigation">
-                    <li><a href="#" class="selected">NOSOTROS</a></li>
-                    <li><a href="#">SERVICIOS</a></li>
-                    <li><a href="#">PORTAFOLIO</a></li>
-                    <li><a href="#">CLIENTES</a></li>
-                    <li><a href="#">HABLEMOS</a></li>
-                    <li><a href="#">+</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <img src="giphy.webp" alt="Gif de Actividad Creativa" class="hero-gif">
-        </div>
-    </section>
-    <section class="services">
-        <h2>LO QUE HACEMOS</h2>
-        <h1>NUESTROS SERVICIOS</h1>
-        <div class="service-cards">
-            <div class="service-card">
-                <div class="card-image">
-                    <img src="111.webp" alt="Creación de Marca">
-                </div>
-                <div class="card-content">
-                    <h3>CREACIÓN DE MARCA</h3>
-                    <a href="https://putumayo.shop" class="btn">LEER MÁS</a>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="card-image">
-                    <img src="111.webp" alt="Estrategia Digital">
-                </div>
-                <div class="card-content">
-                    <h3>ESTRATEGIA DIGITAL</h3>
-                    <a href="https://putumayo.shop" class="btn">LEER MÁS</a>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="card-image">
-                    <img src="111.webp" alt="Desarrollo Web">
-                </div>
-                <div class="card-content">
-                    <h3>DESARROLLO WEB</h3>
-                    <a href="https://putumayo.shop" class="btn">LEER MÁS</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="projects">
-        <h2>CONOCE NUESTRO TRABAJO</h2>
-        <h1>PROYECTOS RECIENTES</h1>
-        <div class="project-categories">
-            <ul>
-                <li><a href="#">Todo</a></li>
-                <li><a href="#">Branding</a></li>
-                <li><a href="#">Campaña Publicitaria</a></li>
-                <li><a href="#">Corporativo</a></li>
-                <li><a href="#">Estrategia Digital</a></li>
-                <li><a href="#">Rebranding</a></li>
-                <li><a href="#">Videos y Animaciones</a></li>
-                <li><a href="#">Web</a></li>
-            </ul>
-        </div>
-        <div class="project-container">
-            <div class="project-item">
-                <img src="111.webp" alt="Comercio 1">
-                <div class="overlay">
-                    <div class="text">Comercio 1</div>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="111.webp" alt="Comercio 2">
-                <div class="overlay">
-                    <div class="text">Comercio 2</div>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="111.webp" alt="Comercio 3">
-                <div class="overlay">
-                    <div class="text">Comercio 3</div>
-                </div>
-            </div>
-            <!-- Añade más items según sea necesario -->
-        </div>
-    </section>
-    <script>
-        window.addEventListener('scroll', function() {
-            const logoContainer = document.querySelector('.logo-container');
-            if (window.scrollY > 50) {
-                logoContainer.classList.add('scrolled');
-            } else {
-                logoContainer.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+body {
+    font-family: 'Questrial', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #555555;
+}
+
+.header-fixed {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.logo-container.scrolled {
+    justify-content: flex-start;
+    transform: translateX(-50px);
+    opacity: 0.8;
+}
+
+.logo {
+    width: 150px;
+    transition: width 0.3s ease-in-out;
+}
+
+.logo-container.scrolled .logo {
+    width: 50px;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+}
+
+.navigation li {
+    margin: 0 15px;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.navigation li a.selected, .navigation li a:hover {
+    color: #9B0A0F;
+    border-bottom: 2px solid #9B0A0F;
+}
+
+.hero {
+    background-color: #ffffff;
+    padding: 60px 0 0; /* Espacio superior para compensar el header fijo */
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0px; /* Ajusta este valor si necesitas más espacio */
+}
+
+.hero-gif {
+    width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+    max-width: 1200px;
+    height: auto;
+    margin-bottom: -1cm; /* Reduce el espacio inferior */
+}
+
+.services {
+    padding: 60px 20px; /* Ajusta el padding superior si es necesario */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 18px;
+    color: #9B0A0F;
+    margin-bottom: 10px;
+}
+
+.services h1 {
+    font-size: 36px;
+    color: #555555;
+    margin-top: 0;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.service-card .card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 15, 21, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #C10F15;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card:hover .card-content {
+    opacity: 1;
+}
+
+.projects {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 18px;
+    color: #9B0A0F;
+    margin-bottom: 10px;
+}
+
+.projects h1 {
+    font-size: 36px;
+    color: #555555;
+    margin-top: 0;
+}
+
+.project-categories {
+    margin-top: 20px;
+}
+
+.project-categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-categories ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.project-categories ul li a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.project-categories ul li a:hover {
+    color: #C10F15;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-item {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover img {
+    filter: brightness(50%);
+}
+
+.project-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay .text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation li {
+        margin: 5px 10px;
+    }
+
+    .service-card, .project-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: none;
+    }
+
+    .hero-gif {
+        width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: -1cm; /* Reduce el espacio inferior */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation li {
+        margin: 5px 10px;
+    }
+
+    .service-card, .project-item {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .hero-gif {
+        width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
+        max-width: 1200px;
+        height: auto;
+        margin-bottom: -1cm; /* Reduce el espacio inferior */
+    }
+}

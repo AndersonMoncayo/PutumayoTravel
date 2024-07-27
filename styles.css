@@ -65,7 +65,7 @@ body {
 
 .hero {
     background-color: #ffffff;
-    padding: 60px 0 0; /* Espacio superior para compensar el header fijo y reducir el espacio inferior */
+    padding: 60px 0 0; /* Espacio superior para compensar el header fijo */
     text-align: center;
 }
 
@@ -81,10 +81,11 @@ body {
     width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
     max-width: 1200px;
     height: auto;
+    margin-bottom: -1cm; /* Reduce el espacio inferior */
 }
 
 .services {
-    padding: 30px 20px; /* Reducido el espacio en la parte superior de la sección de servicios */
+    padding: 60px 20px; /* Ajusta el padding superior si es necesario */
     text-align: center;
 }
 
@@ -294,6 +295,7 @@ body {
         width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
         max-width: 1200px;
         height: auto;
+        margin-bottom: -1cm; /* Reduce el espacio inferior */
     }
 }
 
@@ -325,5 +327,6 @@ body {
         width: calc(100% - 40px); /* Ajusta para tener margen en ambos lados */
         max-width: 1200px;
         height: auto;
+        margin-bottom: -1cm; /* Reduce el espacio inferior */
     }
 }

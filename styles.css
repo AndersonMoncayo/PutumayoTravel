@@ -45,9 +45,8 @@ body {
 
 .logo-container.scrolled {
     justify-content: flex-start;
-    transform: translateX(-10cm);
+    transform: translateY(50px); /* Mueve el logo hacia abajo */
     opacity: 0.8;
-    margin-left: 20px;
 }
 
 .logo {

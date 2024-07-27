@@ -37,7 +37,7 @@
         </div>
     </section>
     <section class="services">
-        <h2>LO QUE HACEMOS</h2>
+        <h2>LO QUE HACEMOS</h1>
         <h1>NUESTROS SERVICIOS</h1>
         <div class="service-cards">
             <div class="service-card">
@@ -106,6 +106,15 @@
             <!-- Añade más items según sea necesario -->
         </div>
     </section>
-    <script src="javascript.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const logo = document.querySelector('.logo');
+            if (window.scrollY > 50) {
+                logo.classList.add('scrolled');
+            } else {
+                logo.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

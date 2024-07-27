@@ -8,11 +8,23 @@
     <link href="styles.css" rel="stylesheet">
     <style>
         .logo-container {
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            position: relative;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out;
         }
         .logo-container.scrolled {
+            justify-content: flex-start;
             transform: translateX(-50px);
             opacity: 0.8;
+        }
+        .logo {
+            width: 150px;
+            transition: width 0.3s ease-in-out;
+        }
+        .logo-container.scrolled .logo {
+            width: 50px;
         }
     </style>
 </head>

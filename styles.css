@@ -65,7 +65,7 @@ body {
 
 .hero {
     background-color: #ffffff;
-    padding: 40px 0 10px; /* Espacio superior para compensar el header fijo */
+    padding: 60px 0 10px; /* Espacio superior para compensar el header fijo */
     text-align: center;
 }
 
@@ -74,7 +74,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 2px; /* Ajusta este valor si necesitas más espacio */
+    margin-top: 0px; /* Ajusta este valor si necesitas más espacio */
 }
 
 .hero-gif {

@@ -15,13 +15,11 @@ body {
     width: 100%;
     z-index: 1000;
     display: flex;
-    flex-direction: column;
     align-items: center;
     transition: all 0.3s ease-in-out;
 }
 
 .header-fixed.scrolled {
-    flex-direction: row;
     justify-content: space-between;
     padding: 10px 20px;
 }
@@ -39,12 +37,12 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out, margin-left 0.3s ease-in-out;
 }
 
 .logo-container.scrolled {
-    justify-content: flex-start;
-    transform: translate(-12cm, 0.5cm); /* Mueve el logo 12 cm a la izquierda y 2 cm hacia abajo */
+    transform: translateY(0.5cm); /* Mueve el logo 0.5 cm hacia abajo */
     opacity: 0.8;
 }
 
@@ -57,34 +55,19 @@ body {
     width: 50px;
 }
 
-.search-bar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 20px;
-}
-
-.search-bar {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
 .navigation {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    width: 100%;
 }
 
-.navigation.scrolled {
+.left-nav {
+    justify-content: flex-start;
+}
+
+.right-nav {
     justify-content: flex-end;
-    width: calc(100% - 70px); /* Ajusta este valor si es necesario */
 }
 
 .navigation li {

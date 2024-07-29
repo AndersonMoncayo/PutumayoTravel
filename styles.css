@@ -20,14 +20,13 @@ body {
 }
 
 .header-fixed.scrolled {
-    justify-content: space-between;
     padding: 10px 20px;
 }
 
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start; /* Cambiado a flex-start */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -37,22 +36,11 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out, margin-left 0.3s ease-in-out;
-}
-
-.logo-container.scrolled {
-    transform: translateY(0.5cm); /* Mueve el logo 0.5 cm hacia abajo */
-    opacity: 0.8;
+    margin-right: 20px;
 }
 
 .logo {
-    width: 150px;
-    transition: width 0.3s ease-in-out;
-}
-
-.logo-container.scrolled .logo {
-    width: 50px;
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
 }
 
 .navigation {
@@ -60,14 +48,7 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-.left-nav {
-    justify-content: flex-start;
-}
-
-.right-nav {
-    justify-content: flex-end;
+    width: 100%;
 }
 
 .navigation li {

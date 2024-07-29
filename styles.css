@@ -15,7 +15,7 @@ body {
     width: 100%;
     z-index: 1000;
     display: flex;
-    align-items: center;
+    justify-content: center; /* Centra el contenido horizontalmente */
     transition: all 0.3s ease-in-out;
 }
 
@@ -26,21 +26,35 @@ body {
 .container {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Cambiado a flex-start */
+    justify-content: center; /* Centra el contenido horizontalmente */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
     width: 100%;
+    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+}
+
+.logo-container.scrolled {
+    transform: translateX(-50%) translateY(0.5cm); /* Centra el logo horizontalmente y ajusta verticalmente */
+    opacity: 0.8;
 }
 
 .logo {
-    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    width: 150px;
+    transition: width 0.3s ease-in-out;
+}
+
+.logo-container.scrolled .logo {
+    width: 50px;
 }
 
 .navigation {
@@ -48,7 +62,6 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .navigation li {

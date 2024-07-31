@@ -1,8 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+// scripts.js
 
-    navToggle.addEventListener('click', function () {
-        navLinks.classList.toggle('nav-active');
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        this.classList.add('active');
+      });
     });
-});
+  });
+  

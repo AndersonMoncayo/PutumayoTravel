@@ -17,7 +17,7 @@ header {
 }
 
 header .logo img {
-  width: 150px;
+  width: 150px; /* Default size for larger screens */
 }
 
 .hamburger {
@@ -338,6 +338,7 @@ main {
   }
 
   header .logo img {
+    width: 50px; /* Smaller size for mobile screens */
     margin-bottom: 10px;
   }
 

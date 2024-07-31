@@ -1,14 +1,12 @@
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header-fixed');
-    const logoContainer = document.querySelector('.logo-container');
-    const navigation = document.querySelector('.navigation');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-        logoContainer.classList.add('scrolled');
-        navigation.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-        logoContainer.classList.remove('scrolled');
-        navigation.classList.remove('scrolled');
-    }
-});
+// scripts.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  });
+  

@@ -1,42 +1,10 @@
 /* Importing fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
 
-/*=============== VARIABLES CSS ===============*/
-:root {
-  --first-color: hsl(82, 60%, 28%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%);
-  --body-color: hsl(0, 0%, 95%);
-  --container-color: hsl(0, 0%, 100%);
-  --body-font: 'Roboto', sans-serif;
-  --h2-font-size: 1.25rem;
-  --small-font-size: .813rem;
-}
-
-@media screen and (min-width: 1120px) {
-  :root {
-    --h2-font-size: 1.5rem;
-    --small-font-size: .875rem;
-  }
-}
-
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  font-family: var(--body-font);
-  background-color: var(--body-color);
-  color: var(--text-color);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -52,15 +20,7 @@ header .logo img {
   width: 50px; /* Default size for larger screens */
 }
 
-.hamburger {
-  display: none;
-  font-size: 1.5em;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-menu ul {
+header .nav-menu ul {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -68,15 +28,23 @@ header .logo img {
   padding: 0;
 }
 
-.nav-menu ul li {
+header .nav-menu ul li {
   margin: 0;
 }
 
-.nav-menu ul li a {
+header .nav-menu ul li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+}
+
+header .hamburger {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 main {
@@ -139,8 +107,7 @@ main {
 .product-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
-  justify-items: center;
+  gap: 20px;
 }
 
 .product-card {
@@ -149,10 +116,7 @@ main {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 10px;
   text-align: center;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .product-card img {
@@ -407,7 +371,6 @@ main {
   }
 }
 
-/*=============== CARD ===============*/
 .container {
   display: grid;
   place-items: center;
@@ -469,6 +432,7 @@ main {
   text-decoration: underline;
 }
 
+/* Naming animations in hover */
 .card__article:hover .card__data {
   animation: show-data 1s forwards;
   opacity: 1;
@@ -487,6 +451,7 @@ main {
   animation: remove-data 1s forwards;
 }
 
+/* Card animation */
 @keyframes show-data {
   50% {
     transform: translateY(-10rem);
@@ -524,7 +489,8 @@ main {
   }
 }
 
-/* Breakpoints */
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
 @media screen and (max-width: 340px) {
   .container {
     margin-inline: 1rem;
@@ -536,6 +502,7 @@ main {
   }
 }
 
+/* For medium devices */
 @media screen and (min-width: 768px) {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
@@ -543,6 +510,7 @@ main {
   }
 }
 
+/* For large devices */
 @media screen and (min-width: 1120px) {
   .container {
     height: 100vh;

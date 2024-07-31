@@ -20,7 +20,15 @@ header .logo img {
   width: 150px;
 }
 
-header nav ul {
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-menu ul {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -28,11 +36,11 @@ header nav ul {
   padding: 0;
 }
 
-header nav ul li {
+.nav-menu ul li {
   margin: 0;
 }
 
-header nav ul li a {
+.nav-menu ul li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -311,45 +319,19 @@ main {
 }
 
 /* Responsivity */
-@media (max-width: 1280px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header .logo img {
-    margin-bottom: 10px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-  }
-
-  .product-cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  header .logo img {
-    margin-bottom: 10px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-  }
-
-  .product-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
   header {
     flex-direction: column;
     text-align: center;

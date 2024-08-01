@@ -1,19 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&family=Poppins:wght@400;500&display=swap');
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-/*========== Variables CSS ==========*/
 :root {
-  /* Color mode HSL(hue, saturation, lightness) */
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(82, 60%, 28%);
   --title-color: hsl(0, 0%, 15%);
   --text-color: hsl(0, 0%, 35%);
   --body-color: hsl(0, 0%, 95%);
   --container-color: hsl(0, 0%, 100%);
-  /* Font and typography */
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1.25rem;
   --small-font-size: .813rem;
 }
 
+/*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
   :root {
     --h2-font-size: 1.5rem;
@@ -39,7 +44,7 @@ header {
 }
 
 header .logo img {
-  width: 50px;
+  width: 50px; /* Default size for larger screens */
 }
 
 .hamburger {
@@ -50,18 +55,12 @@ header .logo img {
   cursor: pointer;
 }
 
-.nav-menu {
+.nav-menu ul {
+  list-style: none;
   display: flex;
-  flex-direction: column;
   gap: 20px;
   margin: 0;
   padding: 0;
-  list-style: none;
-}
-
-.nav-menu ul {
-  display: flex;
-  gap: 20px;
 }
 
 .nav-menu ul li {

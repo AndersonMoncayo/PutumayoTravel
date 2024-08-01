@@ -214,3 +214,10 @@ header h1 {
 .overlay.show {
     display: block;
 }
+
+/* Media query for smaller screens to display products 2 per row */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 20px); /* Two products per row with margin adjustment */
+    }
+}

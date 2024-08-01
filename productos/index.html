@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>The Book Shop</h1>
+        <div class="cart" onclick="toggleCart()">
+            <span id="cart-count">0</span>
+            <img src="cart-icon.png" alt="Cart">
+        </div>
+    </header>
+    <main>
+        <div class="product-grid">
+            <div class="product-card" data-product="HTML" data-price="1000" data-image="111.webp" data-indicator="html">
+                <img src="111.webp" alt="HTML">
+                <h2>HTML</h2>
+                <div class="rating">★★★★★</div>
+                <p>₹ 1000</p>
+                <button>Add To Cart</button>
+            </div>
+            <div class="product-card" data-product="CSS" data-price="1000" data-image="111.webp" data-indicator="css">
+                <img src="111.webp" alt="CSS">
+                <h2>CSS</h2>
+                <div class="rating">★★★★★</div>
+                <p>₹ 1000</p>
+                <button>Add To Cart</button>
+            </div>
+            <div class="product-card" data-product="JavaScript" data-price="5000" data-image="111.webp" data-indicator="javascript">
+                <img src="111.webp" alt="JavaScript">
+                <h2>JavaScript</h2>
+                <div class="rating">★★★★★</div>
+                <p>₹ 5000</p>
+                <button>Add To Cart</button>
+            </div>
+            <div class="product-card" data-product="jQuery" data-price="2500" data-image="111.webp" data-indicator="jquery">
+                <img src="111.webp" alt="jQuery">
+                <h2>jQuery</h2>
+                <div class="rating">★★★★</div>
+                <p>₹ 2500</p>
+                <button>Add To Cart</button>
+            </div>
+            <div class="product-card" data-product="React" data-price="5000" data-image="111.webp" data-indicator="react">
+                <img src="111.webp" alt="React">
+                <h2>React</h2>
+                <div class="rating">★★★★★</div>
+                <p>₹ 5000</p>
+                <button>Add To Cart</button>
+            </div>
+            <div class="product-card" data-product="Angular" data-price="5000" data-image="111.webp" data-indicator="angular">
+                <img src="111.webp" alt="Angular">
+                <h2>Angular</h2>
+                <div class="rating">★★★★★</div>
+                <p>₹ 5000</p>
+                <button>Add To Cart</button>
+            </div>
+        </div>
+    </main>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2>Cart</h2>
+        <ul id="cart-items"></ul>
+        <button class="action-btn" onclick="clearCart()">Clear Cart</button>
+        <button class="action-btn" onclick="checkout()">Checkout</button>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+</body>
+</html>

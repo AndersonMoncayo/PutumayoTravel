@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorbos Cafeteria Putumayo</title>
+    <title>Sorbos Cafetería Putumayo</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Sorbos Cafeteria Putumayo</h1>
+        <h1>Sorbos Cafetería Putumayo</h1>
         <div class="filters">
             <select id="category-filter">
                 <option value="all">Categorias</option>
@@ -279,6 +279,19 @@
     <div id="cart-sidebar" class="cart-sidebar">
         <h2>Carrito</h2>
         <ul id="cart-items"></ul>
+        <div class="delivery-options">
+            <label>
+                <input type="radio" name="delivery" value="local" onclick="toggleLocationField()" checked>
+                Recoger en Local
+            </label>
+            <label>
+                <input type="radio" name="delivery" value="domicilio" onclick="toggleLocationField()">
+                Domicilio (Valor adicional)
+            </label>
+        </div>
+        <div id="locationField" style="display: none;">
+            <input type="text" id="location" placeholder="Ingrese su ubicación">
+        </div>
         <button class="action-btn" onclick="clearCart()">Borrar</button>
         <button class="action-btn" onclick="checkout()">Pedir</button>
     </div>

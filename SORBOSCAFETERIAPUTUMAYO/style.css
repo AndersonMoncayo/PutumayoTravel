@@ -50,22 +50,22 @@ header h1 {
 
 #cart-count {
     font-size: 1em;
-    background: red;
+    background: rgb(160, 135, 135);
     color: #fff;
-    border-radius: 50%;
-    padding: 4px 8px;
-    margin-right: 8px;
+    border-radius: 80%;
+    padding: 2.5px 10px;
+    margin-right: 2px;
 }
 
 .product-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 .product-card {
-    background: #fff;
+    background: #eeeeee;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
@@ -80,9 +80,9 @@ header h1 {
 }
 
 .product-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+    width: 85px;  /*aqui corregi*/
+    height: 85px;
+    border-radius: 20px;
 }
 
 .product-card h2 {
@@ -101,15 +101,15 @@ header h1 {
 }
 
 .product-card button {
-    background: #007bff;
+    background: #000000;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 1px;
     cursor: pointer;
     transition: background 0.3s;
     font-weight: 500;
-    width: 100%;
+    width: 80%;
     margin-top: 10px;
 }
 
@@ -154,6 +154,7 @@ header h1 {
     height: 40px;
     margin-right: 10px;
     border-radius: 5px;
+    
 }
 
 .cart-sidebar ul li .cart-item-info {

@@ -1,22 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Book Shop</title>
+    <title>Sorbos Cafeteria Putumayo</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>The Book Shop</h1>
+        <h1>Sorbos Cafeteria Putumayo</h1>
         <div class="filters">
             <select id="category-filter">
                 <option value="all">All Categories</option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="library">Library</option>
+                <option value="coffee">Coffee</option>
+                <option value="waffles">Ricos Waffles</option>
+                <option value="pan">Pan pa ti</option>
+                <option value="recetas">Tres recetas</option>
+                <option value="jugos">Jugos</option>
+                <option value="arma">Arma tu plato</option>
             </select>
             <select id="price-filter">
                 <option value="default">Sort by Price</option>
@@ -31,47 +33,246 @@
     </header>
     <main>
         <div class="product-grid">
-            <div class="product-card" data-product="HTML" data-price="1000" data-image="111.webp" data-indicator="html" data-category="frontend">
-                <img src="111.webp" alt="HTML">
-                <h2>HTML</h2>
+            <!-- Coffee -->
+            <div class="product-card" data-product="Americano" data-price="3000" data-image="americano.webp" data-indicator="americano" data-category="coffee">
+                <img src="americano.webp" alt="Americano">
+                <h2>Americano</h2>
                 <div class="rating">★★★★★</div>
-                <p>₹ 1000</p>
-                <button>Add To Cart</button>
+                <p>COP 3,000</p>
+                <button>Agregar al Carrito</button>
             </div>
-            <div class="product-card" data-product="CSS" data-price="1000" data-image="111.webp" data-indicator="css" data-category="frontend">
-                <img src="111.webp" alt="CSS">
-                <h2>CSS</h2>
+            <div class="product-card" data-product="Espresso" data-price="3000" data-image="espresso.webp" data-indicator="espresso" data-category="coffee">
+                <img src="espresso.webp" alt="Espresso">
+                <h2>Espresso</h2>
                 <div class="rating">★★★★★</div>
-                <p>₹ 1000</p>
-                <button>Add To Cart</button>
+                <p>COP 3,000</p>
+                <button>Agregar al Carrito</button>
             </div>
-            <div class="product-card" data-product="JavaScript" data-price="5000" data-image="111.webp" data-indicator="javascript" data-category="frontend">
-                <img src="111.webp" alt="JavaScript">
-                <h2>JavaScript</h2>
+            <div class="product-card" data-product="Café con leche" data-price="3500" data-image="cafe_con_leche.webp" data-indicator="cafe-con-leche" data-category="coffee">
+                <img src="cafe_con_leche.webp" alt="Café con leche">
+                <h2>Café con leche</h2>
                 <div class="rating">★★★★★</div>
-                <p>₹ 5000</p>
-                <button>Add To Cart</button>
+                <p>COP 3,500</p>
+                <button>Agregar al Carrito</button>
             </div>
-            <div class="product-card" data-product="jQuery" data-price="2500" data-image="111.webp" data-indicator="jquery" data-category="library">
-                <img src="111.webp" alt="jQuery">
-                <h2>jQuery</h2>
-                <div class="rating">★★★★</div>
-                <p>₹ 2500</p>
-                <button>Add To Cart</button>
-            </div>
-            <div class="product-card" data-product="React" data-price="5000" data-image="111.webp" data-indicator="react" data-category="library">
-                <img src="111.webp" alt="React">
-                <h2>React</h2>
+            <div class="product-card" data-product="Aguapanela con queso" data-price="4500" data-image="aguapanela_queso.webp" data-indicator="aguapanela-queso" data-category="coffee">
+                <img src="aguapanela_queso.webp" alt="Aguapanela con queso">
+                <h2>Aguapanela con queso</h2>
                 <div class="rating">★★★★★</div>
-                <p>₹ 5000</p>
-                <button>Add To Cart</button>
+                <p>COP 4,500</p>
+                <button>Agregar al Carrito</button>
             </div>
-            <div class="product-card" data-product="Angular" data-price="5000" data-image="111.webp" data-indicator="angular" data-category="frontend">
-                <img src="111.webp" alt="Angular">
-                <h2>Angular</h2>
+            <div class="product-card" data-product="Chocolate" data-price="4000" data-image="chocolate.webp" data-indicator="chocolate" data-category="coffee">
+                <img src="chocolate.webp" alt="Chocolate">
+                <h2>Chocolate</h2>
                 <div class="rating">★★★★★</div>
-                <p>₹ 5000</p>
-                <button>Add To Cart</button>
+                <p>COP 4,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Aromática tradicional" data-price="2500" data-image="aromatica_tradicional.webp" data-indicator="aromatica-tradicional" data-category="coffee">
+                <img src="aromatica_tradicional.webp" alt="Aromática tradicional">
+                <h2>Aromática tradicional</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Milo caliente" data-price="5000" data-image="milo_caliente.webp" data-indicator="milo-caliente" data-category="coffee">
+                <img src="milo_caliente.webp" alt="Milo caliente">
+                <h2>Milo caliente</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 5,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Tinto" data-price="2000" data-image="tinto.webp" data-indicator="tinto" data-category="coffee">
+                <img src="tinto.webp" alt="Tinto">
+                <h2>Tinto</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+
+            <!-- Ricos Waffles -->
+            <div class="product-card" data-product="Waffle de proteína" data-price="14000" data-image="waffle_proteina.webp" data-indicator="waffle-proteina" data-category="waffles">
+                <img src="waffle_proteina.webp" alt="Waffle de proteína">
+                <h2>Waffle de proteína</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 14,000</p>
+                <p>Acompañado de fresa, banano, kiwi y crema chantilly. Preferencia: mermelada, miel o chocolate.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Waffle pan de yuca" data-price="14000" data-image="waffle_yuca.webp" data-indicator="waffle-yuca" data-category="waffles">
+                <img src="waffle_yuca.webp" alt="Waffle pan de yuca">
+                <h2>Waffle pan de yuca</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 14,000</p>
+                <p>Acompañado de huevos revueltos, aguacate y tomate cherry. Preferencia: mermelada o miel.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+
+            <!-- Pan pa ti -->
+            <div class="product-card" data-product="Chicharrón de dulce" data-price="2500" data-image="chicharron_dulce.webp" data-indicator="chicharron-dulce" data-category="pan">
+                <img src="chicharron_dulce.webp" alt="Chicharrón de dulce">
+                <h2>Chicharrón de dulce</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Croissant" data-price="2500" data-image="croissant.webp" data-indicator="croissant" data-category="pan">
+                <img src="croissant.webp" alt="Croissant">
+                <h2>Croissant</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Porción de torta" data-price="3000" data-image="porcion_torta.webp" data-indicator="porcion-torta" data-category="pan">
+                <img src="porcion_torta.webp" alt="Porción de torta">
+                <h2>Porción de torta</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 3,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Sándwich tradicional" data-price="4000" data-image="sandwich_tradicional.webp" data-indicator="sandwich-tradicional" data-category="pan">
+                <img src="sandwich_tradicional.webp" alt="Sándwich tradicional">
+                <h2>Sándwich tradicional</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 4,000</p>
+                <p>Con jamón y queso.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+
+            <!-- Tres recetas -->
+            <div class="product-card" data-product="Pechuga con patacón" data-price="18000" data-image="pechuga_patacon.webp" data-indicator="pechuga-patacon" data-category="recetas">
+                <img src="pechuga_patacon.webp" alt="Pechuga con patacón">
+                <h2>Pechuga con patacón</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 18,000</p>
+                <p>Acompañada de patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Huevos revueltos" data-price="9000" data-image="huevos_revueltos.webp" data-indicator="huevos-revueltos" data-category="recetas">
+                <img src="huevos_revueltos.webp" alt="Huevos revueltos">
+                <h2>Huevos revueltos</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 9,000</p>
+                <p>Acompañado de patacón y café negro.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Omelette completo" data-price="17000" data-image="omelette_completo.webp" data-indicator="omelette-completo" data-category="recetas">
+                <img src="omelette_completo.webp" alt="Omelette completo">
+                <h2>Omelette completo</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 17,000</p>
+                <p>Acompañado de tocineta, queso y jamón, patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.</p>
+                <button>Agregar al Carrito</button>
+            </div>
+
+            <!-- Jugos -->
+            <div class="product-card" data-product="Jugo en agua" data-price="6000" data-image="jugo_agua.webp" data-indicator="jugo-agua" data-category="jugos">
+                <img src="jugo_agua.webp" alt="Jugo en agua">
+                <h2>Jugo en agua</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 6,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Jugo en leche" data-price="7000" data-image="jugo_leche.webp" data-indicator="jugo-leche" data-category="jugos">
+                <img src="jugo_leche.webp" alt="Jugo en leche">
+                <h2>Jugo en leche</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 7,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Limonada de coco" data-price="12000" data-image="limonada_coco.webp" data-indicator="limonada-coco" data-category="jugos">
+                <img src="limonada_coco.webp" alt="Limonada de coco">
+                <h2>Limonada de coco</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 12,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Jugo de naranja" data-price="5500" data-image="jugo_naranja.webp" data-indicator="jugo-naranja" data-category="jugos">
+                <img src="jugo_naranja.webp" alt="Jugo de naranja">
+                <h2>Jugo de naranja</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 5,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Milo frío" data-price="7000" data-image="milo_frio.webp" data-indicator="milo-frio" data-category="jugos">
+                <img src="milo_frio.webp" alt="Milo frío">
+                <h2>Milo frío</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 7,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Avena" data-price="7000" data-image="avena.webp" data-indicator="avena" data-category="jugos">
+                <img src="avena.webp" alt="Avena">
+                <h2>Avena</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 7,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+
+            <!-- Arma tu plato -->
+            <div class="product-card" data-product="Porción arroz" data-price="2000" data-image="porcion_arroz.webp" data-indicator="porcion-arroz" data-category="arma">
+                <img src="porcion_arroz.webp" alt="Porción arroz">
+                <h2>Porción arroz</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Porción pechuga" data-price="8000" data-image="porcion_pechuga.webp" data-indicator="porcion-pechuga" data-category="arma">
+                <img src="porcion_pechuga.webp" alt="Porción pechuga">
+                <h2>Porción pechuga</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 8,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Huevos revueltos" data-price="4000" data-image="huevos_revueltos_arma.webp" data-indicator="huevos-revueltos-arma" data-category="arma">
+                <img src="huevos_revueltos_arma.webp" alt="Huevos revueltos">
+                <h2>Huevos revueltos</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 4,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Waffle de proteína" data-price="6500" data-image="waffle_proteina_arma.webp" data-indicator="waffle-proteina-arma" data-category="arma">
+                <img src="waffle_proteina_arma.webp" alt="Waffle de proteína">
+                <h2>Waffle de proteína</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 6,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Waffle pan de yuca" data-price="7500" data-image="waffle_yuca_arma.webp" data-indicator="waffle-yuca-arma" data-category="arma">
+                <img src="waffle_yuca_arma.webp" alt="Waffle pan de yuca">
+                <h2>Waffle pan de yuca</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 7,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Patacón" data-price="2000" data-image="patacon.webp" data-indicator="patacon" data-category="arma">
+                <img src="patacon.webp" alt="Patacón">
+                <h2>Patacón</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 2,000</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Porción aguacate" data-price="1500" data-image="porcion_aguacate.webp" data-indicator="porcion-aguacate" data-category="arma">
+                <img src="porcion_aguacate.webp" alt="Porción aguacate">
+                <h2>Porción aguacate</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 1,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Atún en aceite 93 gr" data-price="6500" data-image="atun_aceite_93.webp" data-indicator="atun-aceite-93" data-category="arma">
+                <img src="atun_aceite_93.webp" alt="Atún en aceite 93 gr">
+                <h2>Atún en aceite 93 gr</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 6,500</p>
+                <button>Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-product="Atún en agua 53 gr" data-price="6500" data-image="atun_agua_53.webp" data-indicator="atun-agua-53" data-category="arma">
+                <img src="atun_agua_53.webp" alt="Atún en agua 53 gr">
+                <h2>Atún en agua 53 gr</h2>
+                <div class="rating">★★★★★</div>
+                <p>COP 6,500</p>
+                <button>Agregar al Carrito</button>
             </div>
         </div>
     </main>

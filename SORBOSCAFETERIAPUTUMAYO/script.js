@@ -58,7 +58,7 @@ function updateCart() {
                 </div>
             </div>`;
         let removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
+        removeButton.textContent = 'Eliminar';
         removeButton.addEventListener('click', () => removeFromCart(item.name));
         li.appendChild(removeButton);
         cartItems.appendChild(li);

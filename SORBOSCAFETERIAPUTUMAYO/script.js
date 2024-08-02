@@ -101,7 +101,7 @@ function clearCart() {
 
 function checkout() {
     let total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0); // Calculate total
-    let message = "Order details:\n";
+    let message = "Hola, me gustaría hacer un pedido, por favor. 😊🍽️:\n";
     cart.forEach(item => {
         message += `${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
     });

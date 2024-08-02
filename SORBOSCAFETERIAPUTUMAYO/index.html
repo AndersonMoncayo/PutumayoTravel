@@ -12,7 +12,7 @@
         <h1>Sorbos Cafeteria Putumayo</h1>
         <div class="filters">
             <select id="category-filter">
-                <option value="all">All Categories</option>
+                <option value="all">Categorias</option>
                 <option value="coffee">Coffee</option>
                 <option value="waffles">Ricos Waffles</option>
                 <option value="pan">Pan pa ti</option>
@@ -21,9 +21,9 @@
                 <option value="arma">Arma tu plato</option>
             </select>
             <select id="price-filter">
-                <option value="default">Sort by Price</option>
-                <option value="asc">Low to High</option>
-                <option value="desc">High to Low</option>
+                <option value="default">Ordenar precio</option>
+                <option value="asc">Bajo a alto</option>
+                <option value="desc">Alto a bajo</option>
             </select>
         </div>
         <div class="cart" onclick="toggleCart()">
@@ -277,10 +277,10 @@
         </div>
     </main>
     <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Cart</h2>
+        <h2>Carrito</h2>
         <ul id="cart-items"></ul>
-        <button class="action-btn" onclick="clearCart()">Clear Cart</button>
-        <button class="action-btn" onclick="checkout()">Checkout</button>
+        <button class="action-btn" onclick="clearCart()">Borrar</button>
+        <button class="action-btn" onclick="checkout()">Pedir</button>
     </div>
     <div id="overlay" class="overlay" onclick="toggleCart()"></div>
 </body>

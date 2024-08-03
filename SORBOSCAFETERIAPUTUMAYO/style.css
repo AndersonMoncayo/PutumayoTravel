@@ -360,7 +360,17 @@ header h1 {
     transition: color 0.3s;
 }
 
-.close:hover,
+.close:hover,    .product-card h2 {
+    font-size: 1em; /* Further reduce font size */
+        margin: 5px 0;  /*  reducir margen texto carta producto */
+    }
+
+    .product-card {
+       width: calc(50% - 20px); /* Two cards per row */
+        margin: 10px;
+        padding: 10px; /* Reduce padding */
+    }
+}
 .close:focus {
     color: #000;
     text-decoration: none;

@@ -37,7 +37,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; /* Valor alto para asegurar que esté sobre otros elementos, pero menor que el del carrito */
 }
 
 header h1 {
@@ -176,7 +176,9 @@ header h1 {
     padding: 20px;
     overflow-y: auto;
     transition: right 0.3s;
+    z-index: 1500; /* Asegúrate de que sea mayor que el z-index del encabezado */
 }
+
 
 .cart-sidebar h2 {
     margin-bottom: 20px;
@@ -299,16 +301,17 @@ header h1 {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 5;
+    z-index: 1400; /* Menor que el carrito pero mayor que el encabezado */
 }
 
 .cart-sidebar.show {
     right: 0;
-    z-index: 10;
+    z-index: 1500;
 }
 
 .overlay.show {
     display: block;
+    z-index: 1400; /* Asegúrate de que sea menor que el z-index del carrito */
 }
 
 /* Shake animation */

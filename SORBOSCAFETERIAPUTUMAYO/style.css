@@ -402,12 +402,14 @@ header h1 {
         right: 10px;
     }
 
-    .product-grid {
+    .product-grid {  
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
-
     .product-card {
         width: calc(50% - 20px); /* Two cards per row */
+        margin: 10px;
     }
 
     .modal-content {
@@ -415,9 +417,10 @@ header h1 {
     }
 }
 
-@media (max-width: 480px) {
+    @media (max-width: 480px) {
     .product-card {
         width: calc(50% - 20px); /* Two cards per row on very small screens */
+        margin: 10px;
     }
 }
 .delivery-options {

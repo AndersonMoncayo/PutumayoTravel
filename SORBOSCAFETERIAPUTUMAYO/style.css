@@ -379,15 +379,15 @@ header h1 {
 /* Responsive styles */
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between; /* Ajustar para mostrar en una fila */
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         padding: 10px;
     }
 
     header h1 {
         font-size: 1.2em;
-        margin-left: 10px; /* Margen izquierdo */
+        margin-left: 0;
     }
 
     .filters {
@@ -405,7 +405,7 @@ header h1 {
     .product-grid {
         justify-content: center;
     }
-    
+
     .product-card {
         width: calc(50% - 20px); /* Two cards per row */
     }
@@ -420,7 +420,6 @@ header h1 {
         width: calc(50% - 20px); /* Two cards per row on very small screens */
     }
 }
-
 .delivery-options {
     margin-top: 20px;
 }

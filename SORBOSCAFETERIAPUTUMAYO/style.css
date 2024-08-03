@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     z-index: 1;
 }
+
 body::before {
     content: "";
     position: absolute;
@@ -98,11 +99,11 @@ header h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 30px;
-    margin-top: 80px;
+    margin-top: 80px; /* Ajuste para compensar el header fijo */
 }
 
 .product-card {
-    background: rgba(255, 255, 255, 0.8); /* Make product cards semi-transparent */
+    background: rgba(238, 238, 238, 0.8); /* Make product cards semi-transparent */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
@@ -119,7 +120,7 @@ header h1 {
 }
 
 .product-card img {
-    width: 120px;
+    width: 120px; /* Más grande */
     height: 120px;
     border-radius: 20px;
     transition: transform 0.2s;
@@ -377,6 +378,30 @@ header h1 {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        margin-left: 0; /* Reset the left margin */
+        margin-top: 10px; /* Add top margin for spacing */
+    }
+
+    .filters {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .cart {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+
     .product-grid {
         justify-content: center;
     }

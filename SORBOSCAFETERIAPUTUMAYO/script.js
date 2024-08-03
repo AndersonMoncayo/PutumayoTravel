@@ -7,8 +7,48 @@ let productGrid = document.querySelector('.product-grid');
 let categoryFilter = document.getElementById('category-filter');
 let priceFilter = document.getElementById('price-filter');
 
+let modal = document.getElementById('productModal');
+let modalImage = document.getElementById('modalImage');
+let modalTitle = document.getElementById('modalTitle');
+let modalDescription = document.getElementById('modalDescription');
+
+function toggleLocationField() {
+    const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
+    const locationField = document.getElementById('locationField');
+    if (deliveryOption === 'domicilio') {
+        locationField.style.display = 'block';
+    } else {
+        locationField.style.display = 'none';
+    }
+}
+
+document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', () => {
+        let productName = card.getAttribute('data-product');
+        let productImage = card.getAttribute('data-image');
+        let productDescription = card.querySelector('p').textContent;
+
+        modalImage.src = productImage;
+        modalTitle.textContent = productName;
+        modalDescription.textContent = productDescription;
+
+        modal.style.display = 'block';
+    });
+});
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
 document.querySelectorAll('.product-card button').forEach(button => {
     button.addEventListener('click', (event) => {
+        event.stopPropagation(); // Evita que el click en el botón cierre el modal
         let productCard = event.target.closest('.product-card');
         let productName = productCard.getAttribute('data-product');
         let productPrice = productCard.getAttribute('data-price');
@@ -68,10 +108,6 @@ function updateCart() {
     let totalDisplay = document.createElement('li');
     totalDisplay.innerHTML = `<strong>Total: COP ${total.toLocaleString()}</strong>`;
     cartItems.appendChild(totalDisplay);
-
-    // Update cart modal
-    let cartItemsModal = document.getElementById('cart-items-modal');
-    cartItemsModal.innerHTML = cartItems.innerHTML;
 }
 
 function increaseQuantity(productName) {
@@ -100,26 +136,22 @@ function removeFromCart(productName) {
 function clearCart() {
     cart = [];
     updateCart();
-    toggleCartModal(); // Close modal on clear
+    toggleCart();
 }
 
 function checkout() {
     let total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0); // Calculate total
+    let deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
+    let location = document.getElementById('location').value;
     let message = "Hola, me gustaría hacer un pedido, por favor. 😊🍽️:\n";
     cart.forEach(item => {
         message += `${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
     });
-    message += `Total: COP ${total.toLocaleString()}`; // Add total to message
-
-    // Add delivery method
-    let deliveryMethod = document.querySelector('input[name="delivery"]:checked').value;
-    if (deliveryMethod === 'domicilio') {
-        let location = document.querySelector('#locationField input').value;
-        message += `\nEntrega: Domicilio\nDirección: ${location}`;
-    } else {
-        message += `\nEntrega: Recoger en local`;
+    message += `Total: COP ${total.toLocaleString()}\n`; // Add total to message
+    message += `Método de entrega: ${deliveryOption === 'local' ? 'Recoger en Local' : 'Domicilio'}\n`;
+    if (deliveryOption === 'domicilio') {
+        message += `Ubicación: ${location}\n`;
     }
-
     const whatsappLink = `https://wa.me/573227737273?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
@@ -127,12 +159,6 @@ function checkout() {
 function toggleCart() {
     cartSidebar.classList.toggle('show');
     overlay.classList.toggle('show');
-}
-
-function toggleCartModal() {
-    let cartModal = document.getElementById('cart-modal');
-    cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
-    document.body.style.overflow = cartModal.style.display === 'block' ? 'hidden' : 'auto';
 }
 
 function filterProducts() {
@@ -187,16 +213,4 @@ document.querySelectorAll('.product-card').forEach(card => {
         let dropdown = createDropdownMenu(productName, options);
         card.insertBefore(dropdown, card.querySelector('button'));
     }
-});
-
-// Handle delivery option change
-document.querySelectorAll('input[name="delivery"]').forEach(input => {
-    input.addEventListener('change', (event) => {
-        let locationField = document.getElementById('locationField');
-        if (event.target.value === 'domicilio') {
-            locationField.style.display = 'block';
-        } else {
-            locationField.style.display = 'none';
-        }
-    });
 });

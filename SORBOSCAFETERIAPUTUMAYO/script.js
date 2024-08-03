@@ -161,6 +161,9 @@ function toggleCart() {
     overlay.classList.toggle('show');
 }
 
+// Event listener for the cart icon
+document.querySelector('.cart').addEventListener('click', toggleCart);
+
 function filterProducts() {
     const category = categoryFilter.value;
     const productCards = document.querySelectorAll('.product-card');

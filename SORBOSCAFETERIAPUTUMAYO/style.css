@@ -29,7 +29,7 @@ body::before {
 
 header {
     display: flex;
-    justify-content: start;
+    justify-content: space-between; /* Alineación ajustada */
     align-items: center;
     padding: 20px;
     background: rgba(255, 255, 255, 0.8); /* Make header semi-transparent */
@@ -49,7 +49,7 @@ header h1 {
 .home-icon {
     display: flex;
     align-items: center;
-    margin-right: 0;
+    margin-right: 10px; /* Ajuste del margen derecho */
 }
 
 .home-icon img {
@@ -379,15 +379,15 @@ header h1 {
 /* Responsive styles */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between; /* Ajustar para mostrar en una fila */
+        align-items: center;
         padding: 10px;
     }
 
     header h1 {
         font-size: 1.2em;
-        margin-left: 0; /* Reset the left margin */
-        margin-top: 10px; /* Add top margin for spacing */
+        margin-left: 10px; /* Margen izquierdo */
     }
 
     .filters {

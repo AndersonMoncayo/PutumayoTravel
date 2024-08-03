@@ -417,7 +417,7 @@ header h1 {
 
 @media (max-width: 480px) {
     .product-card {
-        width: calc(100% - 20px); /* One card per row on very small screens */
+        width: calc(50% - 20px); /* Two cards per row on very small screens */
     }
 }
 

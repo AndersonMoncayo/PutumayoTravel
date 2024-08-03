@@ -103,12 +103,11 @@ header h1 {
 }
 
 .product-card {
-  background: rgba(238, 238, 238, 0.8); /* Make product cards semi-transparent */
+    background: rgba(238, 238, 238, 0.8); /* Make product cards semi-transparent */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     padding: 20px;
-    width: 300px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
@@ -178,7 +177,6 @@ header h1 {
     transition: right 0.3s;
     z-index: 1500; /* Asegúrate de que sea mayor que el z-index del encabezado */
 }
-
 
 .cart-sidebar h2 {
     margin-bottom: 20px;
@@ -363,16 +361,17 @@ header h1 {
     transition: color 0.3s;
 }
 
-.close:hover,    .product-card h2 {
+.close:hover, .product-card h2 {
     font-size: 1em; /* Further reduce font size */
-        margin: 5px 0;  /*  reducir margen texto carta producto */
-    }
+    margin: 5px 0;  /* reducir margen texto carta producto */
+}
 
-    .product-card {
-       width: calc(50% - 20px); /* Two cards per row */
-        margin: 10px;
-        padding: 10px; /* Reduce padding */
-    }
+.product-card {
+    width: calc(50% - 20px); /* Two cards per row */
+    margin: 10px;
+    padding: 10px; /* Reduce padding */
+}
+
 .close:focus {
     color: #000;
     text-decoration: none;
@@ -396,6 +395,7 @@ header h1 {
 }
 
 /* Responsive styles */
+/* Móviles: 2 productos por fila */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -421,11 +421,6 @@ header h1 {
         right: 10px;
     }
 
-    .product-grid {  
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
     .product-card {
         width: calc(50% - 20px); /* Two cards per row */
         margin: 10px;
@@ -436,12 +431,22 @@ header h1 {
     }
 }
 
-    @media (max-width: 480px) {
+/* Navegadores de escritorio: 3 productos por fila */
+@media (min-width: 769px) and (max-width: 1024px) {
     .product-card {
-        width: calc(50% - 20px); /* Two cards per row on very small screens */
-        margin: 10px;
+        width: calc(25% - 20px); /* Three cards per row */
+        margin: 10px 5px; /* Reduce margin on the sides */
     }
 }
+
+/* Pantallas grandes: 3 productos por fila */
+@media (min-width: 1025px) {
+    .product-card {
+        width: calc(25% - 20px); /* Three cards per row */
+        margin: 10px 5px; /* Reduce margin on the sides */
+    }
+}
+
 .delivery-options {
     margin-top: 20px;
 }

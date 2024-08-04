@@ -1,315 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Sorbos Cafetería Putumayo</title>
-   <link rel="stylesheet" href="style.css">
-   <script defer src="script.js"></script>
-   <!-- Añadido el favicon -->
-   <link rel="icon" type="image/webp" href="111.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="111.webp">
+    <title>Responsive Product Grid</title>
 </head>
 <body>
     <header>
-        <a href="https://putumayo.shop/" class="home-icon">
-            <img src="home-icon.svg" alt="Inicio">
-        </a>
-        <h1>Sorbos Cafetería Putumayo</h1>
-        <div class="filters">
-            <select id="category-filter">
-                <option value="all">Categorias</option>
-                <option value="coffee">Coffee</option>
-                <option value="waffles">Ricos Waffles</option>
-                <option value="pan">Pan pa ti</option>
-                <option value="recetas">Tres recetas</option>
-                <option value="jugos">Jugos</option>
-                <option value="arma">Arma tu plato</option>
-            </select>
-            <select id="price-filter">
-                <option value="default">Ordenar precio</option>
-                <option value="asc">Bajo a alto</option>
-                <option value="desc">Alto a bajo</option>
-            </select>
+        <div class="logo">
+            <img src="111.webp" alt="Logo">
         </div>
-        <div class="cart" onclick="toggleCartModal()">
-            <span id="cart-count">0</span>
-            <img src="cart-icon.svg" alt="Cart">
-        </div>
+        <button class="hamburger" id="hamburger">
+            &#9776;
+        </button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="productos/index.html">Products</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a href="SORBOSCAFETERIAPUTUMAYO/index.html">Shop</a></li>
+                <li><a href="#">Deals</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <div class="product-grid">
-            <!-- Coffee -->
-            <div class="product-card" data-product="Americano" data-price="3000" data-image="cafeamericanoputumayo.webp" data-indicator="americano" data-category="coffee">
-                <img src="cafeamericanoputumayo.webp" alt="Americano">
-                <h2>Americano</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 3,000</p>
-                <button>Agregar al Carrito</button>
+        <section class="banner">
+            <img src="111.webp" alt="Banner Image">
+            <div class="banner-content">
+                <h1 class="word-pull-up">Gradual Spacing</h1>
+                <h2 class="word-pull-up">$29 Creative Effects Sale</h2>
+                <p>Shake up your sound with huge discounts on intelligent reverb, stutter effects, and vocal processing.</p>
+                <a href="#" class="button">Save now</a>
             </div>
-            <div class="product-card" data-product="Espresso" data-price="3000" data-image="esspresoputumayo.webp" data-indicator="espresso" data-category="coffee">
-                <img src="esspresoputumayo.webp" alt="Espresso">
-                <h2>Espresso</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 3,000</p>
-                <button>Agregar al Carrito</button>
+        </section>
+        <section class="products">
+            <h2>Shop our most popular products</h2>
+            <div class="product-cards">
+                <div class="product-card">
+                    <img src="111.webp" alt="Product 1">
+                    <h3>Music Production Suite 6.5</h3>
+                    <p>Music Production Suite 6.5 includes the new RX 11 Standard, Ozone 11...</p>
+                    <p class="price">$599.00</p>
+                    <a href="#" class="button">Add to cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="111.webp" alt="Product 2">
+                    <h3>RX 11 Advanced</h3>
+                    <p>RX 11 Advanced is everything you need to fix, enhance, and polish...</p>
+                    <p class="price">$1,199.00</p>
+                    <a href="#" class="button">Add to cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="111.webp" alt="Product 3">
+                    <h3>Ozone 11 Advanced</h3>
+                    <p>Elevate your audio to the highest level with our definitive mastering...</p>
+                    <p class="price">$399.00</p>
+                    <a href="#" class="button">Add to cart</a>
+                </div>
+                <div class="product-card">
+                    <img src="111.webp" alt="Product 4">
+                    <h3>Nectar 4 Advanced</h3>
+                    <p>Gain complete control over your vocals with this all-in-one suite...</p>
+                    <p class="price">$299.00</p>
+                    <a href="#" class="button">Add to cart</a>
+                </div>
             </div>
-            <div class="product-card" data-product="Café con leche" data-price="3500" data-image="cafeconlecheputumayo.webp" data-indicator="cafe-con-leche" data-category="coffee">
-                <img src="cafeconlecheputumayo.webp" alt="Café con leche">
-                <h2>Café con leche</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 3,500</p>
-                <button>Agregar al Carrito</button>
+        </section>
+        <section class="contact">
+            <div class="contact-content">
+                <img src="111.webp" alt="Contact Logo">
+                <p>We make innovative audio products that inspire and enable people to be creative.</p>
+                <div class="social">
+                    <h3>Follow us</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="111.webp" alt="Twitter"></a>
+                        <a href="#"><img src="111.webp" alt="Facebook"></a>
+                        <a href="#"><img src="111.webp" alt="Instagram"></a>
+                        <a href="#"><img src="111.webp" alt="YouTube"></a>
+                    </div>
+                </div>
             </div>
-            <div class="product-card" data-product="Aguapanela con queso" data-price="4500" data-image="aguapanelaconquesoputumayo.webp" data-indicator="aguapanela-queso" data-category="coffee">
-                <img src="aguapanelaconquesoputumayo.webp" alt="Aguapanela con queso">
-                <h2>Aguapanela con queso</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 4,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Chocolate" data-price="4000" data-image="chocolateputumayo.webp" data-indicator="chocolate" data-category="coffee">
-                <img src="chocolateputumayo.webp" alt="Chocolate">
-                <h2>Chocolate</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 4,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Aromática tradicional" data-price="2500" data-image="aromaticaputumayo.webp" data-indicator="aromatica-tradicional" data-category="coffee">
-                <img src="aromaticaputumayo.webp" alt="Aromática tradicional">
-                <h2>Aromática tradicional</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Milo caliente" data-price="5000" data-image="MiloCalienteputumayo.webp" data-indicator="milo-caliente" data-category="coffee">
-                <img src="MiloCalienteputumayo.webp" alt="Milo caliente">
-                <h2>Milo caliente</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 5,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Tinto" data-price="2000" data-image="tintoputumayo.webp" data-indicator="tinto" data-category="coffee">
-                <img src="tintoputumayo.webp" alt="Tinto">
-                <h2>Tinto</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
-            <!-- Ricos Waffles -->
-            <div class="product-card" data-product="Waffle de proteína" data-price="14000" data-image="waffleproteinaputumayo.webp" data-indicator="waffle-proteina" data-category="waffles">
-                <img src="waffleproteinaputumayo.webp" alt="Waffle de proteína">
-                <h2>Waffle de proteína</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 14,000</p>
-                <p>Acompañado de fresa, banano, kiwi y crema chantilly. Preferencia: mermelada, miel o chocolate.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Waffle pan de yuca" data-price="14000" data-image="wafflepandeyucaputumayo.webp" data-indicator="waffle-yuca" data-category="waffles">
-                <img src="wafflepandeyucaputumayo.webp" alt="Waffle pan de yuca">
-                <h2>Waffle pan de yuca</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 14,000</p>
-                <p>Acompañado de huevos revueltos, aguacate y tomate cherry. Preferencia: mermelada o miel.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
-            <!-- Pan pa ti -->
-            <div class="product-card" data-product="Chicharrón de dulce" data-price="2500" data-image="chicharronpanputumayo.webp" data-indicator="chicharron-dulce" data-category="pan">
-                <img src="chicharronpanputumayo.webp" alt="Chicharrón de dulce">
-                <h2>Chicharrón de dulce</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Croissant" data-price="2500" data-image="croasaintputumayo.webp" data-indicator="croissant" data-category="pan">
-                <img src="croasaintputumayo.webp" alt="Croissant">
-                <h2>Croissant</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Porción de torta" data-price="3000" data-image="Porciondetortaputumayo.webp" data-indicator="porcion-torta" data-category="pan">
-                <img src="Porciondetortaputumayo.webp" alt="Porción de torta">
-                <h2>Porción de torta</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 3,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Sándwich tradicional" data-price="4000" data-image="Sandwichtradicionalputumayo.webp" data-indicator="sandwich-tradicional" data-category="pan">
-                <img src="Sandwichtradicionalputumayo.webp" alt="Sándwich tradicional">
-                <h2>Sándwich tradicional</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 4,000</p>
-                <p>Con jamón y queso.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
-            <!-- Tres recetas -->
-            <div class="product-card" data-product="Pechuga con patacón" data-price="18000" data-image="Pechugaconpataconputumayo.webp" data-indicator="pechuga-patacon" data-category="recetas">
-                <img src="Pechugaconpataconputumayo.webp" alt="Pechuga con patacón">
-                <h2>Pechuga con patacón</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 18,000</p>
-                <p>Acompañada de patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Huevos revueltos" data-price="9000" data-image="huevosrevueltosputumayo.webp" data-indicator="huevos-revueltos" data-category="recetas">
-                <img src="huevosrevueltosputumayo.webp" alt="Huevos revueltos">
-                <h2>Huevos revueltos</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 9,000</p>
-                <p>Acompañado de patacón y café negro.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Omelette completo" data-price="17000" data-image="Omeletteputumayo.webp" data-indicator="omelette-completo" data-category="recetas">
-                <img src="Omeletteputumayo.webp" alt="Omelette completo">
-                <h2>Omelette completo</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 17,000</p>
-                <p>Acompañado de tocineta, queso y jamón, patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
-            <!-- Jugos -->
-            <div class="product-card" data-product="Jugo en agua" data-price="6000" data-image="Jugoenaguaputumayo.webp" data-indicator="jugo-agua" data-category="jugos">
-                <img src="Jugoenaguaputumayo.webp" alt="Jugo en agua">
-                <h2>Jugo en agua</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 6,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Jugo en leche" data-price="7000" data-image="jugoenlecheputumayo.webp" data-indicator="jugo-leche" data-category="jugos">
-                <img src="jugoenlecheputumayo.webp" alt="Jugo en leche">
-                <h2>Jugo en leche</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 7,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Limonada de coco" data-price="12000" data-image="limonadadecocoputumayo.webp" data-indicator="limonada-coco" data-category="jugos">
-                <img src="limonadadecocoputumayo.webp" alt="Limonada de coco">
-                <h2>Limonada de coco</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 12,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Jugo de naranja" data-price="5500" data-image="jugonaranjaputumayo.webp" data-indicator="jugo-naranja" data-category="jugos">
-                <img src="jugonaranjaputumayo.webp" alt="Jugo de naranja">
-                <h2>Jugo de naranja</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 5,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Milo frío" data-price="7000" data-image="milofrioputumayo.webp" data-indicator="milo-frio" data-category="jugos">
-                <img src="milofrioputumayo.webp" alt="Milo frío">
-                <h2>Milo frío</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 7,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Avena" data-price="7000" data-image="avenaputumayo.webp" data-indicator="avena" data-category="jugos">
-                <img src="avenaputumayo.webp" alt="Avena">
-                <h2>Avena</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 7,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
-            <!-- Arma tu plato -->
-            <div class="product-card" data-product="Porción arroz" data-price="2000" data-image="porciondearrozputumayo.webp" data-indicator="porcion-arroz" data-category="arma">
-                <img src="porciondearrozputumayo.webp" alt="Porción arroz">
-                <h2>Porción arroz</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Porción pechuga" data-price="8000" data-image="porcionpechugaputumayo.webp" data-indicator="porcion-pechuga" data-category="arma">
-                <img src="porcionpechugaputumayo.webp" alt="Porción pechuga">
-                <h2>Porción pechuga</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 8,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Huevos revueltos" data-price="4000" data-image="Huevosrevueltoputumayo.webp" data-indicator="huevos-revueltos-arma" data-category="arma">
-                <img src="Huevosrevueltoputumayo.webp" alt="Huevos revueltos">
-                <h2>Huevos revueltos</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 4,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Waffle de proteína" data-price="6500" data-image="waffleproteinaputumayo.webp" data-indicator="waffle-proteina-arma" data-category="arma">
-                <img src="waffleproteinaputumayo.webp" alt="Waffle de proteína">
-                <h2>Waffle de proteína</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 6,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Waffle pan de yuca" data-price="7500" data-image="wafflepandeyucaputumayo.webp" data-indicator="waffle-yuca-arma" data-category="arma">
-                <img src="wafflepandeyucaputumayo.webp" alt="Waffle pan de yuca">
-                <h2>Waffle pan de yuca</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 7,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Patacón" data-price="2000" data-image="pataconputumayo.webp" data-indicator="patacon" data-category="arma">
-                <img src="pataconputumayo.webp" alt="Patacón">
-                <h2>Patacón</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 2,000</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Porción aguacate" data-price="1500" data-image="porcionaguacateputumayo.webp" data-indicator="porcion-aguacate" data-category="arma">
-                <img src="porcionaguacateputumayo.webp" alt="Porción aguacate">
-                <h2>Porción aguacate</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 1,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Atún en aceite 93 gr" data-price="6500" data-image="atunenaceiteputumayo.webp" data-indicator="atun-aceite-93" data-category="arma">
-                <img src="atunenaceiteputumayo.webp" alt="Atún en aceite 93 gr">
-                <h2>Atún en aceite 93 gr</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 6,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="product-card" data-product="Atún en agua 53 gr" data-price="6500" data-image="atunenaceite53putumayo.webp" data-indicator="atun-agua-53" data-category="arma">
-                <img src="atunenaceite53putumayo.webp" alt="Atún en agua 53 gr">
-                <h2>Atún en agua 53 gr</h2>
-                <div class="rating">★★★★★</div>
-                <p>COP 6,500</p>
-                <button>Agregar al Carrito</button>
-            </div>
-        </div>
+        </section>
     </main>
-    <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Carrito</h2>
-        <ul id="cart-items"></ul>
-        <div class="delivery-options">
-            <label>
-                <input type="radio" name="delivery" value="local" onclick="toggleLocationField()" checked>
-                Recoger en Local
-            </label>
-            <label>
-                <input type="radio" name="delivery" value="domicilio" onclick="toggleLocationField()">
-                Domicilio (Valor adicional)
-            </label>
-        </div>
-        <div id="locationField" style="display: none;">
-            <input type="text" id="location" placeholder="Ingrese su ubicación">
-        </div>
-        <button class="action-btn" onclick="clearCart()">Borrar</button>
-        <button class="action-btn" onclick="checkout()">Pedir</button>
-    </div>
-    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
-
-    <!-- Modal -->
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="Product Image">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

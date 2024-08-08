@@ -556,6 +556,10 @@ header h1 {
 /* Responsive styles */
 /* Móviles: 2 productos por fila */
 @media (max-width: 768px) {
+      body {
+        background-size: contain; /* Ajusta el tamaño del fondo para que se ajuste a la pantalla */
+        background-attachment: scroll; /* Permite que el fondo se desplace con el contenido */
+    }
     header {
         display: flex;
         flex-direction: column;

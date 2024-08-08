@@ -22,11 +22,12 @@ function toggleLocationField() {
     }
 }
 
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('click', () => {
-        let productName = card.getAttribute('data-product');
-        let productImage = card.getAttribute('data-image');
-        let productDescription = card.querySelector('p').textContent;
+document.querySelectorAll('.card').forEach(card => {
+    card.querySelector('.view-product img').addEventListener('click', (event) => {
+        event.stopPropagation();
+        let productName = card.querySelector('.title strong').textContent;
+        let productImage = card.querySelector('.img img').src;
+        let productDescription = card.querySelector('.card-footer').textContent;
 
         modalImage.src = productImage;
         modalTitle.textContent = productName;
@@ -46,34 +47,33 @@ window.onclick = function(event) {
     }
 }
 
-document.querySelectorAll('.product-card button').forEach(button => {
+document.querySelectorAll('.card .add-to-cart img').forEach(button => {
     button.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evita que el click en el botón cierre el modal
-        let productCard = event.target.closest('.product-card');
-        let productName = productCard.getAttribute('data-product');
-        let productPrice = productCard.getAttribute('data-price');
-        let productImage = productCard.getAttribute('data-image');
+        event.stopPropagation();
+        let productCard = event.target.closest('.card');
+        let productName = productCard.querySelector('.title strong').textContent;
+        let productPrice = productCard.dataset.price; // Obtener el precio del dataset
+        let productImage = productCard.querySelector('.img img').src;
+        let productFlavor = productCard.querySelector('.flavor-dropdown') ? productCard.querySelector('.flavor-dropdown').value : '';
 
-        // Check for dropdown selection
-        let flavorDropdown = productCard.querySelector('.flavor-dropdown');
-        if (flavorDropdown) {
-            let selectedFlavor = flavorDropdown.value;
-            productName += ` (${selectedFlavor})`; // Append selected flavor to product name
-        }
-
-        addToCart(productName, productPrice, productImage);
+        // Aplica el efecto de rebote al botón
+        button.classList.add('bounce');
+        setTimeout(() => {
+            button.classList.remove('bounce');
+            addToCart(productName, productPrice, productImage, productFlavor);
+        }, 500); // Duración del efecto de rebote
     });
 });
 
 categoryFilter.addEventListener('change', filterProducts);
 priceFilter.addEventListener('change', sortProducts);
 
-function addToCart(productName, productPrice, productImage) {
-    let existingProduct = cart.find(item => item.name === productName);
+function addToCart(productName, productPrice, productImage, productFlavor) {
+    let existingProduct = cart.find(item => item.name === productName && item.flavor === productFlavor);
     if (existingProduct) {
         existingProduct.quantity += 1;
     } else {
-        cart.push({name: productName, price: parseInt(productPrice), image: productImage, quantity: 1});
+        cart.push({name: productName, price: parseInt(productPrice), image: productImage, flavor: productFlavor, quantity: 1});
     }
     updateCart();
 }
@@ -89,17 +89,17 @@ function updateCart() {
             <div class="cart-item-info">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
-                    <span>${item.name} - COP ${item.price.toLocaleString()} x </span>
+                    <span>${item.name} ${item.flavor ? '- ' + item.flavor : ''} - COP ${item.price.toLocaleString()} x </span>
                     <div class="quantity-controls">
-                        <button onclick="decreaseQuantity('${item.name}')">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="increaseQuantity('${item.name}')">+</button>
+                        <button onclick="decreaseQuantity('${item.name}', '${item.flavor}')">-</button>
+                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', '${item.flavor}', this.value)">
+                        <button onclick="increaseQuantity('${item.name}', '${item.flavor}')">+</button>
                     </div>
                 </div>
             </div>`;
         let removeButton = document.createElement('button');
         removeButton.textContent = 'Eliminar';
-        removeButton.addEventListener('click', () => removeFromCart(item.name));
+        removeButton.addEventListener('click', () => removeFromCart(item.name, item.flavor));
         li.appendChild(removeButton);
         cartItems.appendChild(li);
     });
@@ -110,26 +110,34 @@ function updateCart() {
     cartItems.appendChild(totalDisplay);
 }
 
-function increaseQuantity(productName) {
-    let product = cart.find(item => item.name === productName);
+function increaseQuantity(productName, productFlavor) {
+    let product = cart.find(item => item.name === productName && item.flavor === productFlavor);
     if (product) {
         product.quantity += 1;
         updateCart();
     }
 }
 
-function decreaseQuantity(productName) {
-    let product = cart.find(item => item.name === productName);
+function decreaseQuantity(productName, productFlavor) {
+    let product = cart.find(item => item.name === productName && item.flavor === productFlavor);
     if (product && product.quantity > 1) {
         product.quantity -= 1;
     } else {
-        cart = cart.filter(item => item.name !== productName);
+        cart = cart.filter(item => !(item.name === productName && item.flavor === productFlavor));
     }
     updateCart();
 }
 
-function removeFromCart(productName) {
-    cart = cart.filter(item => item.name !== productName);
+function updateQuantity(productName, productFlavor, newQuantity) {
+    let product = cart.find(item => item.name === productName && item.flavor === productFlavor);
+    if (product) {
+        product.quantity = parseInt(newQuantity);
+        updateCart();
+    }
+}
+
+function removeFromCart(productName, productFlavor) {
+    cart = cart.filter(item => !(item.name === productName && item.flavor === productFlavor));
     updateCart();
 }
 
@@ -145,14 +153,14 @@ function checkout() {
     let location = document.getElementById('location').value;
     let message = "Hola, me gustaría hacer un pedido, por favor. 😊🍽️:\n";
     cart.forEach(item => {
-        message += `${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
+        message += `${item.name} ${item.flavor ? '- ' + item.flavor : ''} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
     });
     message += `Total: COP ${total.toLocaleString()}\n`; // Add total to message
     message += `Método de entrega: ${deliveryOption === 'local' ? 'Recoger en Local' : 'Domicilio'}\n`;
     if (deliveryOption === 'domicilio') {
         message += `Ubicación: ${location}\n`;
     }
-    const whatsappLink = `https://wa.me/573227737273?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/573227736533?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
 
@@ -161,15 +169,19 @@ function toggleCart() {
     overlay.classList.toggle('show');
 }
 
-// Event listener for the cart icon
-document.querySelector('.cart').addEventListener('click', toggleCart);
+// Event listener for the cart icon with bounce effect
+document.querySelector('.cart').addEventListener('click', function() {
+    toggleCart();
+    this.classList.add('bounce');
+    setTimeout(() => this.classList.remove('bounce'), 500); // Duración del efecto de rebote
+});
 
 function filterProducts() {
     const category = categoryFilter.value;
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll('.card');
 
     productCards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
+        if (category === 'all' || card.querySelector('.badge').textContent.toLowerCase() === category) {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';
@@ -182,11 +194,11 @@ function filterProducts() {
 
 function sortProducts() {
     const order = priceFilter.value;
-    const products = Array.from(document.querySelectorAll('.product-card')).filter(card => card.style.display !== 'none');
+    const products = Array.from(document.querySelectorAll('.card')).filter(card => card.style.display !== 'none');
 
     products.sort((a, b) => {
-        const priceA = parseInt(a.getAttribute('data-price'));
-        const priceB = parseInt(b.getAttribute('data-price'));
+        const priceA = parseInt(a.dataset.price);
+        const priceB = parseInt(b.dataset.price);
 
         return order === 'asc' ? priceA - priceB : priceB - priceA;
     });
@@ -195,7 +207,6 @@ function sortProducts() {
     products.forEach(product => productGrid.appendChild(product));
 }
 
-// Create dropdown lists for flavors and specialties where applicable
 function createDropdownMenu(productName, options) {
     let dropdown = document.createElement('select');
     dropdown.className = 'flavor-dropdown';
@@ -208,12 +219,47 @@ function createDropdownMenu(productName, options) {
     return dropdown;
 }
 
-// Add dropdown menus for products with multiple options
-document.querySelectorAll('.product-card').forEach(card => {
-    let productName = card.getAttribute('data-product');
-    if (productName === 'Jugo en agua' || productName === 'Jugo en leche') {
+function showAddToCartButton(selectElement) {
+    const addToCartButton = selectElement.nextElementSibling;
+    if (selectElement.value) {
+        addToCartButton.style.display = 'flex';
+        addToCartButton.onclick = function() {
+            const productName = selectElement.closest('.card').querySelector('.title strong').textContent;
+            const productPrice = selectElement.closest('.card').dataset.price;
+            const productImage = selectElement.closest('.card').querySelector('.img img').src;
+            addToCart(productName, productPrice, productImage, selectElement.value);
+        };
+    } else {
+        addToCartButton.style.display = 'none';
+    }
+}
+
+document.querySelectorAll('.card').forEach(card => {
+    let productName = card.querySelector('.title strong').textContent;
+    if ((productName === 'Jugo en agua' || productName === 'Jugo en leche') && !card.querySelector('.flavor-dropdown')) {
         let options = ['Tomate de árbol', 'Guanábana', 'Maracuyá', 'Maracumango'];
         let dropdown = createDropdownMenu(productName, options);
-        card.insertBefore(dropdown, card.querySelector('button'));
+        let dropdownContainer = card.querySelector('.back-content');
+        dropdownContainer.insertBefore(dropdown, dropdownContainer.firstChild);
+        dropdown.addEventListener('change', function() {
+            showAddToCartButton(this);
+        });
     }
+
+    // Añadir el evento de clic en toda la tarjeta para abrir el dropdown
+    card.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('flavor-dropdown') && !event.target.closest('.add-to-cart')) {
+            let dropdown = card.querySelector('.flavor-dropdown');
+            if (dropdown) {
+                dropdown.focus(); // Enfocar en el dropdown para abrirlo
+            }
+        }
+    });
+
+    // Prevenir que el evento se propague cuando se haga clic en el dropdown
+    card.querySelectorAll('.flavor-dropdown, .add-to-cart').forEach(element => {
+        element.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
 });

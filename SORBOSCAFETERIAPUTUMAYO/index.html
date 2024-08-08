@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sorbos Cafetería Putumayo</title>
+   <link rel="stylesheet" href="style.css">
+   <script defer src="script.js"></script>
+   <link rel="icon" type="image/png" href="sorbos.png">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="https://putumayo.shop/" class="home-icon">
+                <img src="home-icon.svg" alt="Inicio">
+            </a>
+            <h1>Sorbos Cafetería Putumayo</h1>
+        </div>
+        <div class="filters">
+            <select id="category-filter">
+                <option value="all">Categorias</option>
+                <option value="coffee">Coffee</option>
+                <option value="waffles">Ricos Waffles</option>
+                <option value="pan">Pan pa ti</option>
+                <option value="recetas">Tres recetas</option>
+                <option value="jugos">Jugos</option>
+                <option value="elige">Arma tu plato</option>
+            </select>
+            <select id="price-filter">
+                <option value="default">Ordenar precio</option>
+                <option value="asc">Bajo a alto</option>
+                <option value="desc">Alto a bajo</option>
+            </select>
+        </div>
+        <div class="cart" onclick="toggleCartModal()">
+            <span id="cart-count">0</span>
+            <img src="cart-icon.svg" alt="Cart">
+        </div>
+    </header>
+    <main>
+        <div class="product-grid">
+            <!-- Sección para productos de café -->
+            <div class="card" data-price="3000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="esspresoputumayo.webp" alt="Espresso">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Espresso</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="3500">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="cafeconlecheputumayo.webp" alt="Café con leche">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Café con leche</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="4000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="aguapanelaconquesoputumayo.webp" alt="Aguapanela con queso">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Aguapanela con queso</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="5000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="chocolateputumayo.webp" alt="Chocolate">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Chocolate</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="3500">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="aromaticaputumayo.webp" alt="Aromática tradicional">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Aromática tradicional</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="4500">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="MiloCalienteputumayo.webp" alt="Milo caliente">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Milo caliente</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="2000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="tintoputumayo.webp" alt="Tinto">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Coffee</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Tinto</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="14000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="waffleproteinaputumayo.webp" alt="Waffle de proteína">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Waffles</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Waffle de proteína</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    Acompañado de fresa, banano, kiwi y crema chantilly. Preferencia: mermelada, miel o chocolate.
+                                </p>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-price="14000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="wafflepandeyucaputumayo.webp" alt="Waffle pan de yuca">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Waffles</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Waffle pan de yuca</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    Acompañado de huevos revueltos, aguacate y tomate cherry. Preferencia: mermelada o miel.
+                                </p>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pan pa ti -->
+<div class="card" data-price="2500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="chicharronpanputumayo.webp" alt="Chicharrón de dulce">
+            </div>
+            <div class="front-content">
+                <small class="badge">Pan</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Chicharrón de dulce</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="2500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="croasaintputumayo.webp" alt="Croissant">
+            </div>
+            <div class="front-content">
+                <small class="badge">Pan</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Croissant</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="3000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="Porciondetortaputumayo.webp" alt="Porción de torta">
+            </div>
+            <div class="front-content">
+                <small class="badge">Pan</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Porción de torta</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="4000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="Sandwichtradicionalputumayo.webp" alt="Sándwich tradicional">
+            </div>
+            <div class="front-content">
+                <small class="badge">Pan</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Sándwich tradicional</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        Con jamón y queso.
+                    </p>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tres recetas -->
+<div class="card" data-price="18000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="Pechugaconpataconputumayo.webp" alt="Pechuga con patacón">
+            </div>
+            <div class="front-content">
+                <small class="badge">Recetas</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Pechuga con patacón</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        Acompañada de patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.
+                    </p>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="9000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="huevosrevueltosputumayo.webp" alt="Huevos revueltos">
+            </div>
+            <div class="front-content">
+                <small class="badge">Recetas</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Huevos revueltos</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        Acompañado de patacón y café negro.
+                    </p>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="17000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="Omeletteputumayo.webp" alt="Omelette completo">
+            </div>
+            <div class="front-content">
+                <small class="badge">Recetas</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Omelette completo</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        Acompañado de tocineta, queso y jamón, patacón, aguacate y tomate cherry. Preferencia: café negro o jugo en agua.
+                    </p>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Arma tu plato -->
+<div class="card" data-price="2000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="porciondearrozputumayo.webp" alt="Porción arroz">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Porción arroz</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="8000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="porcionpechugaputumayo.webp" alt="Porción pechuga">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Porción pechuga</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="4000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="Huevosrevueltoputumayo.webp" alt="Huevos revueltos">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Huevos revueltos</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="6500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="waffleproteinaputumayo.webp" alt="Waffle de proteína">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Waffle de proteína</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="7500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="wafflepandeyucaputumayo.webp" alt="Waffle pan de yuca">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Waffle pan de yuca</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="2000">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="pataconputumayo.webp" alt="Patacón">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Patacón</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="1500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="porcionaguacateputumayo.webp" alt="Porción aguacate">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Porción aguacate</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="6500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="atunenaceiteputumayo.webp" alt="Atún en aceite 93 gr">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Atún en aceite 93 gr</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" data-price="6500">
+    <div class="content">
+        <div class="front">
+            <div class="img">
+                <img src="atunenaceite53putumayo.webp" alt="Atún en agua 53 gr">
+            </div>
+            <div class="front-content">
+                <small class="badge">Elige</small>
+                <div class="description">
+                    <div class="title">
+                        <p class="title">
+                            <strong>Atún en agua 53 gr</strong>
+                        </p>
+                    </div>
+                    <p class="card-footer">
+                        10 Mins &nbsp; | &nbsp; 1 Servicio
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="back">
+            <div class="back-content">
+                <div class="add-to-cart">
+                    <img src="shop.svg" alt="Add to Cart">
+                    <span>Añadir</span>
+                </div>
+                <div class="view-product">
+                    <img src="lupa.svg" alt="View Product">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Sección para productos de jugos -->
+            <div class="card" data-price="12000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="limonadadecocoputumayo.webp" alt="Limonada de coco">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Limonada de coco</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-price="5500">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="jugonaranjaputumayo.webp" alt="Jugo de naranja">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Jugo de naranja</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-price="7000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="milofrioputumayo.webp" alt="Milo frío">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Milo frío</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-price="7000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="avenaputumayo.webp" alt="Avena">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Avena</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <div class="add-to-cart">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-price="8000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="Jugoenaguaputumayo.webp" alt="Jugo en agua">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Jugo en agua</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <select class="flavor-dropdown" style="margin-top: 4cm;" onchange="showAddToCartButton(this)">
+                                <option value="">Seleccione un sabor</option>
+                                <option value="Tomate de árbol">Tomate de árbol</option>
+                                <option value="Guanábana">Guanábana</option>
+                                <option value="Maracuyá">Maracuyá</option>
+                                <option value="Maracumango">Maracumango</option>
+                            </select>
+                            <div class="add-to-cart" style="display: none;">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-price="9000">
+                <div class="content">
+                    <div class="front">
+                        <div class="img">
+                            <img src="jugoenlecheputumayo.webp" alt="Jugo en leche">
+                        </div>
+                        <div class="front-content">
+                            <small class="badge">Jugos</small>
+                            <div class="description">
+                                <div class="title">
+                                    <p class="title">
+                                        <strong>Jugo en leche</strong>
+                                    </p>
+                                </div>
+                                <p class="card-footer">
+                                    10 Mins &nbsp; | &nbsp; 1 Servicio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-content">
+                            <select class="flavor-dropdown" style="margin-top: 4cm;" onchange="showAddToCartButton(this)">
+                                <option value="">Seleccione un sabor</option>
+                                <option value="Tomate de árbol">Tomate de árbol</option>
+                                <option value="Guanábana">Guanábana</option>
+                                <option value="Maracuyá">Maracuyá</option>
+                                <option value="Maracumango">Maracumango</option>
+                            </select>
+                            <div class="add-to-cart" style="display: none;">
+                                <img src="shop.svg" alt="Add to Cart">
+                                <span>Añadir</span>
+                            </div>
+                            <div class="view-product">
+                                <img src="lupa.svg" alt="View Product">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2>Carrito</h2>
+        <ul id="cart-items"></ul>
+        <div class="delivery-options">
+            <label>
+                <input type="radio" name="delivery" value="local" onclick="toggleLocationField()" checked>
+                Recoger en Local
+            </label>
+            <label>
+                <input type="radio" name="delivery" value="domicilio" onclick="toggleLocationField()">
+                Domicilio (Valor adicional)
+            </label>
+        </div>
+        <div id="locationField" style="display: none;">
+            <input type="text" id="location" placeholder="Ingrese su ubicación">
+        </div>
+        <button class="action-btn" onclick="clearCart()">Borrar</button>
+        <button class="action-btn" onclick="checkout()">Pedir</button>
+    </div>
+    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Product Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+</body>
+</html>

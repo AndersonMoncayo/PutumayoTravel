@@ -6,12 +6,13 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  list-style: none;
 }
+
 body {
   background-color: #f7f7f2;
   color: #1e1e24;
 }
+
 header {
   position: fixed;
   width: 100%;
@@ -23,14 +24,18 @@ header {
   justify-content: space-between;
   padding: 2rem 8rem;
 }
+
 .logo {
   color: #1e1e24;
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 .navmenu {
   display: flex;
+  list-style: none;
 }
+
 .navmenu a {
   display: inline-block;
   margin: 0 1.5rem;
@@ -38,9 +43,11 @@ header {
   font-weight: 500;
   transition: all 0.6s;
 }
+
 .navmenu a:hover {
   transform: translateY(-5px);
 }
+
 .home {
   width: 100%;
   height: 100vh;
@@ -50,20 +57,24 @@ header {
   padding: 2rem 5rem 0 18rem;
   gap: 1rem;
 }
+
 .home-img img {
   width: 100%;
   height: auto;
 }
+
 .home-text h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+
 .home-text h3 {
   position: relative;
   padding-left: 6rem;
   font-weight: 500;
   margin-bottom: 1rem;
 }
+
 .home-text h3::before {
   content: "";
   position: absolute;
@@ -73,9 +84,11 @@ header {
   left: 0;
   top: 1rem;
 }
+
 .home-text p {
   margin-bottom: 2rem;
 }
+
 .btn {
   display: inline-block;
   width: fit-content;
@@ -90,16 +103,19 @@ header {
   background: #1e1e24;
   transition: all 0.5s;
 }
+
 .btn:hover {
   background: #f7f7f2;
   color: #1e1e24;
   transform: translateY(5px);
 }
+
 .socials-icons {
   position: absolute;
   top: 40%;
   padding: 0 8rem;
 }
+
 .socials-icons i {
   display: block;
   margin: 25px 0;
@@ -107,45 +123,47 @@ header {
   font-size: 1.5rem;
   transition: all 0.6s;
 }
+
 .socials-icons i:hover {
   transform: rotate3d(0, 0, 1, 90deg);
 }
+
 .scroll-btn {
   position: absolute;
   bottom: 7%;
   left: 9%;
-}
-.scroll-btn {
   color: #1e1e24;
   font-weight: 600;
   display: flex;
-
   align-items: center;
 }
-/* Responsividad para Tablets (810px) */
+
+/* Responsividad para Pantallas entre 810px y 1080px */
 @media only screen and (min-width: 810px) and (max-width: 1080px) {
   header {
     padding: 1rem 2rem;
-    justify-content: flex-start; /* Mantiene los elementos alineados a la izquierda */
+    justify-content: flex-start;
   }
+
   .logo {
-    margin-right: 1rem; /* Reduce el espacio entre el logo y los enlaces en pantallas medianas */
+    margin-right: 1rem;
   }
+
   .navmenu a {
-    margin: 0 1rem; /* Reduce el espacio entre enlaces */
+    margin: 0 1rem;
   }
-}
 
   .home {
+    
     padding: 2rem 1rem;
     grid-template-columns: 1fr;
     text-align: center;
   }
 
   .home-text h2 {
-    font-size: 3rem;
-    padding-top: 1.5cm; /* Baja el texto h2 por 1 cm */
-    margin-bottom: 1rem; /* Mantiene el espacio inferior existente */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1cm;
   }
 
   .home-text h3 {
@@ -178,70 +196,67 @@ header {
 
   .socials-icons i {
     margin: 0 15px;
-    margin: 15px 5px; /* Reduce el espacio entre los iconos ajustando los márgenes */
-    transform: translateY(-5cm); /* Sube los iconos sociales 4 cm */
   }
 
   .scroll-btn {
-    transform: translateY(-5cm); /* Sube los iconos sociales 4 cm */
     position: static;
     margin-top: 2rem;
     justify-content: center;
   }
 
-.home-img img {
-  width: 90%; /* Reduce el tamaño de la imagen en un 10% */
-  transform: translateY(-2cm); /* Sube la imagen 2 cm hacia arriba */
-  margin-bottom: 2cm; /* Ajusta el margen inferior para evitar solapamientos (opcional) */
+  .home-img img {
+    width: 90%; /* Reduce el tamaño de la imagen en un 10% */
+    transform: translateY(-2cm); /* Sube la imagen 2 cm hacia arriba */
+    margin-bottom: 2cm;
+  }
 }
-
-/* Responsividad para Móviles (390px) */
+/* Responsividad para Móviles (hasta 390px) */
 @media only screen and (max-width: 390px) {
   header {
     padding: 1rem;
     justify-content: flex-start; /* Mantiene los elementos alineados a la izquierda */
   }
-
+  
   .logo {
     margin-right: 0.5rem; /* Ajusta el espacio en pantallas pequeñas */
   }
-
+  
   .navmenu a {
     margin: 0 0.5rem; /* Ajusta el espacio entre enlaces */
   }
-
+  
   .home {
     padding: 1rem;
     grid-template-columns: 1fr;
     text-align: center;
   }
-
+  
   .home-text h2 {
     font-size: 3rem;
     padding-top: 1.5cm; /* Baja el texto h2 por 1 cm */
     margin-bottom: 1rem; /* Mantiene el espacio inferior existente */
   }
-
+  
   .home-text h3 {
     padding-left: 0;
     margin-bottom: 1rem;
   }
-
+  
   .home-text h3::before {
     display: none;
   }
-
+  
   .home-text p {
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
   }
-
+  
   .btn {
     width: 100%;
     max-width: 250px;
     margin: 0.5rem auto;
   }
-
+  
   .socials-icons {
     position: static;
     margin-top: 1.5rem;
@@ -249,22 +264,72 @@ header {
     display: flex;
     justify-content: center;
   }
-
+  
   .socials-icons i {
     margin: 0 10px;
-    transform: translateY(-5cm); /* Sube los iconos sociales 4 cm */
+    transform: translateY(5cm); /* Sube los iconos sociales 4 cm */
     margin: 15px 5px; /* Reduce el espacio entre los iconos ajustando los márgenes */
   }
-
+  
   .scroll-btn {
     position: static;
     margin-top: 2rem;
     justify-content: center;
-    transform: translateY(-5cm); /* Sube los iconos sociales 4 cm */
+    transform: translateY(4.5cm); /* Sube los iconos sociales 4 cm */
+  }
+  .home-img img {
+  width: 90%; /* Reduce el tamaño de la imagen en un 10% */
+  transform: translateY(-1cm); /* Sube la imagen 2 cm hacia arriba */
+  margin-bottom: 2cm; /* Ajusta el margen inferior para evitar solapamientos (opcional) */
   }
 }
-.home-img img {
-  width: 90%; /* Reduce el tamaño de la imagen en un 10% */
-  transform: translateY(-2cm); /* Sube la imagen 2 cm hacia arriba */
-  margin-bottom: 2cm; /* Ajusta el margen inferior para evitar solapamientos (opcional) */
+
+/* Estilos específicos para pantallas grandes (Escritorio) */
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 2rem 8rem;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-right: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .navmenu a {
+    margin: 0 1.5rem;
+  }
+
+  .home {
+    padding: 2rem 5rem 0 18rem;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+
+  .home-text h2 {
+    font-size: 3rem;
+  }
+
+  .home-text h3 {
+    padding-left: 6rem;
+  }
+
+  .home-img img {
+    width: 100%;
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .socials-icons {
+    position: absolute;
+    top: 40%;
+    padding: 0 8rem;
+  }
+
+  .scroll-btn {
+    position: absolute;
+    bottom: 7%;
+    left: 9%;
+    transform: none;
+  }
 }

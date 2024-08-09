@@ -157,3 +157,77 @@ button#add-to-cart-button:hover img {
   filter: invert(1);
 }
 
+/* Estilos para el botón de Checkout */
+.action-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+  margin-top: 20px; /* Espaciado superior */
+  width: 100%; /* Para que ocupe todo el ancho */
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+}
+
+.action-btn:hover {
+  background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+/* Estilos globales para cualquier botón con el texto 'Eliminar' */
+button:contains('Eliminar') {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f44336; /* Color de fondo */
+  color: white; /* Color del texto */
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 3px; /* Bordes redondeados */
+  cursor: pointer;
+  margin-top: 10px; /* Espaciado superior */
+  margin-left: 10px; /* Espaciado a la izquierda */
+}
+
+button:contains('Eliminar'):hover {
+  background-color: #d32f2f; /* Color de fondo al pasar el mouse */
+}
+/* Estilos para el botón de Eliminar como papelera */
+button.delete-btn {
+  display: inline-block;
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 10px; /* Espaciado superior */
+  margin-left: 10px; /* Espaciado a la izquierda */
+}
+
+button.delete-btn i {
+  font-size: 24px; /* Tamaño del icono */
+  color: #f44336; /* Color del icono de papelera */
+}
+
+button.delete-btn:hover i {
+  color: #d32f2f; /* Color del icono al pasar el mouse */
+}
+.clear-cart-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f44336; /* Color de fondo */
+  color: white; /* Color del texto */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+  margin-top: 20px; /* Espaciado superior */
+  width: 100%; /* Para que ocupe todo el ancho */
+  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+}
+
+.clear-cart-btn:hover {
+  background-color: #d32f2f; /* Color de fondo al pasar el mouse */
+}

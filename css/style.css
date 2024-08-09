@@ -8,12 +8,10 @@
   text-decoration: none;
   list-style: none;
 }
-
 body {
   background-color: #f7f7f2;
   color: #1e1e24;
 }
-
 header {
   position: fixed;
   width: 100%;
@@ -21,58 +19,51 @@ header {
   right: 0;
   z-index: 1000;
   display: flex;
-  align-items: center; /* Alinea verticalmente el logo y el menú */
-  justify-content: flex-start; /* Alinea todo el contenido hacia la izquierda */
-  padding: 1.5rem 6rem; /* Ajusta el padding para pantallas grandes */
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 8rem;
 }
-
 .logo {
   color: #1e1e24;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-right: 3rem; /* Espacio entre el logo y los enlaces */
 }
-
 .navmenu {
   display: flex;
-  align-items: center;
 }
-
 .navmenu a {
   display: inline-block;
-  margin: 0 2rem; /* Espacio entre los enlaces */
+  margin: 0 1.5rem;
   color: #1e1e24;
   font-weight: 500;
   transition: all 0.6s;
 }
-
+.navmenu a:hover {
+  transform: translateY(-5px);
+}
 .home {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas, logo y contenido */
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 3rem 6rem; /* Espacio alrededor del contenido */
-  gap: 2rem; /* Espacio entre las columnas */
+  padding: 2rem 5rem 0 18rem;
+  gap: 1rem;
 }
-
 .home-img img {
   width: 100%;
   height: auto;
 }
-
 .home-text h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
 .home-text h3 {
   position: relative;
   padding-left: 6rem;
   font-weight: 500;
   margin-bottom: 1rem;
 }
-
 .home-text h3::before {
   content: "";
   position: absolute;
@@ -82,11 +73,9 @@ header {
   left: 0;
   top: 1rem;
 }
-
 .home-text p {
   margin-bottom: 2rem;
 }
-
 .btn {
   display: inline-block;
   width: fit-content;
@@ -96,43 +85,41 @@ header {
   color: #f7f7f2;
   border: 1px solid #1e1e24;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   background: #1e1e24;
   transition: all 0.5s;
 }
-
 .btn:hover {
   background: #f7f7f2;
   color: #1e1e24;
   transform: translateY(5px);
 }
-
 .socials-icons {
   position: absolute;
   top: 40%;
-  padding: 0 6rem; /* Ajusta el padding para alinearlo con el resto del contenido */
+  padding: 0 8rem;
 }
-
 .socials-icons i {
   display: block;
-  margin: 25px 10px; /* Ajusta el espacio entre los íconos */
+  margin: 25px 0;
   color: #1e1e24;
   font-size: 1.5rem;
   transition: all 0.6s;
 }
-
 .socials-icons i:hover {
   transform: rotate3d(0, 0, 1, 90deg);
 }
-
 .scroll-btn {
   position: absolute;
   bottom: 7%;
   left: 9%;
+}
+.scroll-btn {
   color: #1e1e24;
   font-weight: 600;
   display: flex;
+
   align-items: center;
 }
 /* Responsividad para Tablets (810px) */

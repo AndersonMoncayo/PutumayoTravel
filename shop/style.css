@@ -79,32 +79,71 @@
   right: -300px;
   width: 300px;
   height: 100%;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   transition: right 0.3s ease;
   z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cart-sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .cart-sidebar.show {
   right: 0;
 }
 
+.cart-sidebar li strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .cart-item-info {
   display: flex;
   align-items: center;
-  padding: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 15px;
 }
 
 .cart-item-info img {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
+  border-radius: 5px;
+  margin-right: 15px;
 }
 
 .item-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.item-details span {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
 }
 
 .quantity-controls {
@@ -157,25 +196,87 @@ button#add-to-cart-button:hover img {
   filter: invert(1);
 }
 
-/* Estilos para el botón de Checkout */
-.action-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50; /* Color de fondo */
-  color: white; /* Color del texto */
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px; /* Bordes redondeados */
+/* Estilos para el botón de Checkout con animación */
+.checkout-btn {
+  padding: 15px 40px;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  text-transform: uppercase;
+  font-family: 'Helvetica', sans-serif; /* Usar Helvetica o sans-serif */
+  font-size: 12px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   cursor: pointer;
-  margin-top: 20px; /* Espaciado superior */
-  width: 100%; /* Para que ocupe todo el ancho */
-  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  display: block;
+  width: fit-content; /* Ajusta el ancho al contenido */
+  margin: 0 auto; /* Centra el botón horizontalmente */
 }
 
-.action-btn:hover {
-  background-color: #45a049; /* Color de fondo al pasar el mouse */
+.checkout-btn::after,
+.checkout-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
+.checkout-btn::after {
+  width: 30px;
+  height: 1px;
+  background: white;
+  transform: translateX(-3px);
+  margin-top: 0px;
+}
+
+.checkout-btn::before {
+  transform: rotate(-135deg) translateX(50%);
+  width: 11px;
+  height: 11px;
+  background: transparent;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: -1px;
+}
+
+.checkout-btn:hover {
+  padding: 15px 60px 15px 20px;
+}
+
+.checkout-btn:hover::after,
+.checkout-btn:hover::before {
+  opacity: 1;
+  right: 15px;
+}
+
+/* Estilos para el botón de Vaciar Carrito */
+.clear-cart-btn {
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Texto negro suave */
+  border: 2px solid #333; /* Borde negro */
+  border-radius: 5px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+  background-color: #f5f5f5; /* Fondo gris claro */
+  color: #000; /* Texto negro más oscuro */
+  border-color: #000; /* Borde negro más oscuro */
+}
+
 /* Estilos globales para cualquier botón con el texto 'Eliminar' */
 button:contains('Eliminar') {
   display: inline-block;
@@ -194,6 +295,25 @@ button:contains('Eliminar') {
 button:contains('Eliminar'):hover {
   background-color: #d32f2f; /* Color de fondo al pasar el mouse */
 }
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.delete-btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.delete-btn:hover img {
+  opacity: 1;
+}
+
 /* Estilos para el botón de Eliminar como papelera */
 button.delete-btn {
   display: inline-block;
@@ -213,21 +333,51 @@ button.delete-btn i {
 button.delete-btn:hover i {
   color: #d32f2f; /* Color del icono al pasar el mouse */
 }
-.clear-cart-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f44336; /* Color de fondo */
-  color: white; /* Color del texto */
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer;
-  margin-top: 20px; /* Espaciado superior */
-  width: 100%; /* Para que ocupe todo el ancho */
-  box-sizing: border-box; /* Asegura que el padding no afecte al ancho total */
+
+/* Estilo para la lista desplegable del filtro */
+#filter-dropdown {
+  position: absolute;
+  top: 100%; /* Justo debajo del botón */
+  left: 50%; /* Centrado inicialmente en móviles */
+  transform: translateX(-70%); /* Asegurar centrado en móviles */
+  z-index: 10;
+  width: auto;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo ligeramente translúcido */
+  border: 1px solid #ddd; /* Borde suave y claro */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  padding: 10px 0; /* Espacio interno para las opciones */
+  margin-top: 8px; /* Espacio entre el botón y el menú */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-.clear-cart-btn:hover {
-  background-color: #d32f2f; /* Color de fondo al pasar el mouse */
+/* Estilo para el botón del filtro */
+.filter-button {
+  margin-top: 0cm; /* Baja el botón 0.2 cm desde su posición natural */
+}
+
+/* Estilo para los botones dentro del filtro */
+#filter-dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  background-color: transparent; /* Fondo transparente para un look minimalista */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Color de texto suave */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#filter-dropdown button:hover {
+  background-color: #f5f5f5; /* Color de fondo claro en hover */
+  color: #000; /* Color de texto más oscuro en hover */
+}
+
+/* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
+@media (min-width: 768px) {
+  #filter-dropdown {
+      left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
+      transform: none; /* Eliminar la transformación centrada */
+  }
 }

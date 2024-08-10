@@ -1,3 +1,4 @@
+// Código del Carrito de Compras
 let cart = [];
 let cartCount = document.getElementById('cart-count');
 let cartItems = document.getElementById('cart-items');
@@ -28,6 +29,18 @@ function addToCart(productName, productPrice, productImage) {
     updateCart();
 }
 
+// Función para actualizar la cantidad de un producto manualmente
+function updateQuantity(productName, newQuantity) {
+    let product = cart.find(item => item.name === productName);
+    if (product) {
+        const quantity = parseInt(newQuantity);
+        if (!isNaN(quantity) && quantity > 0) {
+            product.quantity = quantity;
+            updateCart();
+        }
+    }
+}
+
 // Función para actualizar el carrito
 function updateCart() {
     let total = 0;
@@ -40,12 +53,9 @@ function updateCart() {
             <div class="cart-item-info">
                 <img src="${item.image}" alt="${item.name}">
                 <div class="item-details">
-                    <span>${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}</span>
-                    <div class="quantity-controls">
-                        <button onclick="decreaseQuantity('${item.name}')">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="increaseQuantity('${item.name}')">+</button>
-                    </div>
+                    <span>${item.name} - COP ${item.price.toLocaleString()} x </span>
+                    <input type="number" value="${item.quantity}" min="1" class="quantity-input" 
+                           onchange="updateQuantity('${item.name}', this.value)">
                 </div>
                 <button class="delete-btn" onclick="removeFromCart('${item.name}')">
                     <img src="images/trash.svg" alt="Eliminar" style="width: 24px; height: 24px;">
@@ -57,28 +67,6 @@ function updateCart() {
     let totalDisplay = document.createElement('li');
     totalDisplay.innerHTML = `<strong>Total: COP ${total.toLocaleString()}</strong>`;
     cartItems.appendChild(totalDisplay);
-}
-
-// Función para aumentar la cantidad de un producto
-function increaseQuantity(productName) {
-    let product = cart.find(item => item.name === productName);
-    if (product) {
-        product.quantity += 1;
-        updateCart();
-    }
-}
-
-// Función para disminuir la cantidad de un producto
-function decreaseQuantity(productName) {
-    let product = cart.find(item => item.name === productName);
-    if (product) {
-        if (product.quantity > 1) {
-            product.quantity -= 1;
-        } else {
-            cart = cart.filter(item => item.name !== productName);
-        }
-        updateCart();
-    }
 }
 
 // Función para eliminar un producto del carrito
@@ -130,3 +118,67 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
+
+// Código de los Filtros
+function toggleFilters(event) {
+    event.preventDefault();
+    const filterDropdown = document.getElementById('filter-dropdown');
+    filterDropdown.classList.toggle('hidden');
+}
+
+function filterProductsByCategory(category) {
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        if (category === 'all' || product.getAttribute('data-category') === category) {
+            product.style.display = 'flex'; // Mostrar el producto
+        } else {
+            product.style.display = 'none'; // Ocultar el producto
+        }
+    });
+
+    // Ocultar el menú desplegable después de seleccionar una categoría
+    toggleFilters();
+}
+
+// Función para alternar la barra de búsqueda y el menú de filtros
+function toggleSearch() {
+    const searchInput = document.getElementById('search-input');
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterButton = document.querySelector('button[onclick="toggleFilters(event)"]');
+    
+    if (searchInput.classList.contains('hidden')) {
+        // Mostrar la barra de búsqueda y ocultar el botón de filtro
+        searchInput.classList.remove('hidden');
+        filterDropdown.classList.add('hidden');
+        filterButton.classList.add('hidden');
+        searchInput.focus(); // Colocar el foco en el campo de búsqueda
+    } else {
+        // Ocultar la barra de búsqueda y mostrar el botón de filtro
+        searchInput.classList.add('hidden');
+        filterButton.classList.remove('hidden');
+    }
+}
+
+// Función para manejar el evento de presionar una tecla en el campo de búsqueda
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        searchFunction(); // Ejecutar la búsqueda cuando se presiona "Enter"
+    }
+}
+
+// Función para buscar productos en la página
+function searchFunction() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        const productName = product.querySelector('p').textContent.toLowerCase();
+
+        if (productName.includes(searchTerm)) {
+            product.style.display = 'flex'; // Mostrar el producto si coincide con el término de búsqueda
+        } else {
+            product.style.display = 'none'; // Ocultar el producto si no coincide
+        }
+    });
+}

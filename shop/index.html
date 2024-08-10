@@ -127,25 +127,39 @@
                     <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
                         Store
                     </a>
-                    <div class="flex items-center" id="store-nav-content">
-                        <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-                            <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
-                            </svg>
-                        </a>
-                        <a class="pl-3 inline-block no-underline hover:text-black" href="#">
-                            <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
-                            </svg>
-                        </a>
+                    <div class="flex items-center relative" id="store-nav-content">
+                        <!-- Botón del Filtro con la clase "filter-button" -->
+                        <button class="pl-3 inline-block no-underline hover:text-black filter-button" onclick="toggleFilters(event)">
+                            <img src="images/filter.svg" alt="Filter Icon" width="24" height="24">
+                        </button>
+    
+                        <!-- Lista desplegable de Filtros -->
+                        <div id="filter-dropdown" class="absolute bg-white border border-gray-300 rounded-md shadow-lg p-4 hidden">
+                            <button onclick="filterProductsByCategory('Electronics')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Electronics</button>
+                            <button onclick="filterProductsByCategory('Furniture')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Furniture</button>
+                            <button onclick="filterProductsByCategory('Books')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Books</button>
+                            <button onclick="filterProductsByCategory('all')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Mostrar Todos</button>
+                        </div>
+    
+                        <!-- Barra de Búsqueda que aparece al hacer clic en search.svg -->
+                        <input type="text" id="search-input" class="hidden p-2 border border-gray-300 rounded" placeholder="Buscar..." onkeypress="handleKeyPress(event)">
+    
+                        <!-- Botón de Búsqueda usando <button> -->
+                        <button class="pl-3 inline-block no-underline hover:text-black" onclick="toggleSearch()">
+                            <img src="images/search.svg" alt="Search Icon" width="24" height="24">
+                        </button>
                     </div>
                 </div>
             </nav>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Product Name" data-price="51148.80" data-image="images/111.webp">
+            
+            <!-- Productos -->
+          
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Smartphone" data-price="51148.80" data-category="Electronics" data-image="images/111.webp">
                 <a href="#">
                     <img class="hover:grow hover:shadow-lg" src="images/111.webp">
                     <div class="pt-3 flex items-center justify-between">
-                        <p class="">Product Name</p>
+                        <p class="">Smartphone</p>
                         <button id="add-to-cart-button">
                             <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                         </button>
@@ -153,11 +167,12 @@
                     <p class="pt-1 text-gray-900">$51,148.80 COP</p>
                 </a>
             </div>
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Product Name 2" data-price="61148.80" data-image="images/111.webp">
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Chair" data-price="61148.80" data-category="Furniture" data-image="images/111.webp">
                 <a href="#">
                     <img class="hover:grow hover:shadow-lg" src="images/111.webp">
                     <div class="pt-3 flex items-center justify-between">
-                        <p class="">Product Name 2</p>
+                        <p class="">Chair</p>
                         <button id="add-to-cart-button">
                             <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                         </button>
@@ -165,8 +180,59 @@
                     <p class="pt-1 text-gray-900">$61,148.80 COP</p>
                 </a>
             </div>
-        </div>
-    </section>
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Book" data-price="21148.80" data-category="Books" data-image="images/111.webp">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Book</p>
+                        <button id="add-to-cart-button">
+                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                        </button>
+                    </div>
+                    <p class="pt-1 text-gray-900">$21,148.80 COP</p>
+                </a>
+            </div>
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Laptop" data-price="111148.80" data-category="Electronics" data-image="images/111.webp">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Laptop</p>
+                        <button id="add-to-cart-button">
+                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                        </button>
+                    </div>
+                    <p class="pt-1 text-gray-900">$111,148.80 COP</p>
+                </a>
+            </div>
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Headphones" data-price="3148.80" data-category="Electronics" data-image="images/111.webp">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Headphones</p>
+                        <button id="add-to-cart-button">
+                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                        </button>
+                    </div>
+                    <p class="pt-1 text-gray-900">$3,148.80 COP</p>
+                </a>
+            </div>
+            
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Table" data-price="45148.80" data-category="Furniture" data-image="images/111.webp">
+                <a href="#">
+                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                    <div class="pt-3 flex items-center justify-between">
+                        <p class="">Table</p>
+                        <button id="add-to-cart-button">
+                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                        </button>
+                    </div>
+                    <p class="pt-1 text-gray-900">$45,148.80 COP</p>
+                </a>
+            </div>
+    
 
     <!-- Sidebar del Carrito -->
     <div id="cart-sidebar" class="cart-sidebar">
@@ -177,7 +243,28 @@
     </div>
     <div id="overlay" class="overlay" onclick="toggleCart()"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+    
+    function toggleFilters() {
+        const filterArea = document.getElementById('filter-area');
+        filterArea.classList.toggle('hidden');
+    }
+
+    function filterProductsByCategory(category) {
+        const products = document.querySelectorAll('.product-card');
+
+        products.forEach(product => {
+            if (category === 'all' || product.getAttribute('data-category') === category) {
+                product.style.display = 'flex'; // Mostrar el producto
+            } else {
+                product.style.display = 'none'; // Ocultar el producto
+            }
+        });
+
+        // Cerrar el área de filtros después de seleccionar una categoría
+        toggleFilters();
+    }
+    </script>
 </body>
 
 </html>

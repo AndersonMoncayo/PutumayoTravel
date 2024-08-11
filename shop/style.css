@@ -17,22 +17,59 @@
 }
 
 /* Carousel Styles */
-.carousel-open:checked + .carousel-item {
-  position: static;
-  opacity: 100;
-}
-
+/* Estilos base del carrusel */
 .carousel-item {
-  -webkit-transition: opacity 0.6s ease-out;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 0;
 }
 
+.carousel-open:checked + .carousel-item {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Indicadores */
+.carousel-bullet {
+  transition: color 0.3s ease;
+  color: rgb(231, 231, 231); /* Color para los indicadores inactivos */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para asegurarse de que la imagen ocupe todo el espacio sin deformarse */
+  transition: none;
+}
+
+.carousel-item .container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  background-color: transparent; /* Esto hace que el fondo sea completamente transparente */
+}
+
+.carousel-item p, .carousel-item a {
+  margin: 0;
+}
+
+/* Mostrar controles cuando el slide está activo */
 #carousel-1:checked ~ .control-1,
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3 {
   display: block;
 }
 
+/* Estilos para los indicadores */
 .carousel-indicators {
   list-style: none;
   margin: 0;
@@ -45,12 +82,12 @@
   z-index: 10;
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-  color: #000;
+/* Estilo para el indicador activo */
+#carousel-1:checked ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: black; /* Color del indicador activo */
 }
-
 /* Cart Icon in Header */
 #cart-icon {
   position: relative;
@@ -380,4 +417,28 @@ button.delete-btn:hover i {
       left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
       transform: none; /* Eliminar la transformación centrada */
   }
+}
+.btn-view-product {
+    display: inline-block;
+    padding-bottom: 2px; /* Espacio para la línea inferior */
+    background-color: transparent; /* Mantén transparente para que se vea como un enlace */
+    color: #ffffff; /* Color del texto */
+    text-align: center;
+    text-decoration: none; /* Eliminar subrayado predeterminado */
+    border: none; /* Sin bordes adicionales */
+    font-weight: 500;
+    font-size: 1.25rem; /* Ajusta el tamaño de la fuente según necesites */
+    cursor: pointer; /* Cambiar el cursor a la mano */
+    border-bottom: 1px solid #606060; /* Línea inferior para parecer un enlace subrayado */
+    transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+}
+
+
+.btn-view-product:hover {
+    color: #dddddd; /* Cambia el color del texto al pasar el ratón */
+    border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
+}
+
+.btn-view-product:focus {
+    outline: none; /* Elimina el borde de enfoque */
 }

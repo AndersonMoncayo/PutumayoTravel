@@ -104,19 +104,31 @@ function toggleCart() {
 document.getElementById('cart-icon').addEventListener('click', toggleCart);
 
 // Integración del botón animado "button-bird"
-document.addEventListener("DOMContentLoaded", function(){
-    var el = document.querySelector(".button-bird");
-    var text = document.querySelector(".button-bird__text");
-    el.addEventListener('click', function() {
-        el.classList.toggle('active');
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselItems = document.querySelectorAll('.carousel-open');
+    const indicators = document.querySelectorAll('.carousel-bullet');
+    let currentIndex = 0;
 
-        if(el.classList.contains('active')){
-            text.innerHTML = 'DONE';
-            checkout(); // Llama a la función de checkout cuando se hace clic en el botón
-        } else {
-            text.innerHTML = 'SEND';
-        }
-    });
+    function updateIndicators() {
+        indicators.forEach((bullet, index) => {
+            if (index === currentIndex) {
+                bullet.style.color = "black"; // Activo
+            } else {
+                bullet.style.color = "rgb(231, 231, 231)"; // Inactivo
+            }
+        });
+    }
+
+    function showNextSlide() {
+        carouselItems[currentIndex].checked = false; // Desactivar la diapositiva actual
+        currentIndex = (currentIndex + 1) % carouselItems.length; // Incrementar índice
+        carouselItems[currentIndex].checked = true; // Activar la nueva diapositiva
+        updateIndicators(); // Actualizar los indicadores
+    }
+
+    setInterval(showNextSlide, 5000); // Cambia de diapositiva cada 5 segundos
+
+    updateIndicators(); // Inicializa los indicadores
 });
 
 // Código de los Filtros
@@ -182,3 +194,31 @@ function searchFunction() {
         }
     });
 }
+function showCheckmark(button) {
+    const checkmark = button.querySelector('.checkmark');
+    const buttonText = button.querySelector('span.relative.z-10');
+
+    // Hide the button text and show the checkmark
+    buttonText.style.opacity = '0';
+    checkmark.style.opacity = '1';
+
+    // Optionally, perform the checkout action here
+    checkout();
+
+    // Reset the button after 2 seconds
+    setTimeout(() => {
+        checkmark.style.opacity = '0';
+        buttonText.style.opacity = '1';
+    }, 2000);
+}
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-open');
+const totalSlides = slides.length;
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides[currentIndex].checked = true;
+}
+
+setInterval(nextSlide, 5000);

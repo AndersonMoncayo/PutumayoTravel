@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700&display=swap&font-display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap&font-display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap&font-display=swap');
 
 :root {
   --primary-color: #007BFF;
@@ -25,6 +25,7 @@ body {
     font-size: 12px;
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,45 +33,61 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--title-color-secondary); /* Color negro por defecto */
+  line-height: 1.2; /* Mejora la legibilidad */
+  margin-bottom: 0.5em;
 }
 
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: var(--title-color-main); /* H1 en blanco */
+  line-height: 1.1; /* Mantén una ligera separación */
+}
+
+h2 {
+  font-size: 2.5em; /* Incrementa un poco el tamaño para visibilidad */
+  margin-bottom: 0.5em;
+  color: var(--title-color-secondary); /* H2 en negro */
+  line-height: 1.1;
+}
 
 /* Resto del texto */
 p, a, button {
   font-family: var(--font-family-main);
   font-weight: 300; /* Texto delgado */
   font-size: 12px;
+  line-height: 1.6; /* Mejorar legibilidad */
 }
 
 /* Ajustes específicos para h1 y h2 */
 h1 {
-  font-size: 3em;
-  margin-bottom: 0.5em;
-  color: var(--title-color-main); /* H1 en blanco */
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-  color: var(--title-color-secondary); /* H2 en negro */
+  font-size: 22px; /* Tamaño reducido para mantener coherencia */
+  font-weight: 700; /* Asegura que el texto sea lo suficientemente grueso */
+  line-height: 1.2;
+  margin-bottom: 0.5em; /* Añadir margen inferior */
 }
 
 a.cta-button {
   font-size: 1em; /* Tamaño de fuente ajustado */
   text-decoration: none;
   color: #ffffff; /* Letras blancas */
-  background-color: #ffffff28; /* Fondo con transparencia */
+  background-color: #007BFF; /* Fondo azul */
   padding: 10px 20px;
   border-radius: 35px; /* Bordes redondeados */
-  border: 2px solid #00000075; /* Borde negro */
+  border: 2px solid #0056b3; /* Borde más oscuro */
   transition: background-color 0.3s ease, color 0.3s ease;
   display: inline-block;
   margin-top: 5px; /* Espacio entre el texto y el botón */
 }
 
 a.cta-button:hover {
-  color: #000000; /* Letras negras al pasar el ratón */
-  background-color: #ffffff; /* Fondo blanco al pasar el ratón */
+  color: #ffffff; /* Letras blancas al pasar el ratón */
+  background-color: #0056b3; /* Fondo más oscuro al pasar el ratón */
+}
+
+a:focus {
+  outline: 2px dashed var(--primary-color);
+  outline-offset: 4px;
 }
 
 /* Animación inicial para la hero_section */
@@ -129,7 +146,8 @@ a.cta-button:hover {
 }
 
 .text_container {
-  color: white;
+  color: #FFFFFF;
+  background-color: #33333300; /* Mejora la visibilidad del texto */
   max-width: 900px;
   margin: 0 auto;
   padding-top: 64px;
@@ -143,12 +161,6 @@ a.cta-button:hover {
   font-weight: 400;
   line-height: 1.2; /* Aumenta el espacio entre líneas para mejorar la legibilidad */
   margin-bottom: 0.5em; /* Añadir un poco de margen inferior */
-}
-h1 {
-  font-size: 22px; /* Tamaño reducido para mantener coherencia */
-  font-weight: 700; /* Asegura que el texto sea lo suficientemente grueso */
-  line-height: 1.2;
-  margin-bottom: 0.5em; /* Añadir margen inferior */
 }
 
 .black_box {
@@ -166,7 +178,6 @@ h1 {
   border-bottom: 5px solid black; /* Línea negra más gruesa */
   display: inline-block; /* Para que la línea esté justo debajo del texto */
 }
-
 
 .black_box h2 span {
     font-weight: 400;
@@ -203,7 +214,19 @@ h1 {
 
 .card_content {
     padding: 20px;
+    text-align: center;
 }
+
+.card_image {
+    width: calc(100% + 0.4cm); /* Aumenta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    display: inline-block;
+    margin-left: -0.2cm; /* Ajusta el margen para centrar la imagen */
+    margin-right: -0.2cm; /* Ajusta el margen para centrar la imagen */
+}
+
 
 .card_content h3 {
     margin-bottom: 10px;
@@ -214,7 +237,6 @@ h1 {
     padding: 40px 20px;
 }
 
-
 footer {
     text-align: center;
     padding: 20px;
@@ -224,6 +246,7 @@ footer {
     font-size: 12px;
     letter-spacing: 1px;
 }
+
 @media (max-width: 786px) {
   .hero_section {
       min-height: 50vh;
@@ -253,11 +276,11 @@ footer {
       font-size: 32px;
   }
 }
-  @media (max-width: 786px) {
+
+@media (max-width: 786px) {
     .hero_section {
         min-height: 50vh;
         display: flex;
-       
     }
     .text_container {
         padding: 30px 0; /* Añade más espacio en la parte superior e inferior */
@@ -268,20 +291,13 @@ footer {
     .lg_text {
         font-size: 10px; /* Reducir tamaño del texto principal */
         margin-bottom: 5px; /* Reduce el espacio entre el texto y otros elementos */
+        transform: translateY(-0.3cm); /* Mueve el texto hacia arriba 0.5 cm */
     }
     h1 {
         font-size: 8px; /* Reducir tamaño del h1 */
         margin-bottom: 5px; /* Reducir el espacio entre el h1 y el botón */
     }
 
-    /* Estilos responsivos para el botón */
-    a.cta-button {
-        font-size: 0.7em; /* Reducir aún más el tamaño de fuente */
-        padding: 5px 10px; /* Reducir padding para hacer el botón más pequeño */
-        border-radius: 15px; /* Ajustar el radio de borde */
-        margin-top: 5px; /* Reducir el margen superior */
-        margin-left: 0; /* Quitar margen izquierdo extra */
-    }
 
 /* Ajustes para el título de "Empresas que confían en nosotros" */
 .swiper-section > h2 {
@@ -302,17 +318,19 @@ footer {
   opacity: 1; /* Termina visible */
   transform: translateY(0); /* Termina en su posición normal */
 }
+
 .contact-section {
     flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
     align-items: center; /* Centramos los recuadros horizontalmente */
-  }
+}
   
-  .contact, .about {
+.contact, .about {
     width: 90%; /* Hacemos los recuadros más pequeños y centrados */
     max-width: 600px; /* Opcional: Limitar el ancho máximo */
     margin-bottom: 20px; /* Añadir margen inferior para separar las secciones */
-  }
-  }
+}
+}
+
 @media (max-width: 480px) {
     .lg_text {
         font-size: 16px; /* Reducir aún más el tamaño del texto */
@@ -328,6 +346,7 @@ footer {
         border-radius: 10px; /* Ajustar más el radio de borde */
     }
 }
+
 /* Swiper Section */
 .carousel_section {
     padding: 40px 0;
@@ -408,6 +427,7 @@ footer {
   padding: 20px; /* Opcional: Añadir padding alrededor del carrusel */
   box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho del contenedor */
 }
+
 .swiper-slide h2 {
   color: #fff;
   font-family: 'Poppins', sans-serif; /* Cambiado a Poppins */
@@ -469,12 +489,12 @@ footer {
     background-image: none;
 }
 
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .card {
         box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.15);
     }
 }
+
 .swiper-section > h2 {
   font-size: 24px; /* Tamaño del título para pantallas pequeñas y medianas */
   padding: 10px 0; /* Padding ajustado para pantallas más pequeñas */
@@ -493,6 +513,7 @@ footer {
   opacity: 1; /* Hacer visible */
   transform: translateY(0.5cm); /* Mantiene el título 1 cm hacia abajo */
 }
+
 /* Sección de contacto y sobre nosotros */
 .contact-section {
     display: flex;
@@ -503,11 +524,10 @@ footer {
     background-color: #f5f5f5; /* Fondo suave */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    
-  }
+}
   
-  /* Estilo para cada bloque (contacto y sobre nosotros) */
-  .contact, .about {
+/* Estilo para cada bloque (contacto y sobre nosotros) */
+.contact, .about {
     flex: 1;
     padding: 19px; /* Reducción de padding en 0.5 cm */
     background-color: #ffffff; /* Fondo blanco para los bloques */
@@ -515,34 +535,33 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     margin: 0.5cm; /* Añadir margen externo para separación uniforme */
     box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
-  }
-  
- 
-  .contact h2, .about h2 {
+}
+
+.contact h2, .about h2 {
     font-size: 28px;
     font-weight: 700;
     color: #333; /* Color del texto del título */
     margin-bottom: 15px; /* Espacio inferior para separar del texto */
     border-bottom: 2px solid #000000; /* Línea azul debajo del título */
     padding-bottom: 10px; /* Espacio interno debajo del título */
-  }
+}
   
-  .contact p, .about p {
+.contact p, .about p {
     font-size: 16px;
     line-height: 1.6;
     color: #666; /* Color del texto */
     margin-bottom: 15px; /* Espacio inferior entre los párrafos */
-  }
+}
   
-  .contact p strong {
+.contact p strong {
     color: #007BFF; /* Color destacado para la palabra "Email" */
-  }
+}
   
-  .contact a {
+.contact a {
     color: #007BFF; /* Enlace de correo electrónico en azul */
     text-decoration: none; /* Sin subrayado */
-  }
+}
   
-  .contact a:hover {
+.contact a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón */
-  }
+}

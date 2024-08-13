@@ -1,44 +1,207 @@
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/png" href="111.png">
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Gods Makers</a>
-      <ul class="navmenu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href='/sorboscafeteriaputumayo/'>Productos</a></li>
-        <li><a href='/shop/'>Contacto</a></li>
-      </ul>
-    </header>
+    <title>GodsMakers | Diseño Web, SEO, Soluciones de IA</title>
+    <meta name="description" content="GodsMakers ofrece servicios de diseño web, optimización SEO, desarrollo de chatbots y soluciones de IA para mejorar tu presencia digital y aumentar tus ventas, especialmente en Putumayo y a nivel mundial." />
+    <meta name="keywords" content="GodsMakers, diseño web, SEO, chatbot, IA, inteligencia artificial, marketing digital, Putumayo, desarrollo web, automatización, edición de videos con IA, gestión de redes sociales, planificación de contenidos, WhatsApp, Google Maps" />
+    <meta name="author" content="GodsMakers" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <section class="home">
-      <div class="home-text">
-        <h2>Hello I'm Theo <i class="ph-bold ph-hand-waving"></i></h2>
-        <h3>Front End Developer</h3>
-        <p>I'm Front End Developer based in Jakarta,
-          and i'm very passionate and dedicated to my work.</p>
-        <div class="home-btn">
-          <a href="#" class="btn">Contact Info</a>
-          <a href="#" class="btn">Download CV <i class="ph ph-read-cv-logo"></i></a>
+    <!-- Datos Estructurados para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GodsMakers",
+      "url": "https://www.godsmakers.com",
+      "logo": "https://www.godsmakers.com/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/godsmakers",
+        "https://www.twitter.com/godsmakers",
+        "https://www.instagram.com/godsmakers"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contacto@godsmakers.com",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero_section">
+        <div class="text_container">
+            <h2><span class="lg_text">Bienvenido a GodsMakers</h2>
+            <h1 class="lg_text">DISEÑO WEB, SEO Y SOLUCIONES DE IA</h1>
+            <a href="#services" class="cta-button" aria-label="Explora Nuestros Servicios">Servicios</a>
         </div>
-      </div>
-      <div class="home-img">
-        <img src="img/111.png" />
-      </div>
     </section>
-    <div class="socials-icons">
-      <a href="https://putumayo.shop" target="_blank"><i class="ph ph-facebook-logo"></i></a>
-      <a href="https://putumayo.shop" target="_blank"><i class="ph ph-instagram-logo"></i></a>
-      <a href="https://putumayo.shop" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
-    </div>
-    <a href="#" class="scroll-btn">Scroll down
-      <i class="ph-bold ph-arrow-bend-right-down"></i>
-    </a>
-  </body>
+
+    <!-- Servicios -->
+    <section id="services" class="black_box">
+        <!--  <h2>Nuestros Servicios en <span>GodsMakers</span></h2>-->
+    </section>
+
+    <section class="work">
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img src="images/web.png" alt="Servicios de Desarrollo Web" loading="lazy" />
+                </div>
+                <div class="card_content">
+                    <h3>Desarrollo Web</h3>
+                    <p>Diseño y desarrollo de sitios web personalizados, optimizados para convertir visitantes en clientes leales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img src="images/mobile.png" alt="Servicios de Desarrollo de Apps" loading="lazy" />
+                </div>
+                <div class="card_content">
+                    <h3>Desarrollo de Apps</h3>
+                    <p>Creación de aplicaciones móviles funcionales y atractivas, adaptadas a tus necesidades de negocio.</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img src="images/ui-ux.png" alt="Servicios de Diseño UI/UX" loading="lazy" />
+                </div>
+                <div class="card_content">
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseños de interfaz de usuario (UI) y experiencia de usuario (UX) centrados en la conversión y usabilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel de Empresas -->
+    <section class="swiper-section">
+        <h2>Empresas que Confían en Nosotros</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide--one" data-url="https://putumayo.shop/shop/">
+                    <span>SERVICIOS</span>
+                    <div>
+                        <h2>Producto o Servicio Redirigido a WhatsApp</h2>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            Mocoa Putumayo
+                        </p>
+                    </div>
+                </div>
+                <!-- Repite el formato para otras empresas -->
+                <div class="swiper-slide swiper-slide--two" data-url="https://putumayo.shop/sorboscafeteriaputumayo/">
+                    <span>CAFETERIA PUTUMAYO</span>
+                    <div>
+                        <h2>Producto o Servicio Redirigido a WhatsApp</h2>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                           Mocoa Putumayo
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide--three">
+                    <span>Empresa 4</span>
+                    <div>
+                        <h2>Producto o Servicio Redirigido a WhatsApp, Producto o Servicio Redirigido a WhatsApp,Producto o Servicio Redirigido a WhatsApp</h2>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                            Ciudad, País
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide--four">
+                  <span>Empresa 5</span>
+                  <div>
+                      <h2>Producto o Servicio Redirigido a WhatsApp</h2>
+                      <p>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                          </svg>
+                          Ciudad, País
+                      </p>
+                  </div>
+              </div>
+              <div class="swiper-slide swiper-slide--five">
+                <span>Empresa 2</span>
+                <div>
+                    <h2>Producto o Servicio Redirigido a WhatsApp</h2>
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        Ciudad, País
+                    </p>
+                </div>
+            </div>
+            </div>
+            <!-- Paginación -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto y About -->
+    <section class="bottom_section">
+        <div id="contact" class="contact">
+            <h2>Contáctanos</h2>
+            <p>Estamos aquí para ayudarte a transformar tu presencia digital. Contáctanos para una consulta gratuita.</p>
+            <p>Email: <a href="mailto:contacto@godsmakers.com">contacto@godsmakers.com</a></p>
+        </div>
+        <div id="about" class="about">
+            <h2>Sobre Nosotros</h2>
+            <p>GodsMakers es tu aliado estratégico en la creación y optimización de soluciones digitales. Con años de experiencia en la industria, ofrecemos servicios personalizados que aseguran el crecimiento y éxito de tu negocio.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 GodsMakers. Todos los derechos reservados.</p>
+        <nav>
+            <a href="privacy.html">Política de Privacidad</a> |
+            <a href="terms.html">Términos de Servicio</a> |
+            <a href="#contact">Contáctanos</a> |
+            <a href="https://www.facebook.com/godsmakers" aria-label="Facebook"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitter.com/godsmakers" aria-label="Twitter"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/godsmakers" aria-label="Instagram"><img src="images/instagram-icon.png" alt="Instagram"></a>
+        </nav>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+
+</body>
 </html>

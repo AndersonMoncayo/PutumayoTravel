@@ -92,14 +92,15 @@ a:focus {
 
 /* Animación inicial para la hero_section */
 .hero_section {
-  background-image: url(images/developer.png);
-  min-height: 100vh;
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: background-position 0.5s ease-out, opacity 0.5s ease-out;
-  opacity: 0;
-  will-change: opacity, transform;
+    background-image: url('images/developer.png');
+    min-height: 100vh;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-position 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    will-change: opacity, transform;
+    background-size: cover; /* Esto asegura que la imagen siempre cubra la sección */
 }
 
 .hero_section.animate {

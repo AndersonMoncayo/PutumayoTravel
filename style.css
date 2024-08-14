@@ -278,12 +278,19 @@ footer {
   .bottom_section {
       flex-direction: column;
   }
-  h1 {
-      font-size: 32px;
+ h1 {
+      font-size: 32px; /* Tamaño del h1 en dispositivos móviles */
   }
   .about h2,
   .contact h2 {
-      font-size: 32px;
+        white-space: nowrap; 
+    font-size: 32px; /* Tamaño del h2 en las secciones 'about' y 'contact' */
+  }
+  .hero_section h2 {
+    white-space: nowrap;
+    /* Ajustes adicionales */
+    letter-spacing: -1px; /* Ajusta el espacio entre letras si es necesario */
+    font-size: 24px; /* Ajusta el tamaño de fuente si es necesario */
   }
 }
 

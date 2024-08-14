@@ -227,6 +227,15 @@ a:focus {
     margin-right: -0.2cm; /* Ajusta el margen para centrar la imagen */
 }
 
+.justified-text {
+    text-align: justify; /* Justifica el texto del párrafo */
+}
+
+.left-aligned-list {
+    text-align: left; /* Alinea la lista a la izquierda */
+    margin-left: 20px; /* Opcional: agrega un margen para separarlo del borde del contenedor */
+    list-style-position: inside; /* Asegura que las viñetas estén dentro del margen */
+}
 
 .card_content h3 {
     margin-bottom: 10px;

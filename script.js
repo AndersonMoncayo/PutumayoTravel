@@ -2,6 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const heroSection = document.querySelector('.hero_section');
   const cards = document.querySelectorAll('.card');
 
+  // Verificar que la imagen de fondo esté completamente cargada antes de comenzar la animación
+  const backgroundImage = new Image();
+  backgroundImage.src = getComputedStyle(heroSection).backgroundImage.slice(5, -2);
+  backgroundImage.onload = function() {
+      heroSection.classList.add('animate');
+  };
+
   // Función para manejar la animación en el scroll
   function animateOnScroll() {
       // Para la hero_section
@@ -28,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   animateOnScroll(); // Ejecutar al cargar la página para animar los elementos visibles
 });
 
+// Configuración del Swiper
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -58,6 +66,7 @@ document.querySelectorAll('.swiper-slide').forEach(function(slide) {
   });
 });
 
+// Animación del título del Swiper
 document.addEventListener("DOMContentLoaded", function() {
   const title = document.querySelector('.swiper-section > h2');
 

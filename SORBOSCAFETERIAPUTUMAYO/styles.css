@@ -959,10 +959,22 @@ header {
 	.customer-support {
 		display: none;
 	}
-
 	.content-shopping-cart {
-		display: none;
-	}
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .content-shopping-cart .text {
+        display: none; /* Oculta el texto "Carrito" en móviles */
+    }
+
+	.content-shopping-cart .number {
+        display: inline-block; /* Asegura que el número sea visible */
+        font-size: 1.4rem;
+        margin-left: -0.7cm; /* Mueve el número 1 cm a la izquierda */
+    }
+	
 	.navbar {
 		padding: 1rem 2rem;
 		position: relative; /* Asegura que el menú se posicione correctamente debajo de la barra de navegación */
@@ -1059,9 +1071,17 @@ header {
 		text-align: center;
 		padding: 1rem 2rem;
 	}
-
-	.container-products {
-		grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+	.container-products,
+	.container-category,  /* Añade aquí todas las clases de contenedores de categorías */
+	#all-products-container, /* Para el contenedor de todos los productos */
+	#mejoresproductos, 
+	#coffee,
+	#panpa,
+	#waffles,
+	#tresrecetas,
+	#jugos,
+	#armatuplato {
+		grid-template-columns: repeat(2, 1fr); /* Fuerza que sean 2 columnas en dispositivos móviles */
 	}
 
 	.gallery {
@@ -1781,4 +1801,53 @@ banner, .top-products, .category-container {
 .product-filters span:hover {
     background-color: var(--primary-color); /* Color de fondo al hacer hover o estar activo */
     color: #fff; /* Color del texto */
+}/* Estilo para "Resultados de la Búsqueda" en pantallas más grandes */
+#resultados-busqueda #all-products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+#resultados-busqueda .card-product {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#resultados-busqueda .card-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes opcionales para imágenes y botones */
+#resultados-busqueda .container-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+#resultados-busqueda .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    right: -3rem;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+#resultados-busqueda .card-product:hover .button-group {
+    z-index: 0;
+    right: -1rem;
+}
+
+/* Ajuste para mostrar dos tarjetas en dispositivos móviles */
+@media (max-width: 768px) {
+    #resultados-busqueda #all-products-container {
+        grid-template-columns: repeat(2, 1fr); /* Fuerza que sean 2 columnas en dispositivos móviles */
+        gap: 1.5rem; /* Reduce el espacio entre las tarjetas si es necesario */
+    }
 }

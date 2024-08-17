@@ -258,6 +258,7 @@ function checkout() {
     const whatsappLink = `https://wa.me/573227737273?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     // Obtén el enlace "Todos los productos"
     const allProductsLink = document.querySelector('a[href="#todosproductos"]');
@@ -288,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
         allProductsSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const categories = document.querySelectorAll('.category-container');
 
@@ -303,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(category);
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const fadeInElements = document.querySelectorAll('.fade-in, .gallery img');
 
@@ -318,6 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const galleryImages = document.querySelectorAll('.gallery img');
 
@@ -339,5 +343,67 @@ document.addEventListener('DOMContentLoaded', function () {
 
     galleryImages.forEach(img => {
         observer.observe(img);
+    });
+});
+
+// Maneja la navegación y visualización de secciones
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Evita la acción predeterminada del enlace
+
+        const targetSectionId = this.getAttribute('href').substring(1); // Obtiene el id de la sección destino
+        const targetSection = document.getElementById(targetSectionId);
+
+        // Oculta todas las secciones que no sean la seleccionada
+        document.querySelectorAll('.banner, .top-products, .category-container').forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Muestra la sección seleccionada
+        if (targetSection) {
+            targetSection.style.display = 'block';
+            targetSection.scrollIntoView({ behavior: 'smooth' }); // Desplaza suavemente a la sección
+        }
+
+        // Cierra el menú después de la selección en móviles
+        const menu = document.getElementById('menu');
+        menu.classList.remove('active');
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const allProductsContainer = document.getElementById('all-products-container');
+    const filterButtons = document.querySelectorAll('.product-filters span');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remueve la clase 'active' de todos los botones y añade a la seleccionada
+            document.querySelector('.product-filters span.active')?.classList.remove('active');
+            this.classList.add('active');
+
+            // Filtra los productos según el botón seleccionado
+            const products = Array.from(allProductsContainer.children);
+            const filterType = this.textContent.trim();
+
+            let sortedProducts = [];
+            if (filterType === 'Menor precio') {
+                sortedProducts = products.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.price').textContent.replace(/[$,]/g, ''));
+                    const priceB = parseFloat(b.querySelector('.price').textContent.replace(/[$,]/g, ''));
+                    return priceA - priceB;
+                });
+            } else if (filterType === 'Mayor precio') {
+                sortedProducts = products.sort((a, b) => {
+                    const priceA = parseFloat(a.querySelector('.price').textContent.replace(/[$,]/g, ''));
+                    const priceB = parseFloat(b.querySelector('.price').textContent.replace(/[$,]/g, ''));
+                    return priceB - priceA;
+                });
+            }
+
+            // Limpia el contenedor y vuelve a agregar los productos ordenados
+            allProductsContainer.innerHTML = '';
+            sortedProducts.forEach(product => {
+                allProductsContainer.appendChild(product);
+            });
+        });
     });
 });

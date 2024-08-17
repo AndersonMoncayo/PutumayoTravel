@@ -645,16 +645,6 @@ header {
 
 
 /* ********************************** */
-/*              SPECIALS              */
-/* ********************************** */
-.specials {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	margin-bottom: 3rem;
-}
-
-/* ********************************** */
 /*                BLOGS               */
 /* ********************************** */
 .blogs {
@@ -986,34 +976,39 @@ header {
 		position: absolute;
 		top: 100%; /* Coloca el menú justo debajo de la barra de navegación */
 		left: 0; /* Alinea el menú al lado izquierdo */
-		width: 30%; /* Ajusta el ancho del menú, puedes cambiar este valor */
+		width: 30%; /* Ajusta el ancho del menú */
 		background-color: #d2a7786f; /* Color de fondo del menú */
 		border-radius: 0.5rem; /* Bordes redondeados del menú */
 		z-index: 1000;
 		flex-direction: column; /* Organiza los elementos del menú verticalmente */
+		display: flex; /* Asegura que el contenido se alinee correctamente dentro del menú */
 	}
+	
 	/* Mostrar el menú cuando se active la clase "active" */
 	.menu.active {
 		max-height: 300px; /* Ajusta este valor según la altura de tu menú */
 	}
 	
+	/* Estilos para los elementos de la lista */
 	.menu li {
 		list-style: none;
 		margin: 0;
-		padding: 0.5rem 1rem; /* Opcional: reducir el espacio adicional */
+		padding: 0; /* Elimina el padding adicional */
+		line-height: 1; /* Ajusta la altura de línea para reducir el espacio vertical */
 	}
 	
-	
+	/* Estilos para los enlaces dentro de los elementos de la lista */
 	.menu li a {
 		display: block;
-		padding: 0.5rem 1rem; /* Reduce el padding para disminuir el espacio vertical */
+		padding: 0.4rem 1rem; /* Ajusta este valor para reducir el espacio dentro de cada elemento */
 		text-decoration: none;
 		color: #000;
-		border-radius: 5.9rem; /* Bordes redondeados de cada opción */
-		text-align: center; /* Centra el texto horizontalmente */
-		line-height: 0.1; /* Ajusta la altura de línea para reducir el espacio entre líneas */
+		border-radius: 5.9rem;
+		text-align: center;
+		line-height: 1; /* Ajusta la altura de línea para reducir el espacio entre líneas */
 		transition: background-color 0.3s ease;
 	}
+	/* Efecto hover para los enlaces */
 	.menu li a:hover {
 		background-color: #b08954; /* Color al pasar el mouse sobre la opción */
 	}
@@ -1759,4 +1754,31 @@ option:hover {
 .slide-in-right.visible {
     opacity: 1;
     transform: translateX(0);
+}
+banner, .top-products, .category-container {
+    display: block; /* Mostrar por defecto */
+}
+
+.category-container {
+    display: none; /* Ocultar por defecto */
+}
+.product-filters {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 1rem; /* Espacio entre los botones */
+    margin-bottom: 2rem; /* Espacio debajo de los botones */
+}
+
+.product-filters span {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background-color: #f0f0f0; /* Color de fondo de los botones */
+    transition: background-color 0.3s ease;
+}
+
+.product-filters span.active,
+.product-filters span:hover {
+    background-color: var(--primary-color); /* Color de fondo al hacer hover o estar activo */
+    color: #fff; /* Color del texto */
 }

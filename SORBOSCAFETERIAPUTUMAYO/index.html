@@ -19,7 +19,7 @@
 					<i class="fa-solid fa-basket-shopping"></i>
 					<div class="content-shopping-cart">
 						<span class="text">Carrito</span>
-						<span class="number">(0)</span>
+						<span class="number"></span>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 	</section>
 	
 
-    <main class="main-content">
+	<main class="main-content">
 		<section class="container top-categories fade-in">
 			<h1 class="heading-1">Mejores Categorías</h1>
 			<div class="container-categories">
@@ -75,9 +75,21 @@
 				</div>
 			</div>
 		</section>
-		<section class="container top-products fade-in">
-			<h1 class="heading-1">Mejores Productos</h1>
 	
+		<!-- Nueva sección para los resultados de búsqueda -->
+		<section id="resultados-busqueda" class="container resultados-busqueda fade-in" style="display: none;">
+			
+			<h1 class="heading-1">Resultados de la Búsqueda</h1>
+			    <!-- Botones de Filtro -->
+				<div class="product-filters">
+					<span>Menor precio</span>
+					<span>Mayor precio</span>
+				</div>
+			<div id="all-products-container"></div>
+		</section>
+		
+		<section id="mejoresproductos" class="container top-products fade-in">
+			<h1 class="heading-1">Mejores Productos</h1>
 			<div class="container-products">
             <!-- Coffee Category -->
 			<div class="card-product">
@@ -183,15 +195,8 @@
 			<img src="img/gallery4.jpg" alt="Gallery Img4" class="gallery-img-4">
 			<img src="img/gallery5.jpg" alt="Gallery Img5" class="gallery-img-5">
 		</section>
-<!-- Sección Todos los Productos -->
-<div id="todosproductos" class="category-container" style="display: none;">
-    <h2 class="category-title">Todos los productos</h2>
-    
-    <!-- Botones de Filtro -->
-    <div class="product-filters">
-        <span>Menor precio</span>
-        <span>Mayor precio</span>
-    </div>
+
+
 
     <!-- Contenedor de Productos -->
     <div class="container-category" id="all-products-container">

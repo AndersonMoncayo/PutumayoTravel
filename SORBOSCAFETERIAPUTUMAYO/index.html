@@ -77,11 +77,7 @@
 		</section>
 		<section class="container top-products fade-in">
 			<h1 class="heading-1">Mejores Productos</h1>
-			<div class="container-options">
-				<span class="active">Destacados</span>
-				<span>Más recientes</span>
-				<span>Mejores Vendidos</span>
-			</div>
+	
 			<div class="container-products">
             <!-- Coffee Category -->
 			<div class="card-product">
@@ -190,11 +186,21 @@
 <!-- Sección Todos los Productos -->
 <div id="todosproductos" class="category-container" style="display: none;">
     <h2 class="category-title">Todos los productos</h2>
+    
+    <!-- Botones de Filtro -->
+    <div class="product-filters">
+        <span>Menor precio</span>
+        <span>Mayor precio</span>
+    </div>
+
+    <!-- Contenedor de Productos -->
     <div class="container-category" id="all-products-container">
         <!-- Aquí se agregarán los productos automáticamente -->
     </div>
 </div>
-<div id="coffee" class="category-container">
+    </div>
+</div>
+<div id="coffee" class="category-container hidden">
     <h2 class="category-title">Coffee</h2>
     <div class="container-category">
       
@@ -428,7 +434,7 @@
 </div>
 
 <!-- Sección Pan pa ti -->
-<div id="panpa" class="category-container">
+<div id="panpa" class="category-container hidden">
     <h2 class="category-title">Pan pa ti</h2>
     <div class="container-category">
         <!-- Aquí va el código de los productos de la categoría Pan pa ti -->
@@ -636,7 +642,7 @@
 </div>
 
 <!-- Sección Ricos Waffles -->
-<div id="waffles" class="category-container">
+<div id="waffles" class="category-container hidden">
     <h2 class="category-title">Ricos Waffles</h2>
     <div class="container-category">
         <!-- Aquí va el código de los productos de la categoría Ricos Waffles -->
@@ -695,7 +701,7 @@
 </div>
 
 <!-- Sección Tres Recetas -->
-<div id="tresrecetas" class="category-container">
+<div id="tresrecetas" class="category-container hidden">
     <h2 class="category-title">Tres recetas</h2>
     <div class="container-category">
         <!-- Aquí va el código de los productos de la categoría Tres recetas -->
@@ -779,7 +785,7 @@
 </div>
 
 <!-- Sección Jugos -->
-<div id="jugos" class="category-container">
+<div id="jugos" class="category-container hidden">
     <h2 class="category-title">Jugos</h2>
     <div class="container-category">
         <!-- Aquí va el código de los productos de la categoría Jugos -->
@@ -868,7 +874,7 @@
 </div>
 
 <!-- Sección Arma tu plato -->
-<div id="armatuplato" class="category-container">
+<div id="armatuplato" class="category-container hidden">
     <h2 class="category-title">Arma tu plato</h2>
     <div class="container-category">
         <!-- Aquí va el código de los productos de la categoría Arma tu plato -->
@@ -1025,106 +1031,7 @@
 
     </div>
 </div>
-		<section class="container specials">
-            <h1 class="heading-1">Especiales</h1>
-            <div class="container-products">
-                <!-- Producto 1 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/cafe-irish.jpg" alt="Cafe Irish" />
-                        <span class="discount">-13%</span>
-                        <div class="button-group">
-                            <span><i class="fa-regular fa-eye"></i></span>
-                            <span><i class="fa-regular fa-heart"></i></span>
-                            <span><i class="fa-solid fa-code-compare"></i></span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Cafe Irish</h3>
-						<span class="add-cart" data-product-id="700"><i class="fa-solid fa-basket-shopping"></i></span>
-                        <p class="price">$4.60 <span>$5.30</span></p>
-                    </div>
-                </div>
-                <!-- Producto 2 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/cafe-ingles.jpg" alt="Cafe Inglés" />
-                        <span class="discount">-22%</span>
-                        <div class="button-group">
-                            <span><i class="fa-regular fa-eye"></i></span>
-                            <span><i class="fa-regular fa-heart"></i></span>
-                            <span><i class="fa-solid fa-code-compare"></i></span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Cafe Inglés</h3>
-                        <span class="add-cart" data-product-id="701"><i class="fa-solid fa-basket-shopping"></i></span>
-                        <p class="price">$5.70 <span>$7.30</span></p>
-                    </div>
-                </div>
-                <!-- Producto 3 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/cafe-viena.jpg" alt="Cafe Viena" />
-                        <span class="discount">-30%</span>
-                        <div class="button-group">
-                            <span><i class="fa-regular fa-eye"></i></span>
-                            <span><i class="fa-regular fa-heart"></i></span>
-                            <span><i class="fa-solid fa-code-compare"></i></span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <h3>Cafe Viena</h3>
-                        <span class="add-cart" data-product-id="702"><i class="fa-solid fa-basket-shopping"></i></span>
-                        <p class="price">$3.85 <span>$5.50</span></p>
-                    </div>
-                </div>
-                <!-- Producto 4 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/cafe-liqueurs.jpg" alt="Cafe Liqueurs" />
-                        <div class="button-group">
-                            <span><i class="fa-regular fa-eye"></i></span>
-                            <span><i class="fa-regular fa-heart"></i></span>
-                            <span><i class="fa-solid fa-code-compare"></i></span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Cafe Liqueurs</h3>
-                        <span class="add-cart" data-product-id="703"><i class="fa-solid fa-basket-shopping"></i></span>
-                        <p class="price">$5.60</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+	
     </main>
    
     <footer class="footer">

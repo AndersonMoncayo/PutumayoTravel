@@ -164,7 +164,7 @@
                         <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                     </button>
                 </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+                <p class="pt-1 text-gray-900">$51,148.80 </p>
             </a>
         </div>
 
@@ -235,10 +235,39 @@
         </div>
     </section>
 
-    <!-- Sidebar del Carrito -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Tu Carrito</h2>
+ <!-- Sidebar del Carrito -->
+<div id="cart-sidebar" class="cart-sidebar">
+    <h2>Tu Carrito</h2>
+    
+    <div id="cart-content">
         <ul id="cart-items"></ul>
+
+        <strong>Total: COP <span id="cart-total">0</span></strong>
+
+        <!-- Campo para el cupón de descuento -->
+        <div class="coupon-section">
+            <label for="coupon-code">Código de Cupón:</label>
+            <div class="coupon-input-group">
+                <input type="text" id="coupon-code" placeholder="Ingresa tu cupón">
+                <button onclick="applyCoupon()">Aplicar</button>
+            </div>
+        </div>
+
+        <div class="delivery-section">
+            <div class="delivery-option">
+                <label for="delivery-method">Método de Entrega:</label>
+                <select id="delivery-method" onchange="toggleAddressInput()">
+                    <option value="local">Recoger en Local</option>
+                    <option value="delivery">Domicilio</option>
+                </select>
+            </div>
+
+            <div class="delivery-address hidden" id="delivery-address">
+                <label for="address">Dirección de Entrega:</label>
+                <input type="text" id="address" placeholder="Ingresa tu dirección">
+            </div>
+        </div>
+
         <button onclick="clearCart()" class="border border-black text-black py-2 px-4 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group">
             <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
             <span class="relative z-10">Vaciar Carrito</span>
@@ -251,30 +280,10 @@
             </span>
         </button>
     </div>
-    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+</div>
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
 
-    <script src="script.js">
-    
-    function toggleFilters() {
-        const filterArea = document.getElementById('filter-area');
-        filterArea.classList.toggle('hidden');
-    }
-
-    function filterProductsByCategory(category) {
-        const products = document.querySelectorAll('.product-card');
-
-        products.forEach(product => {
-            if (category === 'all' || product.getAttribute('data-category') === category) {
-                product.style.display = 'flex'; // Mostrar el producto
-            } else {
-                product.style.display = 'none'; // Ocultar el producto
-            }
-        });
-
-        // Cerrar el área de filtros después de seleccionar una categoría
-        toggleFilters();
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

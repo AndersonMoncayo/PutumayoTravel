@@ -4,6 +4,7 @@ let cartCount = document.getElementById('cart-count');
 let cartItems = document.getElementById('cart-items');
 let cartSidebar = document.getElementById('cart-sidebar');
 let overlay = document.getElementById('overlay');
+let discount = 0; // Variable para almacenar el descuento aplicado
 
 // Manejo del evento de añadir al carrito
 document.querySelectorAll('#add-to-cart-button').forEach(button => {
@@ -41,32 +42,65 @@ function updateQuantity(productName, newQuantity) {
     }
 }
 
+// Función para aplicar un cupón de descuento
+function applyCoupon() {
+    const couponCode = document.getElementById('coupon-code').value.trim();
+
+    // Ejemplo de cupones disponibles
+    const coupons = {
+        'DESCUENTO10': 10, // 10% de descuento
+        'DESCUENTO20': 20, // 20% de descuento
+        'DESCUENTO50': 50  // 50% de descuento
+    };
+
+    if (coupons[couponCode]) {
+        discount = coupons[couponCode];
+        alert(`Cupón aplicado: ${discount}% de descuento`);
+        updateCart(); // Llama a updateCart para actualizar el total con el descuento
+    } else {
+        alert('Cupón no válido');
+        discount = 0; // Restablecer el descuento si el cupón es inválido
+    }
+}
+
 // Función para actualizar el carrito
 function updateCart() {
     let total = 0;
     cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
     cartItems.innerHTML = '';
-    cart.forEach(item => {
-        total += item.price * item.quantity;
-        let li = document.createElement('li');
-        li.innerHTML = `
-            <div class="cart-item-info">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="item-details">
-                    <span>${item.name} - COP ${item.price.toLocaleString()} x </span>
-                    <input type="number" value="${item.quantity}" min="1" class="quantity-input" 
-                           onchange="updateQuantity('${item.name}', this.value)">
-                </div>
-                <button class="delete-btn" onclick="removeFromCart('${item.name}')">
-                    <img src="images/trash.svg" alt="Eliminar" style="width: 24px; height: 24px;">
-                </button>
-            </div>`;
-        cartItems.appendChild(li);
-    });
 
-    let totalDisplay = document.createElement('li');
-    totalDisplay.innerHTML = `<strong>Total: COP ${total.toLocaleString()}</strong>`;
-    cartItems.appendChild(totalDisplay);
+    if (cart.length === 0) {
+        document.getElementById('cart-content').classList.add('hidden');
+    } else {
+        document.getElementById('cart-content').classList.remove('hidden');
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            let li = document.createElement('li');
+            li.innerHTML = `
+       <div class="cart-item-info">
+        <img src="${item.image}" alt="${item.name}" class="product-image">
+        <div class="item-details">
+            <div class="product-name">${item.name}</div>
+            <div class="product-info">
+                <span class="product-price">$${item.price.toLocaleString()}</span> 
+                <span>x</span>
+                <input type="number" value="${item.quantity}" min="1" class="quantity-input" 
+                       onchange="updateQuantity('${item.name}', this.value)">
+                <button class="delete-btn" onclick="removeFromCart('${item.name}')">
+                    <img src="images/trash.svg" alt="Eliminar" class="delete-icon">
+                </button>
+            </div>
+        </div>
+    </div>`;
+            cartItems.appendChild(li);
+        });
+
+        if (discount > 0) {
+            total = total - (total * (discount / 100));
+        }
+
+        document.getElementById('cart-total').textContent = total.toLocaleString();
+    }
 }
 
 // Función para eliminar un producto del carrito
@@ -85,11 +119,26 @@ function clearCart() {
 // Función para proceder al checkout
 function checkout() {
     let total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+    // Aplicar descuento si existe
+    if (discount > 0) {
+        total = total - (total * (discount / 100));
+    }
+
     let message = "Hola, me gustaría hacer un pedido:\n";
     cart.forEach(item => {
         message += `${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
     });
     message += `Total: COP ${total.toLocaleString()}\n`;
+
+    const deliveryMethod = document.getElementById('delivery-method').value;
+    if (deliveryMethod === 'delivery') {
+        const address = document.getElementById('address').value;
+        message += `Método de Entrega: Domicilio\nDirección: ${address}\n`;
+    } else {
+        message += "Método de Entrega: Recoger en Local\n";
+    }
+
     const whatsappLink = `https://wa.me/573227737273?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
@@ -100,8 +149,25 @@ function toggleCart() {
     overlay.classList.toggle('show');
 }
 
+// Función para mostrar u ocultar el campo de dirección
+function toggleAddressInput() {
+    const deliveryMethod = document.getElementById('delivery-method').value;
+    const addressInput = document.getElementById('delivery-address');
+
+    if (deliveryMethod === 'delivery') {
+        addressInput.classList.remove('hidden');
+    } else {
+        addressInput.classList.add('hidden');
+    }
+}
+
 // Event listener para el icono del carrito
 document.getElementById('cart-icon').addEventListener('click', toggleCart);
+
+// Event listener para la carga inicial del carrito
+document.addEventListener('DOMContentLoaded', function() {
+    updateCart(); // Verifica el estado del carrito al cargar la página
+});
 
 // Integración del botón animado "button-bird"
 document.addEventListener("DOMContentLoaded", function() {
@@ -194,18 +260,19 @@ function searchFunction() {
         }
     });
 }
+
 function showCheckmark(button) {
     const checkmark = button.querySelector('.checkmark');
     const buttonText = button.querySelector('span.relative.z-10');
 
-    // Hide the button text and show the checkmark
+    // Ocultar el texto del botón y mostrar el checkmark
     buttonText.style.opacity = '0';
     checkmark.style.opacity = '1';
 
-    // Optionally, perform the checkout action here
+    // Realizar la acción de checkout
     checkout();
 
-    // Reset the button after 2 seconds
+    // Restablecer el botón después de 2 segundos
     setTimeout(() => {
         checkmark.style.opacity = '0';
         buttonText.style.opacity = '1';

@@ -144,43 +144,72 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 .cart-item-info {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 15px;
+  align-items: center; /* Alinea verticalmente todos los elementos al centro */
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
-.cart-item-info img {
-  width: 50px;
-  height: 50px;
+.product-image {
+  width: 40px; /* Tamaño de imagen ajustado */
+  height: 40px;
   border-radius: 5px;
-  margin-right: 15px;
+  margin-right: 10px; /* Espacio entre la imagen y el contenido */
 }
 
 .item-details {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  font-size: 0.9rem;
+  width: 100%; /* Ocupa todo el espacio disponible */
 }
 
-.item-details span {
-  margin-bottom: 8px;
-  color: #333;
-  font-weight: 500;
+.product-name {
+  font-weight: 600;
+  margin-bottom: 2px; /* Reduce el espacio entre el nombre y el precio */
+  position: relative; /* Permite mover el elemento respecto a su posición original */
+  top: 0.3cm; /* Mueve el elemento 0.3 cm hacia abajo */
+}
+.product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .quantity-input {
-  width: 60px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  width: 40px; /* Reduce el tamaño del input para que encaje mejor */
+  padding: 3px;
   text-align: center;
-  color: #333;
+  font-size: 14px;
+  margin-right: 5px; /* Añade un pequeño margen a la derecha */
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px; /* Espacio entre el input y el botón eliminar */
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  position: relative; /* Asegura que el icono se pueda mover con top */
+  top: -0.15cm; /* Mueve el icono 0.5 cm hacia arriba */
+}
+
+
+.delete-btn:hover .delete-icon {
+  opacity: 1;
 }
 
 .quantity-controls {
@@ -419,26 +448,101 @@ button.delete-btn:hover i {
   }
 }
 .btn-view-product {
-    display: inline-block;
-    padding-bottom: 2px; /* Espacio para la línea inferior */
-    background-color: transparent; /* Mantén transparente para que se vea como un enlace */
-    color: #ffffff; /* Color del texto */
-    text-align: center;
-    text-decoration: none; /* Eliminar subrayado predeterminado */
-    border: none; /* Sin bordes adicionales */
-    font-weight: 500;
-    font-size: 1.25rem; /* Ajusta el tamaño de la fuente según necesites */
-    cursor: pointer; /* Cambiar el cursor a la mano */
-    border-bottom: 1px solid #606060; /* Línea inferior para parecer un enlace subrayado */
-    transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+  display: inline-block;
+  padding: 10px 12px; /* Aumenta el padding vertical en 8px (0.2cm) y el horizontal a 12px */
+  background-color: transparent; /* Mantén transparente para que se vea como un enlace */
+  color: #ffffff; /* Color del texto */
+  text-align: center;
+  text-decoration: none; /* Eliminar subrayado predeterminado */
+  border: none; /* Sin bordes adicionales */
+  font-weight: 500;
+  font-size: 1.25rem; /* Ajusta el tamaño de la fuente según necesites */
+  cursor: pointer; /* Cambiar el cursor a la mano */
+  border-bottom: 1px solid #606060; /* Línea inferior para parecer un enlace subrayado */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+  line-height: 1.5; /* Ajusta el line-height para centrar el texto verticalmente */
 }
 
-
 .btn-view-product:hover {
-    color: #dddddd; /* Cambia el color del texto al pasar el ratón */
-    border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
+  color: #dddddd; /* Cambia el color del texto al pasar el ratón */
+  border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
 }
 
 .btn-view-product:focus {
-    outline: none; /* Elimina el borde de enfoque */
+  outline: none; /* Elimina el borde de enfoque */
+}
+.hidden {
+  display: none;
+}
+
+#delivery-address {
+  margin-top: 10px;
+}
+
+#delivery-address input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.delivery-section {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.delivery-option, .delivery-address {
+  margin-bottom: 15px;
+}
+
+.delivery-option select, 
+.delivery-address input {
+  width: 100%;  /* Asegura que el select y input ocupen todo el ancho disponible */
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.delivery-option label, 
+.delivery-address label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+.coupon-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.coupon-input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.coupon-input-group input {
+  width: 60%; /* Ajusta el ancho del input */
+  padding: 5px; /* Reduce el padding para hacer el input más compacto */
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 12px; /* Disminuye el tamaño de la fuente */
+}
+
+.coupon-input-group button {
+  padding: 5px 8px; /* Reduce el tamaño del botón */
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 12px; /* Disminuye el tamaño de la fuente */
+}
+
+.coupon-input-group button:hover {
+  background-color: #555;
 }

@@ -1,566 +1,601 @@
-<!DOCTYPE html>
-<html lang="en">
+/* General Styles */
+.work-sans {
+  font-family: 'Work Sans', sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tailwind Starter Template - Nordic Shop: Tailwind Toolbox</title>
-    <meta name="description" content="Free open source Tailwind CSS Store template">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-    
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Referencia al archivo CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons/css/phosphor.css">
-</head>
+#menu-toggle:checked + #menu {
+  display: block;
+}
 
-<body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+.hover\:grow {
+  transition: all 0.3s;
+  transform: scale(1);
+}
 
-    <!--Nav-->
-    <nav id="header" class="w-full z-30 top-0 py-1">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+.hover\:grow:hover {
+  transform: scale(1.02);
+}
 
-            <label for="menu-toggle" class="cursor-pointer md:hidden block">
-                <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                    <title>menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </label>
-            <input class="hidden" type="checkbox" id="menu-toggle" />
+/* Carousel Styles */
+/* Estilos base del carrusel */
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 0;
+}
 
-            <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
-                <nav>
-                    <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">Shop</a></li>
-                    </ul>
-                </nav>
-            </div>
+.carousel-open:checked + .carousel-item {
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
 
-            <div class="order-1 md:order-2">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-                    <svg class="fill-current text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M5,22h14c1.103,0,2-0.897,2-2V9c0-0.553-0.447-1-1-1h-3V7c0-2.757-2.243-5-5-5S7,4.243,7,7v1H4C3.447,8,3,8.447,3,9v11 C3,21.103,3.897,22,5,22z M9,7c0-1.654,1.346-3,3-3s3,1.346,3,3v1H9V7z M5,10h2v2h2v-2h6v2h2v-2h2l0.002,10H5V10z" />
-                    </svg>
-                    GODMAKERS
-                </a>
-            </div>
+/* Indicadores */
+.carousel-bullet {
+  transition: color 0.3s ease;
+  color: rgb(231, 231, 231); /* Color para los indicadores inactivos */
+}
 
-            <div class="order-2 md:order-3 flex items-center" id="nav-content">
-                <div class="relative">
-                    <a href="#" id="cart-icon" class="cart inline-block no-underline hover:text-black">
-                        <img src="images/basket.svg" alt="Carrito" class="w-6 h-6 fill-current text-gray-800">
-                        <span id="cart-count" class="absolute top-0 right-0 text-sm text-white bg-red-500 rounded-full h-5 w-5 text-center">0</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para asegurarse de que la imagen ocupe todo el espacio sin deformarse */
+  transition: none;
+}
 
-    <div class="carousel relative container mx-auto" style="max-width:1600px;">
-        <div class="carousel-inner relative overflow-hidden w-full">
-            <!-- Slide 1 -->
-            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/img1.webp');">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide md-margin-top-cm">
-                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                            <a href="#smartphone" class="btn-view-product">view product</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-            <!-- Slide 2 -->
-            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover" style="background-image: url('images/img2.webp'); background-position-x: calc(100% + 50px);">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Smartphone</p>
-                            <a href="#smartphone" class="btn-view-product">view product</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-            
-            <!-- Slide 3 -->
-            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/img1.webp');">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                            <a href="#smartphone" class="btn-view-product">view product</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-        </div>
-  
-            <!-- ... (Siguientes controles para otros slides) -->
-            
-            <!-- Indicadores -->
-            <ol class="carousel-indicators">
-                <li class="inline-block mr-3">
-                    <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-                <li class="inline-block mr-3">
-                    <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-                <li class="inline-block mr-3">
-                    <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <section class="bg-white py-8">
-        <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-            <nav id="store" class="w-full z-30 top-0 px-6 py-1">
-                <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-                        TIENDA
-                    </a>
-                    <div class="flex items-center relative" id="store-nav-content">
-                        <!-- Botón del Filtro con la clase "filter-button" -->
-                        <button class="pl-3 inline-block no-underline hover:text-black filter-button" onclick="toggleFilters(event)">
-                            <img src="images/filter.svg" alt="Filter Icon" width="24" height="24">
-                        </button>
-    
-                        <!-- Lista desplegable de Filtros -->
-                        <div id="filter-dropdown" class="absolute bg-white border border-gray-300 rounded-md shadow-lg p-4 hidden">
-                            <button onclick="filterProductsByCategory('MASCARILLAUNIDAD')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Mascarillas</button>
-                            <button onclick="filterProductsByCategory('Protector')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Protector solar</button>
-                            <button onclick="filterProductsByCategory('Contorno')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Contorno de ojos</button>
-                            <button onclick="filterProductsByCategory('serumf')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Serum</button>
-                            <button onclick="filterProductsByCategory('parches')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Parches</button>
-                            <button onclick="filterProductsByCategory('geles')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Gel</button>
-                            <button onclick="filterProductsByCategory('varios')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Varios</button>
-                        </div>
-    
-                        <!-- Barra de Búsqueda que aparece al hacer clic en search.svg -->
-                        <input type="text" id="search-input" class="hidden p-2 border border-gray-300 rounded" placeholder="Buscar..." onkeypress="handleKeyPress(event)">
-    
-                        <!-- Botón de Búsqueda usando <button> -->
-                        <button class="pl-3 inline-block no-underline hover:text-black" onclick="toggleSearch()">
-                            <img src="images/search.svg" alt="Search Icon" width="24" height="24">
-                        </button>
-                    </div>
-                </div>
-            </nav>
-    
-            <!-- Productos -->
-        <div id="varios" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Smartphone" data-price="51148.80" data-category="varios" data-image="images/111.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/HerramientasYAccesorios_Guasha.webp">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Guasha</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 </p>
-            </a>
-        </div>
-        <div id="catalog-message" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col bg-gray-100 text-center hide">
-            <p class="text-lg font-semibold">¿Quieres tener tu propio catálogo online?</p>
-            <a href="https://wa.me/573227736533?text=Hola%2C%20me%20gustar%C3%ADa%20contratar%20el%20servicio%20de%20cat%C3%A1logo%20online" target="_blank">CONTACTA CON NOSOTROS</a>
-        </div>
-        <div id="protector" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="protector" data-price="61148.80" data-category="protector" data-image="images/ProtecciónSolar_ProtectorSolarConBase.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/ProtecciónSolar_ProtectorSolarConBase.webp">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Protector solar color</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$61,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Protector" data-price="45148.80" data-category="Protector" data-image="images/111.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/ProtecciónSolar_ProtectorSolarSinColor.webp">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Protector sin color</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$45,148.80 COP</p>
-            </a>
-        </div>
-        <div id="book" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Book" data-price="21148.80" data-category="Contorno" data-image="images/111.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/111.webp">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Contorno de ojos</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$21,148.80 COP</p>
-            </a>
-        </div>
-
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
+.carousel-item .container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  background-color: transparent; /* Esto hace que el fondo sea completamente transparente */
+}
+.carousel-item .container .flex {
+  position: relative;
+  top: -1cm; /* Mueve este contenedor 1 cm hacia arriba */
+}
 
 
+p.text-black.text-2xl.my-4 {
+  font-size: 2rem; /* Ajusta el tamaño según tus necesidades */
+}
+.carousel-item p, .carousel-item a {
+  margin: 0;
+}
+
+/* Mostrar controles cuando el slide está activo */
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+/* Estilos para los indicadores */
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Estilo para el indicador activo */
+#carousel-1:checked ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+  color: black; /* Color del indicador activo */
+}
+/* Cart Icon in Header */
+#cart-icon {
+  position: relative;
+  display: inline-block;
+  top: 0.1cm; /* Baja el ícono 0.2 cm */
+}
+
+#cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 0.75rem;
+  background-color: #e53e3e;
+  color: white;
+  border-radius: 9999px;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar Cart Styles */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cart-sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cart-sidebar.show {
+  right: 0;
+}
+
+.cart-sidebar li strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.cart-item-info {
+  display: flex;
+  align-items: center; /* Alinea verticalmente todos los elementos al centro */
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.product-image {
+  width: 40px; /* Tamaño de imagen ajustado */
+  height: 40px;
+  border-radius: 5px;
+  margin-right: 10px; /* Espacio entre la imagen y el contenido */
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ocupa todo el espacio disponible */
+}
+
+.product-name {
+  font-weight: 600;
+  margin-bottom: 2px; /* Reduce el espacio entre el nombre y el precio */
+  position: relative; /* Permite mover el elemento respecto a su posición original */
+  top: 0.3cm; /* Mueve el elemento 0.3 cm hacia abajo */
+}
+.product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.quantity-input {
+  width: 40px; /* Reduce el tamaño del input para que encaje mejor */
+  padding: 3px;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 5px; /* Añade un pequeño margen a la derecha */
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px; /* Espacio entre el input y el botón eliminar */
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  position: relative; /* Asegura que el icono se pueda mover con top */
+  top: -0.15cm; /* Mueve el icono 0.5 cm hacia arriba */
+}
 
 
+.delete-btn:hover .delete-icon {
+  opacity: 1;
+}
 
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/30gMascarillas_MascarillaPuntosNegros.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/30gMascarillas_MascarillaPuntosNegros.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">30gMascarillas_MascarillaPuntosNegros</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/antiacnekissbea.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/antiacnekissbea.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">antiacnekissbea</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/contornogelaloevera2.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/contornogelaloevera2.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">contornogelaloevera2</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/contornogelalovera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/contornogelalovera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">contornogelalovera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/DespigmentanteBioaqua.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/DespigmentanteBioaqua.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">DespigmentanteBioaqua</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/mascarillanegraimpurezas.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/mascarillanegraimpurezas.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">mascarillanegraimpurezas</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/pulpofacial.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/pulpofacial.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">pulpofacial</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/Puntosnegrosbioqua.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/Puntosnegrosbioqua.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Puntosnegrosbioqua</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/remueveimpurezasmiel.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/remueveimpurezasmiel.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">remueveimpurezasmiel</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/serumdealoevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/serumdealoevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">serumdealoevera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/serumretinol.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/serumretinol.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">serumretinol</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/SuerosSerums_SerumDeRosasPielSeca.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/SuerosSerums_SerumDeRosasPielSeca.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">SuerosSerums_SerumDeRosasPielSeca</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/tonicodearboldete.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/tonicodearboldete.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">tonicodearboldete</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
-        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
-                <div class="pt-3 flex items-center justify-between">
-                    <p class="">Gel Aloe Vera</p>
-                    <button id="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
-            </a>
-        </div>
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
+.quantity-controls button {
+  padding: 2px 6px;
+  background-color: #e2e8f0;
+  border: none;
+  cursor: pointer;
+}
 
+.quantity-controls button:hover {
+  background-color: #cbd5e0;
+}
 
+/* Overlay Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Product Card Button */
+button#add-to-cart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+button#add-to-cart-button img {
+  width: 24px;
+  height: 24px;
+}
+
+button#add-to-cart-button:hover img {
+  filter: invert(1);
+}
+
+/* Estilos para el botón de Checkout con animación */
+.checkout-btn {
+  padding: 15px 40px;  /* Padding inicial */
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  text-transform: uppercase;
+  font-family: 'Helvetica', sans-serif; /* Usar Helvetica o sans-serif */
+  font-size: 12px;
+  letter-spacing: 3px;
+  position: relative;
+  transition: padding 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s ease, color 0.4s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  display: block;
+  width: fit-content; /* Ajusta el ancho al contenido */
+  margin: 0 auto; /* Centra el botón horizontalmente */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del botón */
+}
+
+.checkout-btn::after,
+.checkout-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), right 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.checkout-btn::after {
+  width: 30px;
+  height: 1px;
+  background: white;
+  transform: translateX(-3px);
+  margin-top: 0px;
+}
+
+.checkout-btn::before {
+  transform: rotate(-135deg) translateX(50%);
+  width: 11px;
+  height: 11px;
+  background: transparent;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-top: -1px;
+}
+
+.checkout-btn:hover {
+  padding: 15px 50px 15px 30px; /* Mantén un padding más equilibrado */
+}
+
+.checkout-btn:hover::after,
+.checkout-btn:hover::before {
+  opacity: 1;
+  right: 15px;
+}
+/* Estilos para el botón de Vaciar Carrito */
+.clear-cart-btn {
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Texto negro suave */
+  border: 2px solid #333; /* Borde negro */
+  border-radius: 5px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+  background-color: #f5f5f5; /* Fondo gris claro */
+  color: #000; /* Texto negro más oscuro */
+  border-color: #000; /* Borde negro más oscuro */
+}
+
+/* Estilos globales para cualquier botón con el texto 'Eliminar' */
+button:contains('Eliminar') {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f44336; /* Color de fondo */
+  color: white; /* Color del texto */
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 3px; /* Bordes redondeados */
+  cursor: pointer;
+  margin-top: 10px; /* Espaciado superior */
+  margin-left: 10px; /* Espaciado a la izquierda */
+}
+
+button:contains('Eliminar'):hover {
+  background-color: #d32f2f; /* Color de fondo al pasar el mouse */
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.delete-btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.delete-btn:hover img {
+  opacity: 1;
+}
+
+/* Estilos para el botón de Eliminar como papelera */
+button.delete-btn {
+  display: inline-block;
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 10px; /* Espaciado superior */
+  margin-left: 10px; /* Espaciado a la izquierda */
+}
+
+button.delete-btn i {
+  font-size: 24px; /* Tamaño del icono */
+  color: #f44336; /* Color del icono de papelera */
+}
+
+button.delete-btn:hover i {
+  color: #d32f2f; /* Color del icono al pasar el mouse */
+}
+
+/* Estilo para la lista desplegable del filtro */
+#filter-dropdown {
+  position: absolute;
+  top: 100%; /* Justo debajo del botón */
+  left: 50%; /* Centrado inicialmente en móviles */
+  transform: translateX(-70%); /* Asegurar centrado en móviles */
+  z-index: 10;
+  width: auto;
+  min-width: 200px;
+  background-color: rgba(255, 255, 255, 0.95); /* Fondo ligeramente translúcido */
+  border: 1px solid #ddd; /* Borde suave y claro */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  padding: 10px 0; /* Espacio interno para las opciones */
+  margin-top: 8px; /* Espacio entre el botón y el menú */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo para el botón del filtro */
+.filter-button {
+  margin-top: 0cm; /* Baja el botón 0.2 cm desde su posición natural */
+}
+
+/* Estilo para los botones dentro del filtro */
+#filter-dropdown button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  background-color: transparent; /* Fondo transparente para un look minimalista */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333; /* Color de texto suave */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#filter-dropdown button:hover {
+  background-color: #f5f5f5; /* Color de fondo claro en hover */
+  color: #000; /* Color de texto más oscuro en hover */
+}
+
+/* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
+@media (min-width: 768px) {
+  #filter-dropdown {
+      left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
+      transform: none; /* Eliminar la transformación centrada */
+  }
+}
+.btn-view-product {
+  display: inline-block;
+  padding: 10px 12px; /* Aumenta el padding vertical en 8px (0.2cm) y el horizontal a 12px */
+  background-color: transparent; /* Mantén transparente para que se vea como un enlace */
+  color: #ffffff; /* Color del texto */
+  text-align: center;
+  text-decoration: none; /* Eliminar subrayado predeterminado */
+  border: none; /* Sin bordes adicionales */
+  font-weight: 500;
+  font-size: 1.25rem; /* Ajusta el tamaño de la fuente según necesites */
+  cursor: pointer; /* Cambiar el cursor a la mano */
+  border-bottom: 1px solid #606060; /* Línea inferior para parecer un enlace subrayado */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+  line-height: 1.5; /* Ajusta el line-height para centrar el texto verticalmente */
+}
 
 
+.btn-view-product:hover {
+  color: #dddddd; /* Cambia el color del texto al pasar el ratón */
+  border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
+}
 
+.btn-view-product:focus {
+  outline: none; /* Elimina el borde de enfoque */
+}
+.hidden {
+  display: none;
+}
 
+#delivery-address {
+  margin-top: 10px;
+}
 
-        
-            <div id="mask" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Mascarilla" data-category="MASCARILLAUNIDAD">
-                <div>
-                    <img id="product-image" class="hover:grow hover:shadow-lg" src="images/huevo.webp">
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Mascarilla</p>
-                        <select id="variant-select" onchange="updateVariant()">
-                            <option value="huevo" data-price="3148.80" data-image="images/Mascarillas_MascarillaHuevo.webp" data-name="Huevo">Huevo</option>
-                            <option value="aguacate" data-price="3148.80" data-image="images/Mascarillas_MascarillaAguacate.webp" data-name="Aguacate">Aguacate</option>
-                            <option value="centella" data-price="3148.80" data-image="images/Mascarillas_MascarillaDeCentellaAcné.webp" data-name="Centella">Centella</option>
-                            <option value="acido_hialuronico" data-price="3148.80" data-image="images/Mascarillas_MascarillaÁcidoHialurónicoYAlgas.webp" data-name="Ácido Hialurónico">Ácido Hialurónico</option>
-                            <option value="antiedadM" data-price="3148.80" data-image="images/Mascarillas_MascarillaAntiedad.webp" data-name="Antiedad">Antiedad</option>
-                        </select>
-                        <button id="add-to-cart-button">
-                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                        </button>
-                    </div>
-                    <p id="product-price" class="pt-1 text-gray-900">$3,148.80 COP</p>
-                </div>
-            </div>
-    
-          
-        </div>
-    </section>
+#delivery-address input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.delivery-section {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
 
- <!-- Sidebar del Carrito -->
-<div id="cart-sidebar" class="cart-sidebar">
-    <h2>Tu Carrito</h2>
-    
-    <div id="cart-content">
-        <ul id="cart-items"></ul>
+.delivery-option, .delivery-address {
+  margin-bottom: 15px;
+}
 
-        <strong>Total: COP <span id="cart-total">0</span></strong>
+.delivery-option select, 
+.delivery-address input {
+  width: 100%;  /* Asegura que el select y input ocupen todo el ancho disponible */
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
 
-        <!-- Campo para el cupón de descuento -->
-        <div class="coupon-section">
-            <label for="coupon-code">Código de Cupón:</label>
-            <div class="coupon-input-group">
-                <input type="text" id="coupon-code" placeholder="Ingresa tu cupón">
-                <button onclick="applyCoupon()">Aplicar</button>
-            </div>
-        </div>
+.delivery-option label, 
+.delivery-address label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+.coupon-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-        <div class="delivery-section">
-            <div class="delivery-option">
-                <label for="delivery-method">Método de Entrega:</label>
-                <select id="delivery-method" onchange="toggleAddressInput()">
-                    <option value="local">Recoger en Local</option>
-                    <option value="delivery">Domicilio</option>
-                </select>
-            </div>
+.coupon-input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
 
-            <div class="delivery-address hidden" id="delivery-address">
-                <label for="address">Dirección de Entrega:</label>
-                <input type="text" id="address" placeholder="Ingresa tu dirección">
-            </div>
-        </div>
+.coupon-input-group input {
+  width: 60%; /* Ajusta el ancho del input */
+  padding: 5px; /* Reduce el padding para hacer el input más compacto */
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  font-size: 12px; /* Disminuye el tamaño de la fuente */
+}
 
-        <button onclick="clearCart()" class="border border-black text-black py-2 px-1 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group" style="margin: 2px;">
-            <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-            <span class="relative z-10">Vaciar Carrito</span>
-        </button>
-        <button onclick="showCheckmark(this)" class="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition duration-300 relative overflow-hidden group">
-            <span class="absolute inset-0 w-full h-full bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-            <span class="relative z-10">Comprar</span>
-            <span class="absolute inset-0 flex items-center justify-center text-white opacity-0 checkmark" style="transition: opacity 0.3s ease;">
-                &#10003;
-            </span>
-        </button>
-    </div>
-</div>
-<div id="overlay" class="overlay" onclick="toggleCart()"></div>
+.coupon-input-group button {
+  padding: 5px 8px; /* Reduce el tamaño del botón */
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 12px; /* Disminuye el tamaño de la fuente */
+}
 
-    <script src="script.js"></script>
-</body>
+.coupon-input-group button:hover {
+  background-color: #555;
+}
+#catalog-message {
+  background-color: #ffffff; /* Fondo blanco para el contenedor */
+  border: 1px solid #e0e0e0; /* Borde sutil */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none; /* Ocultar inicialmente */
+  text-align: center; /* Centrar contenido */
+}
 
-</html>
+#catalog-message.show {
+  display: block; /* Mostrar el mensaje */
+  opacity: 1;
+}
+
+#catalog-message.hide {
+  opacity: 0;
+  display: none; /* Ocultar cuando no está visible */
+}
+
+#catalog-message p {
+  font-size: 1.5rem; /* Tamaño de texto moderado */
+  margin-bottom: 10px; /* Espaciado entre el texto y el botón */
+  color: #333; /* Texto en gris oscuro */
+}
+
+#catalog-message a {
+  background-color: #ff6600; /* Fondo azul para el botón */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px 15px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado en el enlace */
+  font-weight: 500; /* Texto moderadamente grueso */
+  letter-spacing: -0.8px; /* Reduce el espacio entre las letras */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+#catalog-message a:hover {
+  background-color: #000000; /* Fondo más oscuro al pasar el cursor */
+  transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
+}

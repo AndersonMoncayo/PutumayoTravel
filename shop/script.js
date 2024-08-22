@@ -12,16 +12,24 @@ document.querySelectorAll('#add-to-cart-button').forEach(button => {
         event.preventDefault();
         let productCard = event.target.closest('.product-card');
         let productName = productCard.getAttribute('data-product');
+
+        // Verifica si hay un selector de variantes
+        let variantSelect = productCard.querySelector('#variant-select');
+        let productVariantName = variantSelect ? variantSelect.options[variantSelect.selectedIndex].getAttribute('data-name') : '';
+        
+        // Combina el nombre del producto con la variante seleccionada
+        let fullProductName = productVariantName ? `${productName} - ${productVariantName}` : productName;
+
         let productPrice = parseFloat(productCard.getAttribute('data-price'));
         let productImage = productCard.getAttribute('data-image');
 
-        addToCart(productName, productPrice, productImage);
+        addToCart(fullProductName, productPrice, productImage);
     });
 });
 
 // Función para añadir productos al carrito
 function addToCart(productName, productPrice, productImage) {
-    let existingProduct = cart.find(item => item.name === productName);
+    let existingProduct = cart.find(item => item.name === productName && item.image === productImage);
     if (existingProduct) {
         existingProduct.quantity += 1;
     } else {
@@ -42,6 +50,25 @@ function updateQuantity(productName, newQuantity) {
     }
 }
 
+// Función para actualizar el carrito en la interfaz de usuario
+function updateCart() {
+    cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartItems.innerHTML = '';
+
+    cart.forEach(item => {
+        let li = document.createElement('li');
+        li.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+            <span>${item.name} - ${item.quantity} x $${item.price.toLocaleString()} COP</span>
+        `;
+        cartItems.appendChild(li);
+    });
+
+    // Actualizar el total del carrito o cualquier otro dato necesario
+}
+
+// Iniciar la actualización del carrito al cargar la página (por si ya hay algo en el carrito)
+document.addEventListener('DOMContentLoaded', updateCart);
 // Función para aplicar un cupón de descuento
 function applyCoupon() {
     const couponCode = document.getElementById('coupon-code').value.trim();
@@ -199,7 +226,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Código de los Filtros
 function toggleFilters(event) {
-    event.preventDefault();
+    if (event) {
+        event.preventDefault();
+    }
     const filterDropdown = document.getElementById('filter-dropdown');
     filterDropdown.classList.toggle('hidden');
 }
@@ -216,8 +245,19 @@ function filterProductsByCategory(category) {
     });
 
     // Ocultar el menú desplegable después de seleccionar una categoría
-    toggleFilters();
+    const filterDropdown = document.getElementById('filter-dropdown');
+    filterDropdown.classList.add('hidden');
 }
+
+// Cierra el menú desplegable si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterToggle = document.getElementById('filter-toggle'); // Asumiendo que tienes un botón o elemento con este ID para abrir/cerrar el menú
+
+    if (!filterDropdown.contains(event.target) && !filterToggle.contains(event.target)) {
+        filterDropdown.classList.add('hidden');
+    }
+});
 
 // Función para alternar la barra de búsqueda y el menú de filtros
 function toggleSearch() {
@@ -288,4 +328,61 @@ function nextSlide() {
     slides[currentIndex].checked = true;
 }
 
+
+function updateVariant() {
+    const variantSelect = document.getElementById('variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    
+    const newImage = selectedOption.getAttribute('data-image');
+    const newPrice = selectedOption.getAttribute('data-price');
+    
+    // Actualiza la imagen del producto
+    document.getElementById('product-image').src = newImage;
+    
+    // Actualiza el precio del producto
+    document.getElementById('product-price').textContent = `$${parseFloat(newPrice).toLocaleString()} COP`;
+    
+    // Actualiza los datos del producto en la tarjeta
+    const productCard = variantSelect.closest('.product-card');
+    productCard.setAttribute('data-price', newPrice);
+    productCard.setAttribute('data-image', newImage);
+}
 setInterval(nextSlide, 5000);
+document.addEventListener('DOMContentLoaded', function() {
+    const catalogMessage = document.getElementById('catalog-message');
+    
+    function moveMessage() {
+        // Oculta el mensaje antes de moverlo
+        catalogMessage.classList.remove('show');
+        
+        setTimeout(function() {
+            catalogMessage.classList.add('hide');
+
+            setTimeout(function() {
+                // Obtén todos los productos
+                const products = document.querySelectorAll('.product-card');
+
+                // Genera un índice aleatorio para la posición
+                const randomIndex = Math.floor(Math.random() * products.length);
+
+                // Inserta el mensaje en la posición aleatoria
+                const randomProduct = products[randomIndex];
+                randomProduct.parentNode.insertBefore(catalogMessage, randomProduct.nextSibling);
+
+                // Después de mover el mensaje, muéstralo de nuevo
+                catalogMessage.classList.remove('hide');
+                catalogMessage.classList.add('show');
+            }, 300); // Pequeño retardo para asegurar que la transición funcione
+        }, 1000); // Espera 1 segundo para ocultar el mensaje
+    }
+    
+    // Mueve el mensaje a una nueva posición cada 2 minutos (120,000 ms)
+    setInterval(moveMessage, 100000);
+    
+    // Mueve el mensaje por primera vez inmediatamente después de que la página cargue
+    moveMessage();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Asegúrate de que la variante inicial esté configurada correctamente
+    updateVariant();
+});

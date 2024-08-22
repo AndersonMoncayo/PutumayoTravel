@@ -42,7 +42,7 @@
                     <svg class="fill-current text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path d="M5,22h14c1.103,0,2-0.897,2-2V9c0-0.553-0.447-1-1-1h-3V7c0-2.757-2.243-5-5-5S7,4.243,7,7v1H4C3.447,8,3,8.447,3,9v11 C3,21.103,3.897,22,5,22z M9,7c0-1.654,1.346-3,3-3s3,1.346,3,3v1H9V7z M5,10h2v2h2v-2h6v2h2v-2h2l0.002,10H5V10z" />
                     </svg>
-                    NORDICS
+                    GODMAKERS
                 </a>
             </div>
 
@@ -62,22 +62,21 @@
             <!-- Slide 1 -->
             <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
             <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('111.webp');">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/img1.webp');">
                     <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide md-margin-top-cm">
                             <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#producto1">view product</a>
+                            <a href="#smartphone" class="btn-view-product">view product</a>
                         </div>
                     </div>
                 </div>
             </div>
             <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-        
             <!-- Slide 2 -->
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('111.webp');">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover" style="background-image: url('images/img2.webp'); background-position-x: calc(100% + 50px);">
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
                             <p class="text-black text-2xl my-4">Smartphone</p>
@@ -92,11 +91,11 @@
             <!-- Slide 3 -->
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('111.webp');">
+                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('images/img1.webp');">
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Brown and blue hardbound book</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#producto1">view product</a>  
+                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
+                            <a href="#smartphone" class="btn-view-product">view product</a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +126,7 @@
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
                     <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
-                        Store
+                        TIENDA
                     </a>
                     <div class="flex items-center relative" id="store-nav-content">
                         <!-- Botón del Filtro con la clase "filter-button" -->
@@ -137,10 +136,13 @@
     
                         <!-- Lista desplegable de Filtros -->
                         <div id="filter-dropdown" class="absolute bg-white border border-gray-300 rounded-md shadow-lg p-4 hidden">
-                            <button onclick="filterProductsByCategory('Electronics')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Electronics</button>
-                            <button onclick="filterProductsByCategory('Furniture')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Furniture</button>
-                            <button onclick="filterProductsByCategory('Books')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Books</button>
-                            <button onclick="filterProductsByCategory('all')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Mostrar Todos</button>
+                            <button onclick="filterProductsByCategory('MASCARILLAUNIDAD')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Mascarillas</button>
+                            <button onclick="filterProductsByCategory('Protector')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Protector solar</button>
+                            <button onclick="filterProductsByCategory('Contorno')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Contorno de ojos</button>
+                            <button onclick="filterProductsByCategory('serumf')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Serum</button>
+                            <button onclick="filterProductsByCategory('parches')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Parches</button>
+                            <button onclick="filterProductsByCategory('geles')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Gel</button>
+                            <button onclick="filterProductsByCategory('varios')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Varios</button>
                         </div>
     
                         <!-- Barra de Búsqueda que aparece al hacer clic en search.svg -->
@@ -155,11 +157,11 @@
             </nav>
     
             <!-- Productos -->
-        <div id="smartphone" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Smartphone" data-price="51148.80" data-category="Electronics" data-image="images/111.webp">
+        <div id="varios" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Smartphone" data-price="51148.80" data-category="varios" data-image="images/111.webp">
             <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                <img class="hover:grow hover:shadow-lg" src="images/HerramientasYAccesorios_Guasha.webp">
                 <div class="pt-3 flex items-center justify-between">
-                    <p class="">Smartphone</p>
+                    <p class="">Guasha</p>
                     <button id="add-to-cart-button">
                         <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                     </button>
@@ -167,12 +169,15 @@
                 <p class="pt-1 text-gray-900">$51,148.80 </p>
             </a>
         </div>
-
-        <div id="chair" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Chair" data-price="61148.80" data-category="Furniture" data-image="images/111.webp">
+        <div id="catalog-message" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col bg-gray-100 text-center hide">
+            <p class="text-lg font-semibold">¿Quieres tener tu propio catálogo online?</p>
+            <a href="https://wa.me/573227736533?text=Hola%2C%20me%20gustar%C3%ADa%20contratar%20el%20servicio%20de%20cat%C3%A1logo%20online" target="_blank">CONTACTA CON NOSOTROS</a>
+        </div>
+        <div id="protector" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="protector" data-price="61148.80" data-category="protector" data-image="images/ProtecciónSolar_ProtectorSolarConBase.webp">
             <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+                <img class="hover:grow hover:shadow-lg" src="images/ProtecciónSolar_ProtectorSolarConBase.webp">
                 <div class="pt-3 flex items-center justify-between">
-                    <p class="">Chair</p>
+                    <p class="">Protector solar color</p>
                     <button id="add-to-cart-button">
                         <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                     </button>
@@ -180,12 +185,23 @@
                 <p class="pt-1 text-gray-900">$61,148.80 COP</p>
             </a>
         </div>
-
-        <div id="book" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Book" data-price="21148.80" data-category="Books" data-image="images/111.webp">
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Protector" data-price="45148.80" data-category="Protector" data-image="images/111.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/ProtecciónSolar_ProtectorSolarSinColor.webp">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Protector sin color</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$45,148.80 COP</p>
+            </a>
+        </div>
+        <div id="book" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Book" data-price="21148.80" data-category="Contorno" data-image="images/111.webp">
             <a href="#">
                 <img class="hover:grow hover:shadow-lg" src="images/111.webp">
                 <div class="pt-3 flex items-center justify-between">
-                    <p class="">Book</p>
+                    <p class="">Contorno de ojos</p>
                     <button id="add-to-cart-button">
                         <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                     </button>
@@ -194,44 +210,305 @@
             </a>
         </div>
 
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Laptop" data-price="111148.80" data-category="Electronics" data-image="images/111.webp">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+
+
+
+
+
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/30gMascarillas_MascarillaPuntosNegros.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/30gMascarillas_MascarillaPuntosNegros.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">30gMascarillas_MascarillaPuntosNegros</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/antiacnekissbea.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/antiacnekissbea.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">antiacnekissbea</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/contornogelaloevera2.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/contornogelaloevera2.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">contornogelaloevera2</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/contornogelalovera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/contornogelalovera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">contornogelalovera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/DespigmentanteBioaqua.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/DespigmentanteBioaqua.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">DespigmentanteBioaqua</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/mascarillanegraimpurezas.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/mascarillanegraimpurezas.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">mascarillanegraimpurezas</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/pulpofacial.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/pulpofacial.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">pulpofacial</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/Puntosnegrosbioqua.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/Puntosnegrosbioqua.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Puntosnegrosbioqua</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/remueveimpurezasmiel.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/remueveimpurezasmiel.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">remueveimpurezasmiel</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/serumdealoevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/serumdealoevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">serumdealoevera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/serumretinol.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/serumretinol.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">serumretinol</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/SuerosSerums_SerumDeRosasPielSeca.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/SuerosSerums_SerumDeRosasPielSeca.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">SuerosSerums_SerumDeRosasPielSeca</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/tonicodearboldete.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/tonicodearboldete.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">tonicodearboldete</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+        <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="GelAloeVera" data-price="51148.80" data-category="Geles Varios" data-image="images/gelaloevera.webp">
+            <a href="#">
+                <img class="hover:grow hover:shadow-lg" src="images/gelaloevera.webp" alt="Gel Aloe Vera">
+                <div class="pt-3 flex items-center justify-between">
+                    <p class="">Gel Aloe Vera</p>
+                    <button id="add-to-cart-button">
+                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+                    </button>
+                </div>
+                <p class="pt-1 text-gray-900">$51,148.80 COP</p>
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+        
+            <div id="mask" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Mascarilla" data-category="MASCARILLAUNIDAD">
+                <div>
+                    <img id="product-image" class="hover:grow hover:shadow-lg" src="images/huevo.webp">
                     <div class="pt-3 flex items-center justify-between">
-                        <p class="">Laptop</p>
+                        <p class="">Mascarilla</p>
+                        <select id="variant-select" onchange="updateVariant()">
+                            <option value="huevo" data-price="3148.80" data-image="images/Mascarillas_MascarillaHuevo.webp" data-name="Huevo">Huevo</option>
+                            <option value="aguacate" data-price="3148.80" data-image="images/Mascarillas_MascarillaAguacate.webp" data-name="Aguacate">Aguacate</option>
+                            <option value="centella" data-price="3148.80" data-image="images/Mascarillas_MascarillaDeCentellaAcné.webp" data-name="Centella">Centella</option>
+                            <option value="acido_hialuronico" data-price="3148.80" data-image="images/Mascarillas_MascarillaÁcidoHialurónicoYAlgas.webp" data-name="Ácido Hialurónico">Ácido Hialurónico</option>
+                            <option value="antiedadM" data-price="3148.80" data-image="images/Mascarillas_MascarillaAntiedad.webp" data-name="Antiedad">Antiedad</option>
+                        </select>
                         <button id="add-to-cart-button">
                             <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
                         </button>
                     </div>
-                    <p class="pt-1 text-gray-900">$111,148.80 COP</p>
-                </a>
+                    <p id="product-price" class="pt-1 text-gray-900">$3,148.80 COP</p>
+                </div>
             </div>
     
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Headphones" data-price="3148.80" data-category="Electronics" data-image="images/111.webp">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Headphones</p>
-                        <button id="add-to-cart-button">
-                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                        </button>
-                    </div>
-                    <p class="pt-1 text-gray-900">$3,148.80 COP</p>
-                </a>
-            </div>
-    
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Table" data-price="45148.80" data-category="Furniture" data-image="images/111.webp">
-                <a href="#">
-                    <img class="hover:grow hover:shadow-lg" src="images/111.webp">
-                    <div class="pt-3 flex items-center justify-between">
-                        <p class="">Table</p>
-                        <button id="add-to-cart-button">
-                            <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                        </button>
-                    </div>
-                    <p class="pt-1 text-gray-900">$45,148.80 COP</p>
-                </a>
-            </div>
+          
         </div>
     </section>
 
@@ -268,13 +545,13 @@
             </div>
         </div>
 
-        <button onclick="clearCart()" class="border border-black text-black py-2 px-4 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group">
+        <button onclick="clearCart()" class="border border-black text-black py-2 px-1 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group" style="margin: 2px;">
             <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
             <span class="relative z-10">Vaciar Carrito</span>
         </button>
         <button onclick="showCheckmark(this)" class="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition duration-300 relative overflow-hidden group">
             <span class="absolute inset-0 w-full h-full bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-            <span class="relative z-10">Checkout</span>
+            <span class="relative z-10">Comprar</span>
             <span class="absolute inset-0 flex items-center justify-center text-white opacity-0 checkmark" style="transition: opacity 0.3s ease;">
                 &#10003;
             </span>

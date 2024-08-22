@@ -57,7 +57,15 @@
   width: 100%;
   background-color: transparent; /* Esto hace que el fondo sea completamente transparente */
 }
+.carousel-item .container .flex {
+  position: relative;
+  top: -1cm; /* Mueve este contenedor 1 cm hacia arriba */
+}
 
+
+p.text-black.text-2xl.my-4 {
+  font-size: 2rem; /* Ajusta el tamaño según tus necesidades */
+}
 .carousel-item p, .carousel-item a {
   margin: 0;
 }
@@ -92,6 +100,7 @@
 #cart-icon {
   position: relative;
   display: inline-block;
+  top: 0.1cm; /* Baja el ícono 0.2 cm */
 }
 
 #cart-count {
@@ -264,7 +273,7 @@ button#add-to-cart-button:hover img {
 
 /* Estilos para el botón de Checkout con animación */
 .checkout-btn {
-  padding: 15px 40px;
+  padding: 15px 40px;  /* Padding inicial */
   background-color: #000; /* Fondo negro */
   color: #fff; /* Texto blanco */
   border: none; /* Sin borde */
@@ -273,7 +282,7 @@ button#add-to-cart-button:hover img {
   font-size: 12px;
   letter-spacing: 3px;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: padding 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s ease, color 0.4s ease;
   cursor: pointer;
   text-align: center;
   margin-top: 10px;
@@ -281,6 +290,7 @@ button#add-to-cart-button:hover img {
   display: block;
   width: fit-content; /* Ajusta el ancho al contenido */
   margin: 0 auto; /* Centra el botón horizontalmente */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del botón */
 }
 
 .checkout-btn::after,
@@ -291,7 +301,7 @@ button#add-to-cart-button:hover img {
   right: 0px;
   transform: translateY(-50%);
   opacity: 0;
-  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), right 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .checkout-btn::after {
@@ -313,7 +323,7 @@ button#add-to-cart-button:hover img {
 }
 
 .checkout-btn:hover {
-  padding: 15px 60px 15px 20px;
+  padding: 15px 50px 15px 30px; /* Mantén un padding más equilibrado */
 }
 
 .checkout-btn:hover::after,
@@ -321,7 +331,6 @@ button#add-to-cart-button:hover img {
   opacity: 1;
   right: 15px;
 }
-
 /* Estilos para el botón de Vaciar Carrito */
 .clear-cart-btn {
   background-color: #fff; /* Fondo blanco */
@@ -463,6 +472,7 @@ button.delete-btn:hover i {
   line-height: 1.5; /* Ajusta el line-height para centrar el texto verticalmente */
 }
 
+
 .btn-view-product:hover {
   color: #dddddd; /* Cambia el color del texto al pasar el ratón */
   border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
@@ -545,4 +555,47 @@ button.delete-btn:hover i {
 
 .coupon-input-group button:hover {
   background-color: #555;
+}
+#catalog-message {
+  background-color: #ffffff; /* Fondo blanco para el contenedor */
+  border: 1px solid #e0e0e0; /* Borde sutil */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: none; /* Ocultar inicialmente */
+  text-align: center; /* Centrar contenido */
+}
+
+#catalog-message.show {
+  display: block; /* Mostrar el mensaje */
+  opacity: 1;
+}
+
+#catalog-message.hide {
+  opacity: 0;
+  display: none; /* Ocultar cuando no está visible */
+}
+
+#catalog-message p {
+  font-size: 1.5rem; /* Tamaño de texto moderado */
+  margin-bottom: 10px; /* Espaciado entre el texto y el botón */
+  color: #333; /* Texto en gris oscuro */
+}
+
+#catalog-message a {
+  background-color: #ff6600; /* Fondo azul para el botón */
+  color: #ffffff; /* Texto blanco */
+  padding: 10px 15px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado en el enlace */
+  font-weight: 500; /* Texto moderadamente grueso */
+  letter-spacing: -0.8px; /* Reduce el espacio entre las letras */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+#catalog-message a:hover {
+  background-color: #000000; /* Fondo más oscuro al pasar el cursor */
+  transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
 }

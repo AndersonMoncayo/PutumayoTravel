@@ -1,4 +1,7 @@
 /* General Styles */
+body {
+  padding-top: 62px; /* Ajusta este valor según la altura real del encabezado */
+}
 .work-sans {
   font-family: 'Work Sans', sans-serif;
 }
@@ -628,4 +631,13 @@ button.delete-btn:hover i {
   padding: 0.25rem 0.5rem; /* Espaciado interno alrededor del texto */
   display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
   border-radius: 0.5rem; /* Bordes redondeados */
+}
+.fixed-header {
+  position: fixed; /* Fija el elemento en la pantalla */
+  top: 0;         /* Fija la parte superior del elemento al borde superior de la página */
+  left: 0;        /* Fija la parte izquierda del elemento al borde izquierdo de la página */
+  width: 100%;    /* Hace que el encabezado ocupe todo el ancho de la pantalla */
+  z-index: 50;    /* Asegura que el encabezado esté por encima de otros elementos */
+  background-color: white; /* Añade un color de fondo para que sea visible */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Añade una ligera sombra para mejor visibilidad */
 }

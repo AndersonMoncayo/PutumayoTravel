@@ -365,29 +365,28 @@ function updateVariant() {
     productCard.setAttribute('data-image', newImage);
 }
 
-function updateNewVariant() {
-    const variantSelect = document.getElementById('new-variant-select');
+function updateRolonVariant() {
+    const variantSelect = document.getElementById('rolon-variant-select');
     const selectedOption = variantSelect.options[variantSelect.selectedIndex];
-    
+
     const newImage = selectedOption.getAttribute('data-image');
-    const newPrice = parseFloat(selectedOption.getAttribute('data-price')); // Convierte a número
+    const newPrice = selectedOption.getAttribute('data-price');
     const newDescription = selectedOption.getAttribute('data-description');
-    
+
     // Actualiza la imagen del producto
-    document.getElementById('new-product-image').src = newImage;
-    
+    document.getElementById('rolon-product-image').src = newImage;
+
     // Actualiza el precio del producto con formato de número local
-    document.getElementById('new-product-price').textContent = `$${newPrice.toLocaleString('es-CO')} COP`;
-    
+    document.getElementById('rolon-product-price').textContent = `$${parseFloat(newPrice).toLocaleString('es-CO')} COP`;
+
     // Actualiza la descripción del producto
-    document.getElementById('new-product-description').textContent = newDescription;
-    
+    document.getElementById('rolon-product-description').textContent = newDescription;
+
     // Actualiza los datos del producto en la tarjeta
     const productCard = variantSelect.closest('.product-card');
     productCard.setAttribute('data-price', newPrice);
     productCard.setAttribute('data-image', newImage);
 }
-
 setInterval(nextSlide, 5000);
 document.addEventListener('DOMContentLoaded', function() {
     const catalogMessage = document.getElementById('catalog-message');

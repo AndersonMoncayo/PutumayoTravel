@@ -624,8 +624,8 @@ button.delete-btn:hover i {
   transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
 }
 .bg-white-opacity {
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
+  background-color: rgba(255, 255, 255, 0.324); /* Fondo blanco con 80% de opacidad */
   padding: 0.25rem 0.5rem; /* Espaciado interno alrededor del texto */
   display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
-  border-radius: 0.25rem; /* Bordes redondeados */
+  border-radius: 0.5rem; /* Bordes redondeados */
 }

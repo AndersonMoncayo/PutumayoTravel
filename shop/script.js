@@ -1,643 +1,434 @@
-/* General Styles */
-body {
-  padding-top: 62px; /* Ajusta este valor según la altura real del encabezado */
-}
-.work-sans {
-  font-family: 'Work Sans', sans-serif;
-}
-
-#menu-toggle:checked + #menu {
-  display: block;
-}
-
-.hover\:grow {
-  transition: all 0.3s;
-  transform: scale(1);
-}
-
-.hover\:grow:hover {
-  transform: scale(1.02);
-}
-
-/* Carousel Styles */
-/* Estilos base del carrusel */
-.carousel-item {
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 0;
-}
-.bg-custom {
-  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
-}
-.bg-custom-2 {
-  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
-}
-.bg-custom-3 {
-  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
-}
-.carousel-open:checked + .carousel-item {
-  position: relative;
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Indicadores */
-.carousel-bullet {
-  transition: color 0.3s ease;
-  color: rgb(231, 231, 231); /* Color para los indicadores inactivos */
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Para asegurarse de que la imagen ocupe todo el espacio sin deformarse */
-  transition: none;
-}
-
-.carousel-item .container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  color: white;
-  width: 100%;
-  background-color: transparent;
-  z-index: 10; /* Asegura que esté por encima del fondo */
-  opacity: 1; /* Asegura visibilidad completa */
-}
-.carousel-item .container .flex {
-  position: relative;
-  top: -1cm; /* Mueve este contenedor 1 cm hacia arriba */
-}
-
-
-p.text-black.text-2xl.my-4 {
-  font-size: 2rem; /* Ajusta el tamaño según tus necesidades */
-}
-.carousel-item p, .carousel-item a {
-  margin: 0;
-}
-
-/* Mostrar controles cuando el slide está activo */
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-  display: block;
-}
-
-/* Estilos para los indicadores */
-.carousel-indicators {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: 2%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 10;
-}
-
-/* Estilo para el indicador activo */
-#carousel-1:checked ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-  color: black; /* Color del indicador activo */
-}
-/* Cart Icon in Header */
-#cart-icon {
-  position: relative;
-  display: inline-block;
-  top: 0.1cm; /* Baja el ícono 0.2 cm */
-}
-
-#cart-count {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 0.75rem;
-  background-color: #e53e3e;
-  color: white;
-  border-radius: 9999px;
-  height: 1.25rem;
-  width: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Sidebar Cart Styles */
-.cart-sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #fff;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  transition: right 0.3s ease;
-  z-index: 1000;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.cart-sidebar h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.cart-sidebar.show {
-  right: 0;
-}
-
-.cart-sidebar li strong {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.cart-item-info {
-  display: flex;
-  align-items: center; /* Alinea verticalmente todos los elementos al centro */
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.product-image {
-  width: 40px; /* Tamaño de imagen ajustado */
-  height: 40px;
-  border-radius: 5px;
-  margin-right: 10px; /* Espacio entre la imagen y el contenido */
-}
-
-.item-details {
-  display: flex;
-  flex-direction: column;
-  width: 100%; /* Ocupa todo el espacio disponible */
-}
-
-.product-name {
-  font-weight: 600;
-  margin-bottom: 2px; /* Reduce el espacio entre el nombre y el precio */
-  position: relative; /* Permite mover el elemento respecto a su posición original */
-  top: 0.3cm; /* Mueve el elemento 0.3 cm hacia abajo */
-  letter-spacing: -0.5px; /* Ajusta el espaciado entre caracteres */
-}
-.product-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
-}
-
-.product-price {
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.quantity-input {
-  width: 40px; /* Reduce el tamaño del input para que encaje mejor */
-  padding: 3px;
-  text-align: center;
-  font-size: 14px;
-  margin-right: 5px; /* Añade un pequeño margen a la derecha */
-}
-
-.delete-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  margin-left: 10px; /* Espacio entre el input y el botón eliminar */
-}
-
-.delete-icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  position: relative; /* Asegura que el icono se pueda mover con top */
-  top: -0.15cm; /* Mueve el icono 0.5 cm hacia arriba */
-}
-
-
-.delete-btn:hover .delete-icon {
-  opacity: 1;
-}
-
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.quantity-controls button {
-  padding: 2px 6px;
-  background-color: #e2e8f0;
-  border: none;
-  cursor: pointer;
-}
-
-.quantity-controls button:hover {
-  background-color: #cbd5e0;
-}
-
-/* Overlay Styles */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
-
-.overlay.show {
-  display: block;
-}
-
-/* Product Card Button */
-button#add-to-cart-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-button#add-to-cart-button img {
-  width: 24px;
-  height: 24px;
-}
-
-button#add-to-cart-button:hover img {
-  filter: invert(1);
-}
-
-/* Estilos para el botón de Checkout con animación */
-.checkout-btn {
-  padding: 15px 40px;  /* Padding inicial */
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
-  text-transform: uppercase;
-  font-family: 'Helvetica', sans-serif; /* Usar Helvetica o sans-serif */
-  font-size: 12px;
-  letter-spacing: 3px;
-  position: relative;
-  transition: padding 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.4s ease, color 0.4s ease;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 10px;
-  font-weight: 600;
-  display: block;
-  width: fit-content; /* Ajusta el ancho al contenido */
-  margin: 0 auto; /* Centra el botón horizontalmente */
-  box-sizing: border-box; /* Incluye padding y border en el tamaño total del botón */
-}
-
-.checkout-btn::after,
-.checkout-btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), right 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.checkout-btn::after {
-  width: 30px;
-  height: 1px;
-  background: white;
-  transform: translateX(-3px);
-  margin-top: 0px;
-}
-
-.checkout-btn::before {
-  transform: rotate(-135deg) translateX(50%);
-  width: 11px;
-  height: 11px;
-  background: transparent;
-  border-left: 1px solid white;
-  border-bottom: 1px solid white;
-  margin-top: -1px;
-}
-
-.checkout-btn:hover {
-  padding: 15px 50px 15px 30px; /* Mantén un padding más equilibrado */
-}
-
-.checkout-btn:hover::after,
-.checkout-btn:hover::before {
-  opacity: 1;
-  right: 15px;
-}
-/* Estilos para el botón de Vaciar Carrito */
-.clear-cart-btn {
-  background-color: #fff; /* Fondo blanco */
-  color: #333; /* Texto negro suave */
-  border: 2px solid #333; /* Borde negro */
-  border-radius: 5px;
-  padding: 12px;
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.clear-cart-btn:hover {
-  background-color: #f5f5f5; /* Fondo gris claro */
-  color: #000; /* Texto negro más oscuro */
-  border-color: #000; /* Borde negro más oscuro */
-}
-
-/* Estilos globales para cualquier botón con el texto 'Eliminar' */
-button:contains('Eliminar') {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #f44336; /* Color de fondo */
-  color: white; /* Color del texto */
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 3px; /* Bordes redondeados */
-  cursor: pointer;
-  margin-top: 10px; /* Espaciado superior */
-  margin-left: 10px; /* Espaciado a la izquierda */
-}
-
-button:contains('Eliminar'):hover {
-  background-color: #d32f2f; /* Color de fondo al pasar el mouse */
-}
-
-.delete-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.delete-btn img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.delete-btn:hover img {
-  opacity: 1;
-}
-
-/* Estilos para el botón de Eliminar como papelera */
-button.delete-btn {
-  display: inline-block;
-  background-color: transparent; /* Fondo transparente */
-  border: none; /* Sin bordes */
-  cursor: pointer;
-  padding: 5px;
-  margin-top: 10px; /* Espaciado superior */
-  margin-left: 10px; /* Espaciado a la izquierda */
-}
-
-button.delete-btn i {
-  font-size: 24px; /* Tamaño del icono */
-  color: #f44336; /* Color del icono de papelera */
-}
-
-button.delete-btn:hover i {
-  color: #d32f2f; /* Color del icono al pasar el mouse */
-}
-
-/* Estilo para la lista desplegable del filtro */
-#filter-dropdown {
-  position: absolute;
-  top: 100%; /* Justo debajo del botón */
-  left: 50%; /* Centrado inicialmente en móviles */
-  transform: translateX(-70%); /* Asegurar centrado en móviles */
-  z-index: 10;
-  width: auto;
-  min-width: 200px;
-  background-color: rgba(255, 255, 255, 0.95); /* Fondo ligeramente translúcido */
-  border: 1px solid #ddd; /* Borde suave y claro */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
-  padding: 10px 0; /* Espacio interno para las opciones */
-  margin-top: 8px; /* Espacio entre el botón y el menú */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-}
-
-/* Estilo para el botón del filtro */
-.filter-button {
-  margin-top: 0cm; /* Baja el botón 0.2 cm desde su posición natural */
-}
-
-/* Estilo para los botones dentro del filtro */
-#filter-dropdown button {
-  width: 100%;
-  text-align: left;
-  padding: 10px 15px;
-  background-color: transparent; /* Fondo transparente para un look minimalista */
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #333; /* Color de texto suave */
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#filter-dropdown button:hover {
-  background-color: #f5f5f5; /* Color de fondo claro en hover */
-  color: #000; /* Color de texto más oscuro en hover */
-}
-
-/* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
-@media (min-width: 768px) {
-
-  .bg-white-opacity {
-    background-color: transparent !important;
-}
-  .bg-custom {
-    background-position: top -2cm right; /* Baja la imagen de fondo 2 cm */
-}
-.bg-custom-2 {
-  background-position: top -2cm right; /* Baja la imagen de fondo 2 cm */
-}
-.bg-custom-3 {
-  background-position: top -1cm right; /* Sube la imagen de fondo 1 cm */
-}
-  #filter-dropdown {
-      left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
-      transform: none; /* Eliminar la transformación centrada */
-  }
-}
-.btn-view-product {
-  display: inline-block;
-  padding: 10px 12px; /* Aumenta el padding vertical en 8px (0.2cm) y el horizontal a 12px */
-  background-color: transparent; /* Mantén transparente para que se vea como un enlace */
-  color: #ffffff; /* Color del texto */
-  text-align: center;
-  text-decoration: none; /* Eliminar subrayado predeterminado */
-  border: none; /* Sin bordes adicionales */
-  font-weight: 500;
-  font-size: 1.25rem; /* Ajusta el tamaño de la fuente según necesites */
-  cursor: pointer; /* Cambiar el cursor a la mano */
-  border-bottom: 1px solid #606060; /* Línea inferior para parecer un enlace subrayado */
-  transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave */
-  line-height: 1.5; /* Ajusta el line-height para centrar el texto verticalmente */
-}
-
-
-.btn-view-product:hover {
-  color: #dddddd; /* Cambia el color del texto al pasar el ratón */
-  border-color: #dddddd; /* Cambia el color del borde inferior al pasar el ratón */
-}
-
-.btn-view-product:focus {
-  outline: none; /* Elimina el borde de enfoque */
-}
-.hidden {
-  display: none;
-}
-
-#delivery-address {
-  margin-top: 10px;
-}
-
-#delivery-address input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-top: 5px;
-}
-.delivery-section {
-  margin-top: 20px;
-  padding: 10px 0;
-  border-top: 1px solid #e0e0e0;
-}
-
-.delivery-option, .delivery-address {
-  margin-bottom: 15px;
-}
-
-.delivery-option select, 
-.delivery-address input {
-  width: 100%;  /* Asegura que el select y input ocupen todo el ancho disponible */
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.delivery-option label, 
-.delivery-address label {
-  font-weight: 600;
-  color: #333;
-  display: block;
-  margin-bottom: 5px;
-}
-.coupon-section {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.coupon-input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.coupon-input-group input {
-  width: 60%; /* Ajusta el ancho del input */
-  padding: 5px; /* Reduce el padding para hacer el input más compacto */
-  border: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
-  font-size: 12px; /* Disminuye el tamaño de la fuente */
-}
-
-.coupon-input-group button {
-  padding: 5px 8px; /* Reduce el tamaño del botón */
-  background-color: #333;
-  color: white;
-  border: 1px solid #333;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 12px; /* Disminuye el tamaño de la fuente */
-}
-
-.coupon-input-group button:hover {
-  background-color: #555;
-}
-#catalog-message {
-  background-color: #ffffff; /* Fondo blanco para el contenedor */
-  border: 1px solid #e0e0e0; /* Borde sutil */
-  padding: 15px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  display: none; /* Ocultar inicialmente */
-  text-align: center; /* Centrar contenido */
-}
-
-#catalog-message.show {
-  display: block; /* Mostrar el mensaje */
-  opacity: 1;
-}
-
-#catalog-message.hide {
-  opacity: 0;
-  display: none; /* Ocultar cuando no está visible */
-}
-
-#catalog-message p {
-  font-size: 1.5rem; /* Tamaño de texto moderado */
-  margin-bottom: 10px; /* Espaciado entre el texto y el botón */
-  color: #333; /* Texto en gris oscuro */
-}
-
-#catalog-message a {
-  background-color: #ff6600; /* Fondo azul para el botón */
-  color: #ffffff; /* Texto blanco */
-  padding: 10px 15px; /* Espaciado interno del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado en el enlace */
-  font-weight: 500; /* Texto moderadamente grueso */
-  letter-spacing: -0.8px; /* Reduce el espacio entre las letras */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
-}
-
-#catalog-message a:hover {
-  background-color: #000000; /* Fondo más oscuro al pasar el cursor */
-  transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
-}
-.bg-white-opacity {
-  background-color: rgba(255, 255, 255, 0.324); /* Fondo blanco con 80% de opacidad */
-  padding: 0.25rem 0.5rem; /* Espaciado interno alrededor del texto */
-  display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
-  border-radius: 0.5rem; /* Bordes redondeados */
-}
-.fixed-header {
-  position: fixed; /* Fija el elemento en la pantalla */
-  top: 0;         /* Fija la parte superior del elemento al borde superior de la página */
-  left: 0;        /* Fija la parte izquierda del elemento al borde izquierdo de la página */
-  width: 100%;    /* Hace que el encabezado ocupe todo el ancho de la pantalla */
-  z-index: 50;    /* Asegura que el encabezado esté por encima de otros elementos */
-  background-color: white; /* Añade un color de fondo para que sea visible */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Añade una ligera sombra para mejor visibilidad */
-}
+// Código del Carrito de Compras
+let cart = [];
+let cartCount = document.getElementById('cart-count');
+let cartItems = document.getElementById('cart-items');
+let cartSidebar = document.getElementById('cart-sidebar');
+let overlay = document.getElementById('overlay');
+let discount = 0; // Variable para almacenar el descuento aplicado
+
+// Manejo del evento de añadir al carrito
+document.querySelectorAll('#add-to-cart-button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        
+        // Encuentra la tarjeta del producto
+        let productCard = event.target.closest('.product-card');
+        
+        // Obtiene el nombre base del producto
+        let productName = productCard.getAttribute('data-product');
+        
+        // Verifica si hay un selector de variantes
+        let variantSelect = productCard.querySelector('select');
+        let productVariantName = variantSelect ? variantSelect.options[variantSelect.selectedIndex].getAttribute('data-name') : '';
+        
+        // Combina el nombre del producto con la variante seleccionada
+        let fullProductName = productVariantName ? `${productName} - ${productVariantName}` : productName;
+        
+        // Obtiene el precio del producto
+        let productPrice = parseFloat(productCard.getAttribute('data-price'));
+        
+        // Obtiene la imagen del producto
+        let productImage = productCard.getAttribute('data-image');
+        
+        // Llama a la función para agregar al carrito
+        addToCart(fullProductName, productPrice, productImage);
+    });
+});
+
+// Función para añadir productos al carrito
+function addToCart(productName, productPrice, productImage) {
+    // Busca si el producto ya existe en el carrito
+    let existingProduct = cart.find(item => item.name === productName && item.image === productImage);
+    
+    if (existingProduct) {
+        // Si el producto ya existe, incrementa la cantidad
+        existingProduct.quantity += 1;
+    } else {
+        // Si no existe, agrega un nuevo producto al carrito con cantidad 1
+        cart.push({name: productName, price: productPrice, image: productImage, quantity: 1});
+    }
+    
+    // Actualiza la UI o el estado del carrito
+    updateCart();
+}
+
+// Función para actualizar la cantidad de un producto manualmente
+function updateQuantity(productName, newQuantity) {
+    let product = cart.find(item => item.name === productName);
+    if (product) {
+        const quantity = parseInt(newQuantity);
+        if (!isNaN(quantity) && quantity > 0) {
+            product.quantity = quantity;
+            updateCart();
+        }
+    }
+}
+
+// Función para actualizar el carrito en la interfaz de usuario
+function updateCart() {
+    cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartItems.innerHTML = '';
+
+    cart.forEach(item => {
+        let li = document.createElement('li');
+        li.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px;">
+            <span>${item.name} - ${item.quantity} x $${item.price.toLocaleString()} COP</span>
+        `;
+        cartItems.appendChild(li);
+    });
+
+    // Actualizar el total del carrito o cualquier otro dato necesario
+}
+
+// Iniciar la actualización del carrito al cargar la página (por si ya hay algo en el carrito)
+document.addEventListener('DOMContentLoaded', updateCart);
+// Función para aplicar un cupón de descuento
+function applyCoupon() {
+    const couponCode = document.getElementById('coupon-code').value.trim();
+
+    // Ejemplo de cupones disponibles
+    const coupons = {
+        'DESCUENTO10': 10, // 10% de descuento
+        'DESCUENTO20': 20, // 20% de descuento
+        'DESCUENTO50': 50  // 50% de descuento
+    };
+
+    if (coupons[couponCode]) {
+        discount = coupons[couponCode];
+        alert(`Cupón aplicado: ${discount}% de descuento`);
+        updateCart(); // Llama a updateCart para actualizar el total con el descuento
+    } else {
+        alert('Cupón no válido');
+        discount = 0; // Restablecer el descuento si el cupón es inválido
+    }
+}
+
+// Función para actualizar el carrito
+function updateCart() {
+    let total = 0;
+    cartCount.textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+    cartItems.innerHTML = '';
+
+    if (cart.length === 0) {
+        document.getElementById('cart-content').classList.add('hidden');
+    } else {
+        document.getElementById('cart-content').classList.remove('hidden');
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            let li = document.createElement('li');
+            li.innerHTML = `
+       <div class="cart-item-info">
+        <img src="${item.image}" alt="${item.name}" class="product-image">
+        <div class="item-details">
+            <div class="product-name">${item.name}</div>
+            <div class="product-info">
+                <span class="product-price">$${item.price.toLocaleString()}</span> 
+                <span>x</span>
+                <input type="number" value="${item.quantity}" min="1" class="quantity-input" 
+                       onchange="updateQuantity('${item.name}', this.value)">
+                <button class="delete-btn" onclick="removeFromCart('${item.name}')">
+                    <img src="images/trash.svg" alt="Eliminar" class="delete-icon">
+                </button>
+            </div>
+        </div>
+    </div>`;
+            cartItems.appendChild(li);
+        });
+
+        if (discount > 0) {
+            total = total - (total * (discount / 100));
+        }
+
+        document.getElementById('cart-total').textContent = total.toLocaleString();
+    }
+}
+
+// Función para eliminar un producto del carrito
+function removeFromCart(productName) {
+    cart = cart.filter(item => item.name !== productName);
+    updateCart();
+}
+
+// Función para vaciar el carrito
+function clearCart() {
+    cart = []; // Vaciamos el array del carrito
+    updateCart(); // Actualizamos la vista del carrito
+    toggleCart(); // Cerramos la barra lateral del carrito (opcional)
+}
+
+// Función para proceder al checkout
+function checkout() {
+    let total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+    // Aplicar descuento si existe
+    if (discount > 0) {
+        total = total - (total * (discount / 100));
+    }
+
+    let message = "Hola, me gustaría hacer un pedido:\n";
+    cart.forEach(item => {
+        message += `${item.name} - COP ${item.price.toLocaleString()} x ${item.quantity}\n`;
+    });
+    message += `Total: COP ${total.toLocaleString()}\n`;
+
+    const deliveryMethod = document.getElementById('delivery-method').value;
+    if (deliveryMethod === 'delivery') {
+        const address = document.getElementById('address').value;
+        message += `Método de Entrega: Domicilio\nDirección: ${address}\n`;
+    } else {
+        message += "Método de Entrega: Recoger en Local\n";
+    }
+
+    const whatsappLink = `https://wa.me/573227736533?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, '_blank');
+}
+
+// Función para alternar la visibilidad del carrito
+function toggleCart() {
+    cartSidebar.classList.toggle('show');
+    overlay.classList.toggle('show');
+}
+
+// Función para mostrar u ocultar el campo de dirección
+function toggleAddressInput() {
+    const deliveryMethod = document.getElementById('delivery-method').value;
+    const addressInput = document.getElementById('delivery-address');
+
+    if (deliveryMethod === 'delivery') {
+        addressInput.classList.remove('hidden');
+    } else {
+        addressInput.classList.add('hidden');
+    }
+}
+
+// Event listener para el icono del carrito
+document.getElementById('cart-icon').addEventListener('click', toggleCart);
+
+// Event listener para la carga inicial del carrito
+document.addEventListener('DOMContentLoaded', function() {
+    updateCart(); // Verifica el estado del carrito al cargar la página
+});
+
+// Integración del botón animado "button-bird"
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselItems = document.querySelectorAll('.carousel-open');
+    const indicators = document.querySelectorAll('.carousel-bullet');
+    let currentIndex = 0;
+
+    function updateIndicators() {
+        indicators.forEach((bullet, index) => {
+            if (index === currentIndex) {
+                bullet.style.color = "black"; // Activo
+            } else {
+                bullet.style.color = "rgb(231, 231, 231)"; // Inactivo
+            }
+        });
+    }
+
+    function showNextSlide() {
+        carouselItems[currentIndex].checked = false; // Desactivar la diapositiva actual
+        currentIndex = (currentIndex + 1) % carouselItems.length; // Incrementar índice
+        carouselItems[currentIndex].checked = true; // Activar la nueva diapositiva
+        updateIndicators(); // Actualizar los indicadores
+    }
+
+    setInterval(showNextSlide, 5000); // Cambia de diapositiva cada 5 segundos
+
+    updateIndicators(); // Inicializa los indicadores
+});
+
+// Código de los Filtros
+function toggleFilters(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    const filterDropdown = document.getElementById('filter-dropdown');
+    filterDropdown.classList.toggle('hidden');
+}
+
+function filterProductsByCategory(category) {
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        if (category === 'all' || product.getAttribute('data-category') === category) {
+            product.style.display = 'flex'; // Mostrar el producto
+        } else {
+            product.style.display = 'none'; // Ocultar el producto
+        }
+    });
+
+    // Ocultar el menú desplegable después de seleccionar una categoría
+    const filterDropdown = document.getElementById('filter-dropdown');
+    filterDropdown.classList.add('hidden');
+}
+
+// Cierra el menú desplegable si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterToggle = document.getElementById('filter-toggle'); // Asumiendo que tienes un botón o elemento con este ID para abrir/cerrar el menú
+
+    if (!filterDropdown.contains(event.target) && !filterToggle.contains(event.target)) {
+        filterDropdown.classList.add('hidden');
+    }
+});
+
+// Función para alternar la barra de búsqueda y el menú de filtros
+function toggleSearch() {
+    const searchInput = document.getElementById('search-input');
+    const filterDropdown = document.getElementById('filter-dropdown');
+    const filterButton = document.querySelector('button[onclick="toggleFilters(event)"]');
+    
+    if (searchInput.classList.contains('hidden')) {
+        // Mostrar la barra de búsqueda y ocultar el botón de filtro
+        searchInput.classList.remove('hidden');
+        filterDropdown.classList.add('hidden');
+        filterButton.classList.add('hidden');
+        searchInput.focus(); // Colocar el foco en el campo de búsqueda
+    } else {
+        // Ocultar la barra de búsqueda y mostrar el botón de filtro
+        searchInput.classList.add('hidden');
+        filterButton.classList.remove('hidden');
+    }
+}
+
+// Función para manejar el evento de presionar una tecla en el campo de búsqueda
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        searchFunction(); // Ejecutar la búsqueda cuando se presiona "Enter"
+    }
+}
+
+// Función para buscar productos en la página
+function searchFunction() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const products = document.querySelectorAll('.product-card');
+
+    products.forEach(product => {
+        const productName = product.querySelector('p').textContent.toLowerCase();
+
+        if (productName.includes(searchTerm)) {
+            product.style.display = 'flex'; // Mostrar el producto si coincide con el término de búsqueda
+        } else {
+            product.style.display = 'none'; // Ocultar el producto si no coincide
+        }
+    });
+}
+
+function showCheckmark(button) {
+    const checkmark = button.querySelector('.checkmark');
+    const buttonText = button.querySelector('span.relative.z-10');
+
+    // Ocultar el texto del botón y mostrar el checkmark
+    buttonText.style.opacity = '0';
+    checkmark.style.opacity = '1';
+
+    // Realizar la acción de checkout
+    checkout();
+
+    // Restablecer el botón después de 2 segundos
+    setTimeout(() => {
+        checkmark.style.opacity = '0';
+        buttonText.style.opacity = '1';
+    }, 2000);
+}
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.carousel-open');
+const totalSlides = slides.length;
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides[currentIndex].checked = true;
+}
+
+function updateVariant() {
+    const variantSelect = document.getElementById('variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    
+    const newImage = selectedOption.getAttribute('data-image');
+    const newPrice = selectedOption.getAttribute('data-price');
+    const newDescription = selectedOption.getAttribute('data-description');
+    
+    // Actualiza la imagen del producto
+    document.getElementById('product-image').src = newImage;
+    
+    // Actualiza el precio del producto con formato de número local
+    document.getElementById('product-price').textContent = `$${parseFloat(newPrice).toLocaleString('es-CO')} COP`;
+    
+    // Actualiza la descripción del producto
+    document.getElementById('product-description').textContent = newDescription;
+    
+    // Actualiza los datos del producto en la tarjeta
+    const productCard = variantSelect.closest('.product-card');
+    productCard.setAttribute('data-price', newPrice);
+    productCard.setAttribute('data-image', newImage);
+}
+
+function updateRolonVariant() {
+    const variantSelect = document.getElementById('rolon-variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+
+    const newImage = selectedOption.getAttribute('data-image');
+    const newPrice = selectedOption.getAttribute('data-price');
+    const newDescription = selectedOption.getAttribute('data-description');
+
+    // Actualiza la imagen del producto
+    document.getElementById('rolon-product-image').src = newImage;
+
+    // Actualiza el precio del producto con formato de número local
+    document.getElementById('rolon-product-price').textContent = `$${parseFloat(newPrice).toLocaleString('es-CO')} COP`;
+
+    // Actualiza la descripción del producto
+    document.getElementById('rolon-product-description').textContent = newDescription;
+
+    // Actualiza los datos del producto en la tarjeta
+    const productCard = variantSelect.closest('.product-card');
+    productCard.setAttribute('data-price', newPrice);
+    productCard.setAttribute('data-image', newImage);
+}
+setInterval(nextSlide, 5000);
+document.addEventListener('DOMContentLoaded', function() {
+    const catalogMessage = document.getElementById('catalog-message');
+    
+    function moveMessage() {
+        // Oculta el mensaje antes de moverlo
+        catalogMessage.classList.remove('show');
+        
+        setTimeout(function() {
+            catalogMessage.classList.add('hide');
+
+            setTimeout(function() {
+                // Obtén todos los productos
+                const products = document.querySelectorAll('.product-card');
+
+                // Genera un índice aleatorio para la posición
+                const randomIndex = Math.floor(Math.random() * products.length);
+
+                // Inserta el mensaje en la posición aleatoria
+                const randomProduct = products[randomIndex];
+                randomProduct.parentNode.insertBefore(catalogMessage, randomProduct.nextSibling);
+
+                // Después de mover el mensaje, muéstralo de nuevo
+                catalogMessage.classList.remove('hide');
+                catalogMessage.classList.add('show');
+            }, 300); // Pequeño retardo para asegurar que la transición funcione
+        }, 1000); // Espera 1 segundo para ocultar el mensaje
+    }
+    
+    // Mueve el mensaje a una nueva posición cada 1 minuto (60,000 ms)
+    setInterval(moveMessage, 60000);
+    
+    // Mueve el mensaje por primera vez 10 segundos después de que la página cargue
+    setTimeout(moveMessage, 10000); // 10,000 ms = 10 segundos
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Asegúrate de que la variante inicial esté configurada correctamente
+    updateVariant();
+});

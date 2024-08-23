@@ -180,7 +180,7 @@ function checkout() {
         message += "Método de Entrega: Recoger en Local\n";
     }
 
-    const whatsappLink = `https://wa.me/573227737273?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/573227736533?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
 }
 

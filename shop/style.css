@@ -63,7 +63,9 @@
   padding: 20px;
   color: white;
   width: 100%;
-  background-color: transparent; /* Esto hace que el fondo sea completamente transparente */
+  background-color: transparent;
+  z-index: 10; /* Asegura que esté por encima del fondo */
+  opacity: 1; /* Asegura visibilidad completa */
 }
 .carousel-item .container .flex {
   position: relative;
@@ -461,6 +463,9 @@ button.delete-btn:hover i {
 /* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
 @media (min-width: 768px) {
 
+  .bg-white-opacity {
+    background-color: transparent !important;
+}
   .bg-custom {
     background-position: top -2cm right; /* Baja la imagen de fondo 2 cm */
 }
@@ -617,4 +622,10 @@ button.delete-btn:hover i {
 #catalog-message a:hover {
   background-color: #000000; /* Fondo más oscuro al pasar el cursor */
   transform: translateY(-3px); /* Pequeño movimiento hacia arriba */
+}
+.bg-white-opacity {
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
+  padding: 0.25rem 0.5rem; /* Espaciado interno alrededor del texto */
+  display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
+  border-radius: 0.25rem; /* Bordes redondeados */
 }

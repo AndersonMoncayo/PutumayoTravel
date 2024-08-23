@@ -28,7 +28,15 @@
   opacity: 0;
   z-index: 0;
 }
-
+.bg-custom {
+  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
+}
+.bg-custom-2 {
+  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
+}
+.bg-custom-3 {
+  background-position: top 0cm right; /* Ajuste base para dispositivos móviles */
+}
 .carousel-open:checked + .carousel-item {
   position: relative;
   opacity: 1;
@@ -178,6 +186,7 @@ p.text-black.text-2xl.my-4 {
   margin-bottom: 2px; /* Reduce el espacio entre el nombre y el precio */
   position: relative; /* Permite mover el elemento respecto a su posición original */
   top: 0.3cm; /* Mueve el elemento 0.3 cm hacia abajo */
+  letter-spacing: -0.5px; /* Ajusta el espaciado entre caracteres */
 }
 .product-info {
   display: flex;
@@ -451,6 +460,16 @@ button.delete-btn:hover i {
 
 /* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
 @media (min-width: 768px) {
+
+  .bg-custom {
+    background-position: top -2cm right; /* Baja la imagen de fondo 2 cm */
+}
+.bg-custom-2 {
+  background-position: top -2cm right; /* Baja la imagen de fondo 2 cm */
+}
+.bg-custom-3 {
+  background-position: top -1cm right; /* Sube la imagen de fondo 1 cm */
+}
   #filter-dropdown {
       left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
       transform: none; /* Eliminar la transformación centrada */

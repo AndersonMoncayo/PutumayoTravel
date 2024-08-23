@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Godmakers</title>
+    <title>FACIAL</title>
     <meta name="description" content="CUIDADO FACIAL">
     <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
     
@@ -526,25 +526,26 @@
 </div>
 
 
-<div id="new-mask" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Rolon Metalico" data-category="Contorno">
+<div id="rolon-metalico" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Rolón Metálico" data-category="Contorno" data-price="12000.0" data-image="images/colagenorollon.webp">
     <div>
-        <img id="new-product-image" class="hover:grow hover:shadow-lg" src="images/vitaminacrollon.webp">
+        <img id="rolon-product-image" class="hover:grow hover:shadow-lg" src="images/colagenorollon.webp">
         <div class="pt-3 flex items-center justify-between">
-            <p id="new-product-name-base" class="hidden">Rolon Metalico</p> <!-- Nombre base oculto -->
-            <p id="new-product-name" class="">Rolon Metalico</p> <!-- Nombre completo visible solo como "Rolon Metalico" -->
-            <select id="new-variant-select" onchange="updateNewVariant()"> <!-- para el js -->
-                <option value="opcion1" data-price="12000.0" data-image="images/vitaminacrollon.webp" data-name="Vitamina C" data-description="Refresca y revitaliza el contorno de tus ojos con la Vitamina C. La rueda metálica proporciona un masaje frío para reducir las ojeras y la hinchazón.">Vitamina C</option>
-                <option value="opcion2" data-price="12000.0" data-image="images/colagenorollon.webp" data-name="Colageno" data-description="Hidrata profundamente y mejora la firmeza del área de los ojos con Colágeno. La rueda metálica ayuda a aplicar el producto suavemente mientras reduce la fatiga ocular.">Colageno</option>
+            <p id="rolon-product-name-base" class="hidden">Rolón Metálico</p> <!-- Nombre base oculto -->
+            <p id="rolon-product-name" class="">Rolón Metálico</p> <!-- Nombre completo visible solo como "Rolón Metálico" -->
+            <select id="rolon-variant-select" onchange="updateRolonVariant()">
+                <option value="colageno" data-price="12000.0" data-image="images/colagenorollon.webp" data-name="Colágeno" data-description="Revitaliza y reafirma la piel alrededor de tus ojos con el poder del colágeno. Ideal para reducir las líneas finas y la hinchazón.">Colágeno</option>
+                <option value="vitamina-c" data-price="12000.0" data-image="images/vitaminacrollon.webp" data-name="Vitamina C" data-description="Ilumina y refresca la piel alrededor de tus ojos con este rolón de Vitamina C. Perfecto para reducir ojeras y dar un aspecto radiante.">Vitamina C</option>
             </select>
-            <button id="add-to-cart-button-rolon">
+            <button id="add-to-cart-button">
                 <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6">
             </button>
         </div>
-        <p id="new-product-description" class="text-sm text-gray-700">Revitaliza tu piel con la frescura de esta opción. Ideal para una piel suave y radiante.</p>
-        <p id="new-product-price" class="pt-1 text-gray-900">$12000 COP</p>
+        <p id="rolon-product-description" class="text-sm text-gray-700">Revitaliza y reafirma la piel alrededor de tus ojos con el poder del colágeno. Ideal para reducir las líneas finas y la hinchazón.</p>
+        <p id="rolon-product-price" class="pt-1 text-gray-900">$12000 COP</p>
     </div>
 </div>
-        
+
+
 <div id="mask" class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col product-card" data-product="Mascarilla" data-category="MASCARILLAUNIDAD">
     <div>
         <img id="product-image" class="hover:grow hover:shadow-lg" src="images/huevo.webp">

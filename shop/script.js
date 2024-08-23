@@ -10,31 +10,45 @@ let discount = 0; // Variable para almacenar el descuento aplicado
 document.querySelectorAll('#add-to-cart-button').forEach(button => {
     button.addEventListener('click', (event) => {
         event.preventDefault();
+        
+        // Encuentra la tarjeta del producto
         let productCard = event.target.closest('.product-card');
+        
+        // Obtiene el nombre base del producto
         let productName = productCard.getAttribute('data-product');
-
+        
         // Verifica si hay un selector de variantes
-        let variantSelect = productCard.querySelector('#variant-select');
+        let variantSelect = productCard.querySelector('select');
         let productVariantName = variantSelect ? variantSelect.options[variantSelect.selectedIndex].getAttribute('data-name') : '';
         
         // Combina el nombre del producto con la variante seleccionada
         let fullProductName = productVariantName ? `${productName} - ${productVariantName}` : productName;
-
+        
+        // Obtiene el precio del producto
         let productPrice = parseFloat(productCard.getAttribute('data-price'));
+        
+        // Obtiene la imagen del producto
         let productImage = productCard.getAttribute('data-image');
-
+        
+        // Llama a la función para agregar al carrito
         addToCart(fullProductName, productPrice, productImage);
     });
 });
 
 // Función para añadir productos al carrito
 function addToCart(productName, productPrice, productImage) {
+    // Busca si el producto ya existe en el carrito
     let existingProduct = cart.find(item => item.name === productName && item.image === productImage);
+    
     if (existingProduct) {
+        // Si el producto ya existe, incrementa la cantidad
         existingProduct.quantity += 1;
     } else {
+        // Si no existe, agrega un nuevo producto al carrito con cantidad 1
         cart.push({name: productName, price: productPrice, image: productImage, quantity: 1});
     }
+    
+    // Actualiza la UI o el estado del carrito
     updateCart();
 }
 
@@ -328,25 +342,52 @@ function nextSlide() {
     slides[currentIndex].checked = true;
 }
 
-
 function updateVariant() {
     const variantSelect = document.getElementById('variant-select');
     const selectedOption = variantSelect.options[variantSelect.selectedIndex];
     
     const newImage = selectedOption.getAttribute('data-image');
     const newPrice = selectedOption.getAttribute('data-price');
+    const newDescription = selectedOption.getAttribute('data-description');
     
     // Actualiza la imagen del producto
     document.getElementById('product-image').src = newImage;
     
-    // Actualiza el precio del producto
-    document.getElementById('product-price').textContent = `$${parseFloat(newPrice).toLocaleString()} COP`;
+    // Actualiza el precio del producto con formato de número local
+    document.getElementById('product-price').textContent = `$${parseFloat(newPrice).toLocaleString('es-CO')} COP`;
+    
+    // Actualiza la descripción del producto
+    document.getElementById('product-description').textContent = newDescription;
     
     // Actualiza los datos del producto en la tarjeta
     const productCard = variantSelect.closest('.product-card');
     productCard.setAttribute('data-price', newPrice);
     productCard.setAttribute('data-image', newImage);
 }
+
+function updateNewVariant() {
+    const variantSelect = document.getElementById('new-variant-select');
+    const selectedOption = variantSelect.options[variantSelect.selectedIndex];
+    
+    const newImage = selectedOption.getAttribute('data-image');
+    const newPrice = parseFloat(selectedOption.getAttribute('data-price')); // Convierte a número
+    const newDescription = selectedOption.getAttribute('data-description');
+    
+    // Actualiza la imagen del producto
+    document.getElementById('new-product-image').src = newImage;
+    
+    // Actualiza el precio del producto con formato de número local
+    document.getElementById('new-product-price').textContent = `$${newPrice.toLocaleString('es-CO')} COP`;
+    
+    // Actualiza la descripción del producto
+    document.getElementById('new-product-description').textContent = newDescription;
+    
+    // Actualiza los datos del producto en la tarjeta
+    const productCard = variantSelect.closest('.product-card');
+    productCard.setAttribute('data-price', newPrice);
+    productCard.setAttribute('data-image', newImage);
+}
+
 setInterval(nextSlide, 5000);
 document.addEventListener('DOMContentLoaded', function() {
     const catalogMessage = document.getElementById('catalog-message');
@@ -376,12 +417,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000); // Espera 1 segundo para ocultar el mensaje
     }
     
-    // Mueve el mensaje a una nueva posición cada 2 minutos (120,000 ms)
-    setInterval(moveMessage, 100000);
+    // Mueve el mensaje a una nueva posición cada 1 minuto (60,000 ms)
+    setInterval(moveMessage, 60000);
     
-    // Mueve el mensaje por primera vez inmediatamente después de que la página cargue
-    moveMessage();
+    // Mueve el mensaje por primera vez 10 segundos después de que la página cargue
+    setTimeout(moveMessage, 10000); // 10,000 ms = 10 segundos
 });
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Asegúrate de que la variante inicial esté configurada correctamente
     updateVariant();

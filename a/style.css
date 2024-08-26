@@ -90,16 +90,18 @@ body {
 #carousel-3:checked ~ .control-3 {
   display: block;
 }
+
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Asegura que las tarjetas se distribuyan correctamente */
-  gap: 10px; /* Espacio entre las tarjetas */
+  justify-content: space-between;
+  gap: 20px; /* Ajuste del espacio entre tarjetas */
+  padding: 20px; /* Espacio interior del contenedor */
 }
 
 /* Estilos de tarjeta de producto predeterminados */
 .product-card {
-  width: 100%;
+  flex: 1 1 calc(25% - 40px); /* Ajusta según cuántas tarjetas quieres por fila */
   max-width: 220px;
   height: 350px;
   overflow: hidden;
@@ -115,7 +117,6 @@ body {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .product-card:hover {
   transform: scale(1.05);
@@ -397,25 +398,24 @@ button.add-to-cart-button:hover img {
 }
 
 @media (min-width: 768px) {
-
   .product-card {
-    width: calc(50% - 20px); /* Ajusta el ancho para que quepan dos tarjetas en una fila con espacio */
+      width: calc(25% - 20px); /* Ajusta para mostrar cuatro tarjetas por fila en pantallas más grandes */
   }
   .bg-white-opacity {
-    background-color: transparent !important;
+      background-color: transparent !important;
   }
   .bg-custom {
-    background-position: top -2cm right;
+      background-position: top -2cm right;
   }
   .bg-custom-2 {
-    background-position: top -2cm right;
+      background-position: top -2cm right;
   }
   .bg-custom-3 {
-    background-position: top -1cm right;
+      background-position: top -1cm right;
   }
   #filter-dropdown {
-    left: -2.5cm;
-    transform: none;
+      left: -2.5cm;
+      transform: none;
   }
 }
 

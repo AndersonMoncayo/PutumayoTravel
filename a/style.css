@@ -462,15 +462,6 @@ button.delete-btn:hover i {
   background-color: #f5f5f5; /* Color de fondo claro en hover */
   color: #000; /* Color de texto más oscuro en hover */
 }
-.product-card {
-  width: 50%; /* 2 productos por fila en pantallas medianas */
-}
-@media (min-width: 1024px) {
-  .product-card {
-      width: 25%;
-  }
-}
-
 
 /* En pantallas más grandes, mueve la lista 2.5 cm hacia la izquierda */
 @media (min-width: 768px) {
@@ -491,7 +482,6 @@ button.delete-btn:hover i {
       left: -2.5cm; /* Desplazar 2.5 cm hacia la izquierda en pantallas grandes */
       transform: none; /* Eliminar la transformación centrada */
   }
-  
 }
 .btn-view-product {
   display: inline-block;

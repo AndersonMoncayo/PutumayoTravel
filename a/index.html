@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FACIAL</title>
     <meta name="description" content="CUIDADO FACIAL">
-    <meta name="keywords" content="tailwind, tailwindcss, tailwind css, css, starter template, free template, store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
-
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,store template, shop layout, minimal, monochrome, minimalistic, theme, nordic">
+    
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Referencia al archivo CSS -->
     <link rel="stylesheet" href="https://unpkg.com/phosphor-icons/css/phosphor.css">
 </head>
 
@@ -27,7 +27,7 @@
                 </svg>
             </label>
             <input class="hidden" type="checkbox" id="menu-toggle">
-
+    
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
@@ -35,13 +35,13 @@
                     </ul>
                 </nav>
             </div>
-
+    
             <div class="order-1 md:order-2">
-                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl" href="#">
+                <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
                     FACIAL
                 </a>
             </div>
-
+    
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
                 <div class="relative">
                     <a href="#" id="cart-icon" class="cart inline-block no-underline hover:text-black">
@@ -52,59 +52,58 @@
             </div>
         </div>
     </nav>
-
-    <!-- Carousel -->
     <div class="carousel relative container mx-auto" style="max-width:1600px;">
         <div class="carousel-inner relative overflow-hidden w-full">
-
-            <!-- Slide 1 -->
-            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom" style="background-image: url('images/img1.webp');">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide md-margin-top-cm">
-                            <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity md:bg-transparent tracking-tight md:tracking-normal" style="letter-spacing: -2px;">Mascarilla Tres Pasos para Nariz</p>
-                            <p class="text-black text-base md:text-lg my-2 bg-white-opacity md:bg-transparent tracking-tight md:tracking-normal">Despídete de los puntos negros con esta mascarilla de tres pasos diseñada para una limpieza profunda, nariz suave y limpia.</p>
-                            <a href="#MascarillaTresPasos" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
-                        </div>
-                    </div>
+      <!-- Slide 1: Rolon Metálico Vitamina C -->
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+      <div class="carousel-item absolute opacity-0" style="height:50vh;">
+        <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom" style="background-image: url('images/NETFLIX-1-PANFinal.webp');">
+              <div class="container mx-auto">
+                <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide md-margin-top-cm">
+                    <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity md:bg-transparent tracking-tight md:tracking-normal" style="letter-spacing: -2px;">Mascarilla Tres Pasos para Nariz</p>
+                    <p class="text-black text-base md:text-lg my-2 bg-white-opacity md:bg-transparent tracking-tight md:tracking-normal">Despídete de los puntos negros con esta mascarilla de tres pasos diseñada para una limpieza profunda, nariz suave y limpia.</p>
+                    <a href="#MascarillaTresPasos" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
                 </div>
+              </div>
+          </div>
+      </div>
+      <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+      <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+<!-- Slide 2: Mascarilla -->
+<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+<div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
+    <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom-2" style="background-image: url('images/SPOTIFY-2-MESES.webp');">
+        <div class="container mx-auto">
+            <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity md:bg-transparent">Mascarilla</p>
+                <p class="text-black text-base md:text-lg my-2 bg-white-opacity md:bg-transparent">Revitaliza tu piel con la suavidad y el poder nutriente del huevo, o explora otras variantes como aguacate, centella y más. Ideal para una piel suave y luminosa.</p>
+                <a href="#mask" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
             </div>
-            <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-            <!-- Slide 2 -->
-            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom-2" style="background-image: url('images/img3.webp');">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity md:bg-transparent">Mascarilla</p>
-                            <p class="text-black text-base md:text-lg my-2 bg-white-opacity md:bg-transparent">Revitaliza tu piel con la suavidad y el poder nutriente del huevo, o explora otras variantes como aguacate, centella y más. Ideal para una piel suave y luminosa.</p>
-                            <a href="#mask" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </div>
+</div>
+<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+<!-- Slide 3: Protector Solar + Base Líquida -->
+<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+<div class="carousel-item absolute opacity-0" style="height:50vh;">
+    <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom-3" style="background-image: url('images/VIX-1-PANTALLA.webp');">
+        <div class="container mx-auto">
+            <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity tracking-tight md:tracking-normal" style="letter-spacing: -2px;">Protector Solar + Base Líquida</p>
+                <p class="text-black text-base md:text-lg my-2 bg-white-opacity tracking-tight md:tracking-normal">Protección solar efectiva con un toque de color. Logra un acabado natural mientras proteges tu piel de los rayos UV.</p>
+                <a href="#Protectorbase" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
             </div>
-            <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+        </div>
+    </div>
+</div>
+<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+<label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-            <!-- Slide 3 -->
-            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right bg-custom-3" style="background-image: url('images/colorbase1.webp');">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-xl md:text-2xl my-4 font-bold bg-white-opacity tracking-tight md:tracking-normal" style="letter-spacing: -2px;">Protector Solar + Base Líquida</p>
-                            <p class="text-black text-base md:text-lg my-2 bg-white-opacity tracking-tight md:tracking-normal">Protección solar efectiva con un toque de color. Logra un acabado natural mientras proteges tu piel de los rayos UV.</p>
-                            <a href="#Protectorbase" class="btn-view-product bg-black text-white px-4 py-2 rounded hover:bg-black">Ver Producto</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-            <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
+</div>
+  
+            <!-- ... (Siguientes controles para otros slides) -->
+            
             <!-- Indicadores -->
             <ol class="carousel-indicators">
                 <li class="inline-block mr-3">
@@ -120,21 +119,20 @@
         </div>
     </div>
 
-    <!-- Product Section -->
     <section class="bg-white py-8">
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
             <nav id="store" class="w-full z-30 top-0 px-6 py-1">
                 <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl" href="#">
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
                         TIENDA
                     </a>
                     <div class="flex items-center relative" id="store-nav-content">
-                        <!-- Filtro -->
+                        <!-- Botón del Filtro con la clase "filter-button" -->
                         <button class="pl-3 inline-block no-underline hover:text-black filter-button" onclick="toggleFilters(event)">
                             <img src="images/filter.svg" alt="Filter Icon" width="24" height="24">
                         </button>
-
-                        <!-- Dropdown Filtros -->
+    
+                        <!-- Lista desplegable de Filtros -->
                         <div id="filter-dropdown" class="absolute bg-white border border-gray-300 rounded-md shadow-lg p-4 hidden">
                             <button onclick="filterProductsByCategory('Mascarilla')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Mascarillas</button>
                             <button onclick="filterProductsByCategory('Protector')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Protector solar</button>
@@ -144,221 +142,332 @@
                             <button onclick="filterProductsByCategory('geles')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Gel</button>
                             <button onclick="filterProductsByCategory('varios')" class="block w-full text-left px-4 py-2 hover:bg-gray-200">Varios</button>
                         </div>
-
-                        <!-- Barra de Búsqueda -->
+    
+                        <!-- Barra de Búsqueda que aparece al hacer clic en search.svg -->
                         <input type="text" id="search-input" class="hidden p-2 border border-gray-300 rounded" placeholder="Buscar..." onkeypress="handleKeyPress(event)">
-
-                        <!-- Botón de Búsqueda -->
+    
+                        <!-- Botón de Búsqueda usando <button> -->
                         <button class="pl-3 inline-block no-underline hover:text-black" onclick="toggleSearch()">
                             <img src="images/search.svg" alt="Search Icon" width="24" height="24">
                         </button>
                     </div>
                 </div>
             </nav>
+    
 
-            <!-- Mensaje de Catálogo -->
-            <div id="catalog-message" class="product-card">
+            <div id="catalog-message" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 p-4 flex flex-col bg-gray-100 text-center hide">
                 <p class="text-lg font-semibold">¿Quieres tener tu propio catálogo online?</p>
-                <a href="https://wa.me/573227736533?text=Hola%2C%20me%20gustar%C3%ADa%20contratar%20el%20servicio%20de%20cat%C3%A1logo%20online" target="_blank" class="mt-2">CONTACTA CON NOSOTROS</a>
+                <a href="https://wa.me/573227736533?text=Hola%2C%20me%20gustar%C3%ADa%20contratar%20el%20servicio%20de%20cat%C3%A1logo%20online" target="_blank">CONTACTAR</a>
             </div>
 
+<!-- Producto 7 -->
+<div id="spotify-2-meses" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Spotify 2 Meses" data-price="8500.0" data-category="Música" data-image="images/SPOTIFY-2-MESES.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/SPOTIFY-2-MESES.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Spotify 2 Meses</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de dos meses de música sin interrupciones con Spotify Premium.</p>
+        <p class="pt-1 text-gray-900">$8500 </p>
+    </a>
+</div>
+
+<!-- Producto 8 -->
+<div id="spotify-3-meses" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Spotify 3 Meses" data-price="11000.0" data-category="Música" data-image="images/SPOTIFY-3-MESES.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/SPOTIFY-3-MESES.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Spotify 3 Meses</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de tres meses de música sin interrupciones con Spotify Premium.</p>
+        <p class="pt-1 text-gray-900">$11000 </p>
+    </a>
+</div>
+
+<!-- Producto 9 -->
+<div id="netflix-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Netflix 1 Pantalla" data-price="7500.0" data-category="Streaming" data-image="images/NETFLIX-1-PANTALLA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/NETFLIX-1-PANFinal.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Netflix 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a Netflix desde una pantalla con esta suscripción económica.</p>
+        <p class="pt-1 text-gray-900">$7500 </p>
+    </a>
+</div>
+
+<!-- Producto 10 -->
+<div id="netflix-completa-original" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Netflix Completa Original" data-price="15000.0" data-category="Streaming" data-image="images/NETFLIX-COMPLETA-ORIGINAL.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/NETFLIX-COMPLETA-ORIGINAL.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Netflix Completa Original</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de todo el contenido de Netflix con la suscripción completa.</p>
+        <p class="pt-1 text-gray-900">$15000 </p>
+    </a>
+</div>
+
+<!-- Producto 11 -->
+<div id="netflix-1p-generica" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Netflix 1 Pantalla Genérica" data-price="8000.0" data-category="Streaming" data-image="images/NETFLIX-1P-GENERICAFinal.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/NETFLIX-1P-GENERICAFinal.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Netflix 1 Pantalla Genérica</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de Netflix en una pantalla con una suscripción genérica.</p>
+        <p class="pt-1 text-gray-900">$8000 </p>
+    </a>
+</div>
+
+<!-- Producto 12 -->
+<div id="prime-video-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Prime Video 1 Pantalla" data-price="7500.0" data-category="Streaming" data-image="images/PRIME-VIDEO-1-PANTALLA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PRIME-VIDEO-1-PANTALLA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Prime Video 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a Prime Video desde una pantalla con esta suscripción.</p>
+        <p class="pt-1 text-gray-900">$7500 </p>
+    </a>
+</div>
+
+<!-- Producto 13 -->
+<div id="prime-video-completa" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Prime Video Completa" data-price="8500.0" data-category="Streaming" data-image="images/PRIME-VIDEO-COMPLETA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PRIME-VIDEO-COMPLETA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Prime Video Completa</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de todo el contenido de Prime Video con la suscripción completa.</p>
+        <p class="pt-1 text-gray-900">$8500 </p>
+    </a>
+</div>
+
+<!-- Producto 14 -->
+<div id="youtube-premium-2-meses" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="YouTube Premium 2 Meses" data-price="8500.0" data-category="Streaming" data-image="images/YOUTUBE-PREMIUM-2-MESES.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/YOUTUBE-PREMIUM-2-MESES.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">YouTube Premium 2 Meses</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de dos meses de YouTube sin anuncios.</p>
+        <p class="pt-1 text-gray-900">$8500 </p>
+    </a>
+</div>
+
+<!-- Producto 15 -->
+<div id="youtube-premium-3-meses" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="YouTube Premium 3 Meses" data-price="13000.0" data-category="Streaming" data-image="images/YOUTUBE-PREMIUM-3-MESES.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/YOUTUBE-PREMIUM-3-MESES.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">YouTube Premium 3 Meses</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de tres meses de YouTube sin anuncios.</p>
+        <p class="pt-1 text-gray-900">$13000 </p>
+    </a>
+</div>
+
+<!-- Producto 16 -->
+<div id="paramount-completa" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Paramount Completa" data-price="10000.0" data-category="Streaming" data-image="images/PARAMOUNT-COMPLETA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PARAMOUNT-COMPLETA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Paramount Completa</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a todo el contenido de Paramount con esta suscripción completa.</p>
+        <p class="pt-1 text-gray-900">$10000 </p>
+    </a>
+</div>
+
+<!-- Producto 17 -->
+<div id="paramount-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card"  data-product="Paramount 1 Pantalla" data-price="7000.0" data-category="Streaming" data-image="images/PARAMOUNT-1-PANTALLA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PARAMOUNT-1-PANTALLAFinal.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Paramount 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de Paramount en una sola pantalla.</p>
+        <p class="pt-1 text-gray-900">$7000 </p>
+    </a>
+</div>
+
+<!-- Producto 18 -->
+<div id="plex-completa" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Plex Completa" data-price="8500.0" data-category="Streaming" data-image="images/PLEX-COMPLETA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PLEX-COMPLETA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Plex Completa</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a todos los canales y contenido de Plex con esta suscripción completa.</p>
+        <p class="pt-1 text-gray-900">$8500 </p>
+    </a>
+</div>
+
+<!-- Producto 19 -->
+<div id="plex-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Plex 1 Pantalla" data-price="6000.0" data-category="Streaming" data-image="images/PLEX-1-PANTALLA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PLEX-1-PANTALLA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Plex 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de Plex en una pantalla con esta suscripción.</p>
+        <p class="pt-1 text-gray-900">$6000 </p>
+    </a>
+</div>
+
+<!-- Producto 20 -->
+<div id="max-1-meses-completa" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Max 1 Mes Completa" data-price="9500.0" data-category="Streaming" data-image="images/MAX-1-MESES-COMPLETA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/MAX-1-MESES-COMPLETA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Max 1 Mes Completa</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a todos los canales de Max durante un mes completo.</p>
+        <p class="pt-1 text-gray-900">$9500 </p>
+    </a>
+</div>
+
+<!-- Producto 21 -->
+<div id="max-1-meses-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Max 1 Mes Pantalla" data-price="7000.0" data-category="Streaming" data-image="images/MAX-1-MESES-PANTALLA.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/MAX-1-MESES-PANTALLA.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Max 1 Mes Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de Max en una pantalla durante un mes.</p>
+        <p class="pt-1 text-gray-900">$7000 </p>
+    </a>
+</div>
+
+<!-- Producto 22 -->
+<div id="crunchyroll-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="Crunchyroll 1 Pantalla" data-price="4000.0" data-category="Streaming" data-image="images/CRUNCHYROLL-1-PANTALLAFinal.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/CRUNCHYROLL-1-PANTALLAFinal.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">Crunchyroll 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Disfruta de Crunchyroll en una pantalla con esta suscripción.</p>
+        <p class="pt-1 text-gray-900">$4000 </p>
+    </a>
+</div>
+
+<!-- Producto 23 -->
+<div id="iptv-1-pantalla" class="w-full md:w-1/2 lg:w-1/4 p-6 flex flex-col product-card" data-product="IPTV 1 Pantalla" data-price="12000.0" data-category="Streaming" data-image="images/IPTV-1-PANTALLAFinal.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/IPTV-1-PANTALLAFinal.webp">
+        <div class="pt-3 flex items-center justify-between">
+            <p class="">IPTV 1 Pantalla</p>
+            <button id="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
+        </div>
+        <p class="text-sm text-gray-700">Accede a cientos de canales con esta suscripción IPTV para una pantalla.</p>
+        <p class="pt-1 text-gray-900">$12000 </p>
+    </a>
+</div>
             
-            
-<!-- Productos de Música -->
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Spotify 2 Meses" data-price="8500.0" data-category="Música" data-image="images/Spotify-2-MESES.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/SPOTIFY-2-MESES.webp" alt="Spotify 2 Meses" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>SPOTIFY 2 MESES</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$16,000</span>
-            <span class="text-red-500">$8,500</span>
-        </p>
-    </a>
-</div>
-
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Spotify 3 Meses" data-price="11000.0" data-category="Música" data-image="images/Spotify-3-MESES.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/SPOTIFY-3-MESES.webp" alt="Spotify 3 Meses" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>SPOTIFY 3 MESES</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$19,000</span>
-            <span class="text-red-500">$11,000</span>
-        </p>
-    </a>
-</div>
-
-<!-- Productos de Herramientas Creativas -->
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Canva 1 Mes" data-price="6000.0" data-category="Herramientas Creativas" data-image="images/Canva-1-MES.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/CANVA-1-MES.webp" alt="Canva 1 Mes" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>CANVA 1 MES</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: 12 unidades</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$12,000</span>
-            <span class="text-red-500">$6,000</span>
-        </p>
-    </a>
-</div>
-
-<!-- Productos de Streaming -->
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Netflix 1 Pantalla" data-price="7500.0" data-category="Streaming" data-image="images/Netflix-1-PANTALLA.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/NETFLIX-1-PANFinal.webp" alt="Netflix 1 Pantalla" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>NETFLIX 1 PANTALLA</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$13,000</span>
-            <span class="text-red-500">$7,500</span>
-        </p>
-    </a>
-</div>
-
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Crunchyroll 1 Pantalla" data-price="2500.0" data-category="Streaming" data-image="images/CRUNCHYROLL-1-PANTALLAFinal.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/CRUNCHYROLL-1-PANTALLAFinal.webp" alt="Crunchyroll 1 Pantalla" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>CRUNCHYROLL 1 PANTALLA</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: 13 unidades</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$8,000</span>
-            <span class="text-red-500">$2,500</span>
-        </p>
-    </a>
-</div>
-
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="Prime Video Completa" data-price="8500.0" data-category="Streaming" data-image="images/PRIME-VIDEO-COMPLETA.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/PRIME-VIDEO-COMPLETA.webp" alt="Prime Video Completa" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>PRIME VIDEO COMPLETA</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$12,000</span>
-            <span class="text-red-500">$8,500</span>
-        </p>
-    </a>
-</div>
-
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="YouTube Premium 2 Meses" data-price="8500.0" data-category="Streaming" data-image="images/YOUTUBE-PREMIUM-2-MESES.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/YOUTUBE-PREMIUM-2-MESES.webp" alt="YouTube Premium 2 Meses" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>YOUTUBE PREMIUM 2 MESES</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$16,000</span>
-            <span class="text-red-500">$8,500</span>
-        </p>
-    </a>
-</div>
-
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 xl:w-1/6 p-4 flex flex-col product-card" data-product="YouTube Premium 3 Meses" data-price="13000.0" data-category="Streaming" data-image="images/YOUTUBE-PREMIUM-3-MESES.webp">
-    <a href="#">
-        <img class="hover:grow hover:shadow-lg" src="images/YOUTUBE-PREMIUM-3-MESES.webp" alt="YouTube Premium 3 Meses" loading="lazy">
-        <div class="pt-3 flex items-center justify-between">
-            <p>YOUTUBE PREMIUM 3 MESES</p>
-            <button class="add-to-cart-button">
-                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-            </button>
-        </div>
-        <p class="text-sm text-gray-700">Disponible: Agotado</p>
-        <p class="pt-1 text-gray-900">
-            <span class="line-through">$18,000</span>
-            <span class="text-red-500">$13,000</span>
-        </p>
-    </a>
-</div>
 
 
-
+          
         </div>
     </section>
 
-    <!-- Sidebar del Carrito -->
-    <div id="cart-sidebar" class="cart-sidebar">
-        <h2>Tu Carrito</h2>
+ <!-- Sidebar del Carrito -->
+<div id="cart-sidebar" class="cart-sidebar">
+    <h2>Tu Carrito</h2>
+    
+    <div id="cart-content">
+        <ul id="cart-items"></ul>
 
-        <div id="cart-content">
-            <ul id="cart-items"></ul>
+        <strong>Total: COP <span id="cart-total">0</span></strong>
 
-            <strong>Total: COP <span id="cart-total">0</span></strong>
-
-            <!-- Campo para el cupón de descuento -->
-            <div class="coupon-section">
-                <label for="coupon-code">Código de Cupón:</label>
-                <div class="coupon-input-group">
-                    <input type="text" id="coupon-code" placeholder="Ingresa tu cupón">
-                    <button onclick="applyCoupon()">Aplicar</button>
-                </div>
+        <!-- Campo para el cupón de descuento -->
+        <div class="coupon-section">
+            <label for="coupon-code">Código de Cupón:</label>
+            <div class="coupon-input-group">
+                <input type="text" id="coupon-code" placeholder="Ingresa tu cupón">
+                <button onclick="applyCoupon()">Aplicar</button>
             </div>
-
-            <!-- Opciones de Entrega -->
-            <div class="delivery-section">
-                <div class="delivery-option">
-                    <label for="delivery-method">Método de Entrega:</label>
-                    <select id="delivery-method" onchange="toggleAddressInput()">
-                        <option value="local">Recoger en Local</option>
-                        <option value="delivery">Domicilio</option>
-                    </select>
-                </div>
-
-                <div class="delivery-address hidden" id="delivery-address">
-                    <label for="address">Dirección de Entrega:</label>
-                    <input type="text" id="address" placeholder="Ingresa tu dirección">
-                </div>
-            </div>
-
-            <!-- Botones del Carrito -->
-            <button onclick="clearCart()" class="border border-black text-black py-2 px-1 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group" style="margin: 2px;">
-                <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                <span class="relative z-10">Vaciar Carrito</span>
-            </button>
-            <button onclick="showCheckmark(this)" class="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition duration-300 relative overflow-hidden group">
-                <span class="absolute inset-0 w-full h-full bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                <span class="relative z-10">Comprar</span>
-                <span class="absolute inset-0 flex items-center justify-center text-white opacity-0 checkmark" style="transition: opacity 0.3s ease;">
-                    &#10003;
-                </span>
-            </button>
         </div>
-    </div>
 
-    <!-- Overlay -->
-    <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+        <div class="delivery-section">
+            <div class="delivery-option">
+                <label for="delivery-method">Método de Entrega:</label>
+                <select id="delivery-method" onchange="toggleAddressInput()">
+                    <option value="local">Recoger en Local</option>
+                    <option value="delivery">Domicilio</option>
+                </select>
+            </div>
+
+            <div class="delivery-address hidden" id="delivery-address">
+                <label for="address">Dirección de Entrega:</label>
+                <input type="text" id="address" placeholder="Ingresa tu dirección">
+            </div>
+        </div>
+
+        <button onclick="clearCart()" class="border border-black text-black py-2 px-1 rounded hover:bg-black hover:text-white transition duration-300 relative overflow-hidden group" style="margin: 2px;">
+            <span class="absolute inset-0 w-full h-full bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+            <span class="relative z-10">Vaciar Carrito</span>
+        </button>
+        <button onclick="showCheckmark(this)" class="bg-black text-white py-2 px-4 rounded hover:bg-white hover:text-black hover:border-black border border-transparent transition duration-300 relative overflow-hidden group">
+            <span class="absolute inset-0 w-full h-full bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+            <span class="relative z-10">Comprar</span>
+            <span class="absolute inset-0 flex items-center justify-center text-white opacity-0 checkmark" style="transition: opacity 0.3s ease;">
+                &#10003;
+            </span>
+        </button>
+    </div>
+</div>
+<div id="overlay" class="overlay" onclick="toggleCart()"></div>
 
     <script src="script.js"></script>
 </body>

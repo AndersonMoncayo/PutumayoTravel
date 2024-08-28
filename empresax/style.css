@@ -1,6 +1,4 @@
-/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
 
 * {
   margin: 0;
@@ -12,37 +10,101 @@
   list-style: none;
   text-decoration: none;
 }
+
 *::selection {
   background: var(--main-color);
   color: #fff;
 }
+
 :root {
   --main-color: #ffb411;
   --text-color: #1e1c2a;
   --bg-color: #fff;
+  --dark-bg-color: #000;  /* Fondo oscuro */
+  --dark-text-color: #fff; /* Texto claro en modo oscuro */
 
   --big-font: 4rem;
   --h2-font: 2.24rem;
   --p-font: 0.9rem;
 }
+
 section {
   padding: 50px 10%;
 }
-body.active {
-  --bg-color: #1e1c2a;
-  --text-color: #fff;
-}
+
 body {
   color: var(--text-color);
   background: var(--bg-color);
 }
-body.active {
-  color: #fff;
-  background: #1e1c2a;
+
+/* Ajustes globales para modo oscuro */
+body.dark-mode {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
 }
-#darkmode {
-  font-size: 25px;
-  cursor: pointer;
+
+/* Componentes específicos en modo oscuro */
+body.dark-mode header,
+body.dark-mode .navbar,
+body.dark-mode .cart-sidebar,
+body.dark-mode .footer {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+/* Textos específicos en modo oscuro */
+body.dark-mode .navbar a,
+body.dark-mode .social i,
+body.dark-mode .contact-box li a,
+body.dark-mode .product-name,
+body.dark-mode .product-price,
+body.dark-mode .quantity-input,
+body.dark-mode .delete-icon,
+body.dark-mode .text-gray-700,
+body.dark-mode .text-gray-800 {
+  color: var(--dark-text-color) !important;
+}
+
+/* Estilos de entrada y dropdowns en modo oscuro */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode .coupon-input-group input {
+  background-color: #333; /* Fondo más oscuro */
+  color: #fff; /* Texto blanco */
+  border: 1px solid #444; /* Borde más oscuro */
+}
+
+/* Aplicar modo oscuro a secciones, excepto productos */
+body.dark-mode section:not(.products-section),
+body.dark-mode .box:not(.products-section .box),
+body.dark-mode .s-box:not(.products-section .s-box) {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
+/* Sección de productos excluida del modo oscuro */
+body.dark-mode .products-section {
+  background-color: #fff !important;
+  color: #1e1c2a !important;
+}
+
+body.dark-mode .products-section .product-card {
+  background-color: #fff !important;
+  color: #1e1c2a !important;
+}
+
+/* Asegurar colores legibles en textos dentro de productos */
+body.dark-mode .products-section .product-card .text-gray-700 {
+  color: #4a4a4a !important;
+}
+
+body.dark-mode .products-section .product-card .text-gray-900 {
+  color: #333 !important;
+}
+
+/* Destacar el color principal en encabezados dentro del modo oscuro */
+body.dark-mode .heading span {
+  color: var(--main-color);
 }
 header {
   position: fixed;
@@ -57,18 +119,30 @@ header {
   padding: 18px 100px;
   box-shadow: 0 0.5rem 50rem rgba(0, 0, 0, 0.1);
 }
+
+/* Aplicar estilo de modo oscuro a otros elementos */
+header.dark-mode,
+.navbar.dark-mode,
+.footer.dark-mode,
+.cart-sidebar.dark-mode {
+  background: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #FFA500;
-  margin-left: -4cm; /* Mueve el logotipo 4 cm a la izquierda */
+  color: var(--main-color);
+  margin-left: -9.2cm; /* Ajuste de margen */
 }
+
 .navbar {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .navbar li {
   margin: 0 15px;
 }
@@ -79,33 +153,16 @@ header {
   font-size: 16px;
   font-weight: 500;
 }
+
 .navbar a:hover {
   color: var(--main-color);
 }
+
 #menu-icon {
-  display: none; /* Escondido por defecto en escritorio */
+  display: none;
   cursor: pointer;
 }
 
-.home {
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 1.5rem;
-}
-.home-img img {
-  width: 100%;
-}
-.home-text h1 {
-  font-size: var(--big-font);
-  color: var(--main-color);
-}
-.home-text h2 {
-  font-size: var(--h2-font);
-  margin: 1rem 0 1rem;
-}
 .btn {
   display: inline-block;
   background: var(--main-color);
@@ -113,45 +170,64 @@ header {
   border-radius: 0.5rem;
   color: #fff;
 }
+
 .btn:hover {
   background: #ffa400;
 }
+
 .about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   align-items: center;
 }
+
 .about-img img {
   max-width: 80%;
   border-radius: 0.5rem;
 }
+
 .about-text span {
   color: var(--main-color);
   font-weight: 500;
 }
+
 .about-text h2 {
   font-size: var(--h2-font);
 }
+
 .about-text p {
   margin: 0.8rem 0 1.8rem;
 }
+
+
 .heading {
   text-align: center;
 }
+
 .heading span {
   color: var(--main-color);
   font-weight: 500;
 }
+
 .heading h2 {
   font-size: var(--h2-font);
 }
+
 .menu-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   gap: 1.5rem;
   align-items: center;
 }
+.products-section {
+  margin-top: -20px; /* Ajuste más pequeño para no afectar el diseño */
+}
+.products-section .container {
+  padding-left: 1cm;
+  padding-right: 1cm;
+}
+
 .box {
   position: relative;
   margin-top: 2rem;
@@ -163,29 +239,41 @@ header {
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgb(4 64 54 / 10%);
   padding: 10px;
+  background: var(--bg-color); /* Fondo para la caja */
 }
+
+.box.dark-mode {
+  background: var(--dark-bg-color);
+  color: var(--dark-text-color);
+}
+
 .box-img {
   width: 200px;
   height: 200px;
 }
+
 .box-img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
+
 .box h2 {
   font-size: 1.2rem;
 }
+
 .box h3 {
   font-size: 1rem;
   font-weight: 400;
   margin: 4px 0 10px;
 }
+
 .box span {
   font-size: var(--p-font);
   font-weight: 500;
 }
+
 .box .bx {
   position: absolute;
   right: 0;
@@ -195,77 +283,99 @@ header {
   border-radius: 0 0.5rem 0 0.5rem;
   padding: 5px 8px;
 }
+
 .box .bx:hover {
   background: #ffa400;
 }
+
 .servives-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   gap: 1.5rem;
   margin-top: 2rem;
 }
+
 .s-box {
   text-align: center;
 }
+
 .s-box img {
   width: 60px;
 }
+
 .s-box h3 {
   margin: 4px 0 10px;
 }
+
 .connect {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .connect-text span {
   color: var(--main-color);
   font-weight: 500;
 }
+
 .connect-text h2 {
   font-size: var(--h2-font);
 }
+
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   gap: 1.5rem;
 }
+
 .contact-box h3 {
   margin-bottom: 1rem;
 }
+
 .social {
   display: flex;
   margin-top: 1.5rem;
 }
+
 .social i {
   font-size: 20px;
   margin-right: 1rem;
   color: var(--text-color);
 }
+
 .social i:hover {
   color: var(--main-color);
 }
+
 .contact-box li a {
   color: var(--text-color);
 }
+
 .contact-box li a:hover {
   color: var(--main-color);
 }
+
 .address {
   display: flex;
   flex-direction: column;
 }
+
 .address i {
   margin-bottom: 0.5rem;
   font-size: 1rem;
 }
+
 .address span {
   margin-left: 1rem;
 }
+
 .copyright {
   padding: 20px;
   text-align: center;
 }
+
+
+
 @media (max-width: 921px) {
   header {
     padding: 14px 41px;
@@ -276,6 +386,67 @@ header {
   }
 }
 @media (max-width: 768px) {
+  .about {
+    position: relative;
+    padding:1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco opaco para el texto */
+    background-image: url('images/pexels-karolina-grabowska-6255908.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Cubrir toda la sección */
+    background-position: center; /* Centrar la imagen */
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-img {
+    display: none; /* Ocultar el elemento de la imagen ya que ahora usamos background-image */
+}
+
+.about-text {
+  max-width: 95%; 
+  z-index: 2; /* Asegura que el texto esté siempre encima de la imagen de fondo */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco para el texto para mayor contraste */
+}
+
+.about-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text .btn {
+    margin-top: 1rem;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.about-text .btn:hover {
+    background-color: #ffa400;
+}
+  .products-section {
+    margin-top: 0; /* Restablece el margen para dispositivos móviles */
+  }
+
+  .products-section .container {
+    padding-left: 0cm;
+    padding-right: 0cm;
+  }
   section {
     padding: 50px 8%;
   }
@@ -311,6 +482,8 @@ header {
     cursor: pointer;
   }
 }
+
+
 @media (max-width: 715px) {
   header {
     flex-wrap: wrap;
@@ -337,9 +510,7 @@ header {
   letter-spacing: -0.08em;
 }
 
-  .home {
-    grid-template-columns: 1fr;
-  }
+  
   .about {
     grid-template-columns: 1fr;
     text-align: center;
@@ -361,9 +532,7 @@ header {
     --big-font: 2rem;
     --h2-font: 1.4rem;
   }
-  .home-text {
-    padding-top: 4rem;
-  }
+ 
 }
 
 /* Carrito de Compras y Elementos Relacionados */
@@ -376,7 +545,7 @@ header {
 #cart-icon {
   position: relative;
   display: inline-block;
-  top: 0.1cm;
+  top: 0cm;
 }
 
 #cart-count {

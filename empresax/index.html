@@ -23,8 +23,7 @@
         <a href="#" class="logo">Empresa X</a>
         <div class="bx bx-menu" id="menu-icon"></div>
         <ul class="navbar">
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#about">Inicio</a></li>
             <li><a href="#services">Servicios</a></li>
             <li><a href="#products">Productos</a></li>
             <li><a href="#contact">Contacto</a></li>
@@ -67,16 +66,7 @@
     </div>
 
     <!-- Home Section -->
-    <section class="home" id="home">
-        <div class="home-text">
-            <h1>Empresa X</h1>
-            <h2>Innovando tu vida con la mejor tecnología</h2>
-            <a href="#products" class="btn">Explorar Productos</a>
-        </div>
-        <div class="home-img">
-            <img src="images/pexels-introspectivedsgn-16195434.jpg" alt="Tech Image">
-        </div>
-    </section>
+ 
 
     <!-- About -->
     <section class="about" id="about">
@@ -84,15 +74,14 @@
             <img src="images/pexels-karolina-grabowska-6255908.jpg" alt="Sobre Empresa X">
         </div>
         <div class="about-text">
-            <span>Sobre Nosotros</span>
             <h2>Liderando el camino en innovación tecnológica</h2>
-            <p>En Empresa X, te ofrecemos lo último en tecnología a tu alcance. Desde servicios de streaming hasta las herramientas más modernas, te garantizamos estar siempre conectado y entretenido.</p>
-            <a href="#services" class="btn">Conoce Más</a>
+            <p>Todo en un solo lugar: descubre una gama completa de servicios que transformarán tu vida digital. En Empresa X, te conectamos con las mejores soluciones para tus necesidades diarias. ¡Explora lo que podemos hacer por ti!</p>
+            <a href="#store" class="btn">Conoce Más</a>
         </div>
     </section>
 
 <!-- Store Section with Filters -->
-<section class="bg-white py-8">
+<section class="products-section bg-white py-8">
     <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
         <nav id="store" class="w-full z-30 top-0 px-6 py-1">
             <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
@@ -112,7 +101,7 @@
                     <!-- Barra de Búsqueda -->
                     <input type="text" id="search-input" class="hidden p-2 border border-gray-300 rounded" placeholder="Buscar..." onkeypress="handleKeyPress(event)">
                     <!-- Botón de Búsqueda -->
-                    <button class="pl-3 inline-block no-underline hover:text-black" onclick="toggleSearch()">
+                    <button class="pl-3 inline-block no-underline hover:text-black search-button" onclick="toggleSearch()">
                         <img src="images/search.svg" alt="Search Icon" width="24" height="24">
                     </button>
                     <!-- Icono del Carrito -->
@@ -125,351 +114,275 @@
         </nav>
             <!-- Productos -->
             
-            <!-- Producto 1 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Canva - 1 Mes" data-price="5000" data-category="Diseño" data-image="images/canva-1-mes.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/canva-1-mes.webp" alt="Canva - 1 Mes">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Canva - 1 Mes</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Canva por un mes.</p>
-                <p class="pt-1 text-gray-900">$5000 COP</p>
-            </a>
+      <!-- Producto 1 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Canva - 1 Mes" data-price="8000" data-category="Diseño" data-image="images/canva-1-mes.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/canva-1-mes.webp" alt="Canva - 1 Mes">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Canva - 1 Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$8000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 2 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Crunchyroll - 1 Pantalla" data-price="7000" data-category="Streaming" data-image="images/crunchyroll-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/crunchyroll-1-pantalla.webp" alt="Crunchyroll - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Crunchyroll - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Crunchyroll en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$7000 COP</p>
-            </a>
+<!-- Producto 2 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Crunchyroll - 1 Pantalla" data-price="4900" data-category="Streaming" data-image="images/crunchyroll-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/CRUNCHYROLL-1-PANTALLAFinal.webp" alt="Crunchyroll - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Crunchyroll - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$4900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 3 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Crunchyroll - Completa" data-price="10000" data-category="Streaming" data-image="images/crunchyroll-completa.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/crunchyroll-completa.webp" alt="Crunchyroll - Completa">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Crunchyroll - Completa</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Crunchyroll.</p>
-                <p class="pt-1 text-gray-900">$10000 COP</p>
-            </a>
+<!-- Producto 3 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Crunchyroll - Completa" data-price="8900" data-category="Streaming" data-image="images/crunchyroll-completa.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/crunchyroll-completa.webp" alt="Crunchyroll - Completa">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Crunchyroll - Completa 1 Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$8900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 4 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="IPTV - 1 Pantalla" data-price="8000" data-category="Televisión" data-image="images/iptv-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/iptv-1-pantalla.webp" alt="IPTV - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>IPTV - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Disfruta de IPTV en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$8000 COP</p>
-            </a>
+<!-- Producto 4 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="IPTV - 1 Pantalla" data-price="7900" data-category="Televisión" data-image="images/iptv-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/IPTV-1-PANTALLAFinal.webp" alt="IPTV - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>IPTV - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$7900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 5 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Max - 1 Mes Completa" data-price="9000" data-category="Streaming" data-image="images/max-1-meses-completa.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/max-1-meses-completa.webp" alt="Max - 1 Mes Completa">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Max - 1 Mes Completa</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Max por un mes.</p>
-                <p class="pt-1 text-gray-900">$9000 COP</p>
-            </a>
+<!-- Producto 5 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Max - 1 Mes Completa" data-price="10000" data-category="Streaming" data-image="images/max-1-meses-completa.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/max-1-meses-completa.webp" alt="Max - 1 Mes Completa">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Max - 1 Mes Completa</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$10000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 6 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Max - 1 Mes Pantalla" data-price="7500" data-category="Streaming" data-image="images/max-1-meses-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/max-1-meses-pantalla.webp" alt="Max - 1 Mes Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Max - 1 Mes Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Max en una pantalla por un mes.</p>
-                <p class="pt-1 text-gray-900">$7500 COP</p>
-            </a>
+<!-- Producto 6 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Max - 1 Mes Pantalla" data-price="4900" data-category="Streaming" data-image="images/max-1-meses-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/max-1-meses-pantalla.webp" alt="Max - 1 Mes Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Max - 1 Mes Pantalla</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$4900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 7 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Netflix - 1 Pantalla" data-price="10000" data-category="Streaming" data-image="images/netflix-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/netflix-1-pantalla.webp" alt="Netflix - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Netflix - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Netflix en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$10000 COP</p>
-            </a>
+<!-- Producto 7 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Netflix - 1 Pantalla" data-price="9900" data-category="Streaming" data-image="images/netflix-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/NETFLIX-1-PANFinal.webp" alt="Netflix - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Netflix - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$9900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 8 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Netflix - Completa Genérica" data-price="15000" data-category="Streaming" data-image="images/netflix-completa-generica.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/netflix-completa-generica.webp" alt="Netflix - Completa Genérica">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Netflix - Completa Genérica</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Netflix en cuenta genérica.</p>
-                <p class="pt-1 text-gray-900">$15000 COP</p>
-            </a>
+<!-- Producto 8 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Netflix - Completa Genérica" data-price="39900" data-category="Streaming" data-image="images/netflix-completa-generica.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/netflix-completa-generica.webp" alt="Netflix - Completa Genérica">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Netflix - Completa Genérica 1 Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$39900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 9 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Paramount+ - 1 Pantalla" data-price="7000" data-category="Streaming" data-image="images/paramount-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/paramount-1-pantalla.webp" alt="Paramount+ - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Paramount+ - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Paramount+ en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$7000 COP</p>
-            </a>
+<!-- Producto 9 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Paramount+ - 1 Pantalla" data-price="4000" data-category="Streaming" data-image="images/paramount-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/PARAMOUNT-1-PANTALLAFinal.webp" alt="Paramount+ - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Paramount+ - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$4000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 10 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Paramount+ - Completa" data-price="12000" data-category="Streaming" data-image="images/paramount-completa.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/paramount-completa.webp" alt="Paramount+ - Completa">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Paramount+ - Completa</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Paramount+.</p>
-                <p class="pt-1 text-gray-900">$12000 COP</p>
-            </a>
+<!-- Producto 10 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Paramount+ - Completa" data-price="9900" data-category="Streaming" data-image="images/paramount-completa.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/paramount-completa.webp" alt="Paramount+ - Completa">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Paramount+ - Completa 1 Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$9900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 11 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Plex - 1 Pantalla" data-price="5000" data-category="Streaming" data-image="images/plex-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/plex-1-pantalla.webp" alt="Plex - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Plex - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Plex en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$5000 COP</p>
-            </a>
+<!-- Producto 11 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Plex - 1 Pantalla" data-price="5000" data-category="Streaming" data-image="images/plex-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/plex-1-pantalla.webp" alt="Plex - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Plex - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$5000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 12 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Plex - Completa" data-price="10000" data-category="Streaming" data-image="images/plex-completa.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/plex-completa.webp" alt="Plex - Completa">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Plex - Completa</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Plex.</p>
-                <p class="pt-1 text-gray-900">$10000 COP</p>
-            </a>
+<!-- Producto 12 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Plex - Completa" data-price="10000" data-category="Streaming" data-image="images/plex-completa.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/plex-completa.webp" alt="Plex - Completa">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Plex - Completa 1 Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$10000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 13 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Prime Video - 1 Pantalla" data-price="8000" data-category="Streaming" data-image="images/prime-video-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/prime-video-1-pantalla.webp" alt="Prime Video - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Prime Video - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Prime Video en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$8000 COP</p>
-            </a>
+<!-- Producto 13 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Prime Video - 1 Pantalla" data-price="4900" data-category="Streaming" data-image="images/prime-video-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/prime-video-1-pantalla.webp" alt="Prime Video - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Prime Video - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$4900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 14 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Prime Video - Completa" data-price="13000" data-category="Streaming" data-image="images/prime-video-completa.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/prime-video-completa.webp" alt="Prime Video - Completa">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Prime Video - Completa</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Prime Video.</p>
-                <p class="pt-1 text-gray-900">$13000 COP</p>
-            </a>
+<!-- Producto 14 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Prime Video - Completa" data-price="10900" data-category="Streaming" data-image="images/prime-video-completa.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/prime-video-completa.webp" alt="Prime Video - Completa">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Prime Video - Completa Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$10900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 15 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Spotify - 2 Meses" data-price="10000" data-category="Música" data-image="images/spotify-2-meses.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/spotify-2-meses.webp" alt="Spotify - 2 Meses">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Spotify - 2 Meses</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Spotify Premium por 2 meses.</p>
-                <p class="pt-1 text-gray-900">$10000 COP</p>
-            </a>
+<!-- Producto 15 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Spotify - 2 Meses" data-price="10900" data-category="Música" data-image="images/spotify-2-meses.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/spotify-2-meses.webp" alt="Spotify - 2 Meses">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Spotify - 2 Meses</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$10900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 16 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Spotify - 3 Meses" data-price="12000" data-category="Música" data-image="images/spotify-3-meses.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/spotify-3-meses.webp" alt="Spotify - 3 Meses">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Spotify - 3 Meses</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Spotify Premium por 3 meses.</p>
-                <p class="pt-1 text-gray-900">$12000 COP</p>
-            </a>
+<!-- Producto 16 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="Spotify - 3 Meses" data-price="14900" data-category="Música" data-image="images/spotify-3-meses.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/spotify-3-meses.webp" alt="Spotify - 3 Meses">
+        <div class="pt-3 flex items-center justify-between">
+            <p>Spotify - 3 Meses</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$14900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 17 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="VIX - 1 Pantalla" data-price="6000" data-category="Streaming" data-image="images/vix-1-pantalla.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/vix-1-pantalla.webp" alt="VIX - 1 Pantalla">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>VIX - 1 Pantalla</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a VIX en una pantalla.</p>
-                <p class="pt-1 text-gray-900">$6000 COP</p>
-            </a>
+<!-- Producto 17 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="VIX - 1 Pantalla" data-price="4000" data-category="Streaming" data-image="images/vix-1-pantalla.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/vix-1-pantalla.webp" alt="VIX - 1 Pantalla">
+        <div class="pt-3 flex items-center justify-between">
+            <p>VIX - 1 Pantalla Mes</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$4000 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 18 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="YouTube Premium - 2 Meses" data-price="11000" data-category="Streaming" data-image="images/youtube-premium-2-meses.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/youtube-premium-2-meses.webp" alt="YouTube Premium - 2 Meses">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>YouTube Premium - 2 Meses</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a YouTube Premium por 2 meses.</p>
-                <p class="pt-1 text-gray-900">$11000 COP</p>
-            </a>
+<!-- Producto 18 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="YouTube Premium - 2 Meses" data-price="10900" data-category="Streaming" data-image="images/youtube-premium-2-meses.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/youtube-premium-2-meses.webp" alt="YouTube Premium - 2 Meses">
+        <div class="pt-3 flex items-center justify-between">
+            <p>YouTube Premium - 2 Meses</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$10900 COP</p>
+    </a>
+</div>
 
-        <!-- Producto 19 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="YouTube Premium - 3 Meses" data-price="15000" data-category="Streaming" data-image="images/youtube-premium-3-meses.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/youtube-premium-3-meses.webp" alt="YouTube Premium - 3 Meses">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>YouTube Premium - 3 Meses</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a YouTube Premium por 3 meses.</p>
-                <p class="pt-1 text-gray-900">$15000 COP</p>
-            </a>
+<!-- Producto 19 -->
+<div class="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 flex flex-col product-card" data-product="YouTube Premium - 3 Meses" data-price="14900" data-category="Streaming" data-image="images/youtube-premium-3-meses.webp">
+    <a href="#">
+        <img class="hover:grow hover:shadow-lg" src="images/youtube-premium-3-meses.webp" alt="YouTube Premium - 3 Meses">
+        <div class="pt-3 flex items-center justify-between">
+            <p>YouTube Premium - 3 Meses</p>
+            <button class="add-to-cart-button">
+                <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
+            </button>
         </div>
+        <p class="pt-1 text-gray-900">$14900 COP</p>
+    </a>
+</div>
+ 
 
-        <!-- Producto 20 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Netflix - 1 Pantalla Genérica" data-price="9500" data-category="Streaming" data-image="images/netflix-1p-generica.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/netflix-1p-generica.webp" alt="Netflix - 1 Pantalla Genérica">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Netflix - 1 Pantalla Genérica</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Netflix en una pantalla genérica.</p>
-                <p class="pt-1 text-gray-900">$9500 COP</p>
-            </a>
-        </div>
-
-        <!-- Producto 21 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Netflix - Completa TA Original" data-price="14000" data-category="Streaming" data-image="images/netflix-completa-ta-original.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/netflix-completa-ta-original.webp" alt="Netflix - Completa TA Original">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Netflix - Completa TA Original</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Netflix TA Original.</p>
-                <p class="pt-1 text-gray-900">$14000 COP</p>
-            </a>
-        </div>
-
-        <!-- Producto 22 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Spotify - 3 Meses (1)" data-price="11500" data-category="Música" data-image="images/spotify-3-meses-1.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/spotify-3-meses-1.webp" alt="Spotify - 3 Meses (1)">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Spotify - 3 Meses (1)</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso a Spotify Premium por 3 meses (variante 1).</p>
-                <p class="pt-1 text-gray-900">$11500 COP</p>
-            </a>
-        </div>
-
-        <!-- Producto 23 -->
-        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-6 flex flex-col product-card" data-product="Netflix - Completa TA Genérica" data-price="14500" data-category="Streaming" data-image="images/netflix-completa-ta-generica.webp">
-            <a href="#">
-                <img class="hover:grow hover:shadow-lg" src="images/netflix-completa-ta-generica.webp" alt="Netflix - Completa TA Genérica">
-                <div class="pt-3 flex items-center justify-between">
-                    <p>Netflix - Completa TA Genérica</p>
-                    <button class="add-to-cart-button">
-                        <img src="images/bookmark-simple.svg" alt="Bookmark Icon" class="h-6 w-6 invert-on-hover">
-                    </button>
-                </div>
-                <p class="text-sm text-gray-700">Acceso completo a Netflix TA en cuenta genérica.</p>
-                <p class="pt-1 text-gray-900">$14500 COP</p>
-            </a>
-        </div>
-
+  
+      
 
 
 
